@@ -3,7 +3,7 @@ angular.module('budjetz', ['ui.router', 'ionic']).config(function($stateProvider
   $stateProvider
     .state('welcome', {
       url: '/welcome',
-      templateUrl: "./templates/welcome.html"
+      templateUrl: "./welcome/welcome.html"
     })
 
 });
