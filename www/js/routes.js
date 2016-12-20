@@ -38,6 +38,6 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
             }
           })
 
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/login');
 
 });
