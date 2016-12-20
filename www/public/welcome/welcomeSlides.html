@@ -1,11 +1,24 @@
-<ion-view>
+<ion-view >
 
   <ion-content scroll="false">
     <ion-slides  options="options" slider="data.slider">
 
       <ion-slide-page>
+        <div ng-controller='welcomeCtrl'>
         <div class="box blue"><h1>BLUE</h1></div>
-        <button class="button button-clear button-positive" ui-sref="home"> Skip </button>
+        <form name='budgetInput' >
+          Starting Money
+          <input id='startingMoney' type="text" name="" ng-model='startingMoney'/>
+          Monthly Pay Check
+          <input id='monthlyPayCheck' type="text" name="" ng-model='monthlyPayCheck'/>
+          Gas
+          <input id='gasBudget'type="text" name="" ng-model='gasBudget'/>
+          Rent
+          <input id='rentBudget'type="text" name="" ng-model='rentBudget'/>
+        </form>
+        <div class="circle"></div>
+        <button class="button button-clear button-positive" ng-click='setPieChart()' ui-sref="home"> Skip </button>
+      </div>
       </ion-slide-page>
 
       <ion-slide-page>

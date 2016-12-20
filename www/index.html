@@ -6,7 +6,7 @@
     <title>Budjetz</title>
 
     <link rel="manifest" href="manifest.json">
-
+    <script src='http://d3js.org/d3.v3.min.js'></script>
     <!-- Styling -->
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="public/login/login.css" rel="stylesheet">
@@ -22,10 +22,12 @@
     <script src="js/routes.js"></script>
 
     <!-- Controllers -->
-    <script src="public/login/loginCtrl.js"></script>
     <script src="public/welcome/welcomeCtrl.js"></script>
+    <script src="public/login/loginCtrl.js"></script>
 
     <!-- Services -->
+    <script src="public/services/barChart.js"></script>
+    <script src="public/services/pieChart.js"></script>
   </head>
 
   <body ng-controller="loginCtrl">
