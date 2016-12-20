@@ -17,7 +17,6 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
             views: {
               'menuContent' :{
                 templateUrl: "./public/home/home.html",
-                controller: "homeCtrl"
               }
             }
           })
