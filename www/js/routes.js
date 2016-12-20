@@ -6,19 +6,37 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
       url: '/welcome',
       templateUrl: "./public/welcome/welcomeSlides.html"
     })
-    .state('home', {
-      url: '/home',
-      templateUrl: "./public/home/home.html",
-      controller: "homeCtrl"
+    .state('app', {
+      url: "/app",
+      abstract: true,
+      templateUrl: "./public/menu/menu.html",
+      controller: "menuCtrl"
     })
-        .state('home.settings', {
-          url: '/settings',
-          templateUrl: "./public/settings/settings.html"
-        })
-        .state('home.other', {
-          url: '/other',
-          templateUrl: "./public/other/other.html"
-        })
+          .state('app.home', {
+            url: '/home',
+            views: {
+              'menuContent' :{
+                templateUrl: "./public/home/home.html",
+                controller: "homeCtrl"
+              }
+            }
+          })
+          .state('app.settings', {
+            url: '/settings',
+            views: {
+              'menuContent' :{
+                templateUrl: "./public/settings/settings.html"
+              }
+            }
+          })
+          .state('app.other', {
+            url: '/other',
+            views: {
+              'menuContent' :{
+                templateUrl: "./public/other/other.html"
+              }
+            }
+          })
 
     $urlRouterProvider.otherwise('/home');
 
