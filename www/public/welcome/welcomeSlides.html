@@ -17,22 +17,23 @@
           <input id='rentBudget'type="text" name="" ng-model='rentBudget'/>
         </form>
 
-        <button class="button button-clear button-positive" ui-sref='home' ng-click='setPieChart()' > Skip </button>
+        <button class="button button-clear button-positive" ui-sref='app.home' ng-click='setPieChart()' > Skip </button>
       </div>
       </ion-slide-page>
 
       <ion-slide-page>
         <div ng-controller='welcomeCtrl'>
           <div class="box yellow"><h1>YELLOW</h1></div>
-          <button class="button button-clear button-positive" ui-sref="home" ng-click='setPieChart()' > Skip </button>
+          <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Skip </button>
         </div>
       </ion-slide-page>
 
       <ion-slide-page>
         <div ng-controller='welcomeCtrl'>
           <div class="box yellow"><h1>Pink</h1></div>
-          <button class="button button-clear button-positive" ui-sref="home" ng-click='setPieChart()' > Skip </button>
+          <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Skip </button>
         </div>
+
       </ion-slide-page>
 
     </ion-slides>

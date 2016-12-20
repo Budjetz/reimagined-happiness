@@ -1,9 +1,7 @@
-
-/*hr {
-  margin-top: 100px;
-  size: 1px;
-  width: 100%;
-}*/
+.header-wrapper {
+  display: flex;
+  background: #ccc;
+}
 
 .home-content-wrapper {
   padding: 5px;
