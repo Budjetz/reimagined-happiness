@@ -1,6 +1,6 @@
 <ion-view ng-controller='welcomeCtrl'>
 
-<ion-content>
+<ion-content ng-controller='homeCtrl'>
   <div class="bar bar-header bar-balanced" id="home-header">
     <h1 class="title"> Home </h1>
   </div>
@@ -9,6 +9,7 @@
 
   <div class="circle"></div>
 
+<div data-ng-init="setPieChart()"></div>
 </ion-content>
 
 </ion-view>
