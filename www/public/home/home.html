@@ -1,7 +1,11 @@
-<ion-view title="Home">
+<ion-view title="Home" ng-controller='welcomeCtrl'>
 
-  <ion-content>
-    <h1> Home </h1>
-  </ion-content>
+<ion-content ng-controller='homeCtrl'>
+
+  <div class="circle"></div>
+
+<div data-ng-init="setPieChart()"></div>
+</ion-content>
+
 
 </ion-view>
