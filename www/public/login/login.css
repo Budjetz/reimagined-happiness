@@ -1,6 +1,59 @@
-.button-wrapper {
+.login-wrapper {
+  height: 100vh;
   width: 100vw;
-  /*background: #ccc;*/
+  background: #209800;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.border {
+  width: 98vw;
+  height: 99vh;
+  border: 1px solid black;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#logo {
+  background: #209800;
+  color: #D4C31C;
+  font-size: 10em;
+  padding: 50px;
+  transform: rotate(45deg);
+  position: relative;
+}
+
+.title-wrapper {
+  position: absolute;
+  text-align: center;
+  margin-top: 15em;
+}
+
+h3 {
+  /*margin-top: 10em;*/
+  font-size: 81px;
+  font-family: 'Amatic SC', cursive;}
+
+p {
+  font-size: 23px;
+  font-family: 'Indie Flower', cursive;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.button-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 14em;
+}
+
+#login-button {
+  background: #D4C31C;
+  color: #000;
+  font-weight: bold;
 }
