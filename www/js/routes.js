@@ -16,7 +16,6 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
             views: {
               'menuContent' :{
                 templateUrl: "./public/home/home.html",
-                controller: "homeCtrl"
               }
             }
           })
@@ -28,11 +27,11 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
               }
             }
           })
-          .state('app.other', {
-            url: '/other',
+          .state('app.goals', {
+            url: '/goals',
             views: {
               'menuContent' :{
-                templateUrl: "./public/other/other.html"
+                templateUrl: "./public/goals/goals.html"
               }
             }
           })
