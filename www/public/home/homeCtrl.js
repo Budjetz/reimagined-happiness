@@ -1,5 +1,4 @@
-
-angular.module('budjetz').controller('homeCtrl', function ($scope) {
+angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, barChart) {
 
     $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');

@@ -9,7 +9,6 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const config = require('./config.js');
 
 const app = module.exports = express();
-const LocalStrategy = require('passport-local').Strategy;
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -54,7 +53,7 @@ passport.deserializeUser((deserializedUser, done) => {
   done(null, deserializedUser);
 });
 
-app.get('/auth/facebook',passport.authenticate('facebook'));
+app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/#/welcome',

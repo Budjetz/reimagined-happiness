@@ -3,19 +3,19 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
   $stateProvider
     .state('welcome', {
       url: '/welcome',
-      templateUrl: "./public/welcome/welcomeSlides.html"
+      templateUrl: "./welcome/welcomeSlides.html"
     })
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "./public/menu/menu.html",
+      templateUrl: "./menu/menu.html",
       controller: "menuCtrl"
     })
           .state('app.home', {
             url: '/home',
             views: {
               'menuContent' :{
-                templateUrl: "./public/home/home.html",
+                templateUrl: "./home/home.html",
               }
             }
           })
@@ -23,7 +23,7 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
             url: '/settings',
             views: {
               'menuContent' :{
-                templateUrl: "./public/settings/settings.html"
+                templateUrl: "./settings/settings.html"
               }
             }
           })
@@ -31,7 +31,7 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
             url: '/goals',
             views: {
               'menuContent' :{
-                templateUrl: "./public/goals/goals.html"
+                templateUrl: "./goals/goals.html"
               }
             }
           })

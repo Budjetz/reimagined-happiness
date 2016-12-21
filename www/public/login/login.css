@@ -22,7 +22,7 @@
   background: #209800;
   color: #D4C31C;
   font-size: 10em;
-  padding: .5em;
+  padding: 50px;
   transform: rotate(45deg);
   position: relative;
 }
@@ -30,7 +30,7 @@
 .title-wrapper {
   position: absolute;
   text-align: center;
-  margin-top: 17em;
+  margin-top: 15em;
 }
 
 h3 {
@@ -41,13 +41,15 @@ h3 {
 p {
   font-size: 23px;
   font-family: 'Indie Flower', cursive;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .button-wrapper {
   width: 100vw;
   display: flex;
   justify-content: center;
-  margin-top: 19em;
+  margin-top: 14em;
 }
 
 #login-button {
