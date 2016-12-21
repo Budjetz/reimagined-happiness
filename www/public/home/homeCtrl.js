@@ -1,7 +1,5 @@
 angular.module('budjetz').controller('homeCtrl', function ($scope, $timeout, $mdSidenav, pieChart) {
 
-    $scope.logg('home working');
-
     $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');
 
