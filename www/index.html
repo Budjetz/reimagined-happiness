@@ -13,6 +13,7 @@
     <link href="public/welcome/welcome.css" rel="stylesheet">
     <link href="public/home/home.css" rel="stylesheet">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower" rel="stylesheet">
 
     <!-- Ionic Stuff -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -45,14 +46,26 @@
   <body ng-controller="loginCtrl">
 
     <ion-nav-view></ion-nav-view>
-    <!-- <div ion-nav-view></div> -->
 
       <ion-content>
-        <div class="button-wrapper">
-          <button class="button button-balanced" id="login-button" href="/auth/facebook">
-              Login via Facebook
-          </button>
-        </div>
+        <section class="login-wrapper">
+          <section class="border">
+            <div class="logo-wrapper">
+              <button class="button ion-android-plane" id="logo"></button>
+
+            <div class="title-wrapper">
+              <h3> BUDJETZ </h3> <br>
+              <p> Helping you keep money in your pocket! </p>
+            </div>
+
+            </div>
+            <div class="button-wrapper">
+              <button class="button" id="login-button" href="/auth/facebook">
+                  Login via Facebook
+              </button>
+            </div>
+        </section>
+      </section>
       </ion-content>
 
   </body>
