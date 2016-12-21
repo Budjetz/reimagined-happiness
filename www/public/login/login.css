@@ -1,7 +1,16 @@
 .login-wrapper {
   height: 100vh;
   width: 100vw;
-  background: #ccc;
+  background: #209800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border {
+  width: 98vw;
+  height: 99vh;
+  border: 1px solid black;
 }
 
 .logo-wrapper {
@@ -10,7 +19,8 @@
 }
 
 #logo {
-  background: #ccc;
+  background: #209800;
+  color: #D4C31C;
   font-size: 10em;
   padding: .5em;
   transform: rotate(45deg);
@@ -20,11 +30,17 @@
 .title-wrapper {
   position: absolute;
   text-align: center;
-  margin-top: 20em;
+  margin-top: 17em;
 }
 
 h3 {
-  margin-top: 10em;
+  /*margin-top: 10em;*/
+  font-size: 81px;
+  font-family: 'Amatic SC', cursive;}
+
+p {
+  font-size: 23px;
+  font-family: 'Indie Flower', cursive;
 }
 
 .button-wrapper {
@@ -32,4 +48,10 @@ h3 {
   display: flex;
   justify-content: center;
   margin-top: 19em;
+}
+
+#login-button {
+  background: #D4C31C;
+  color: #000;
+  font-weight: bold;
 }
