@@ -1,6 +1,35 @@
-.button-wrapper {
+.login-wrapper {
+  height: 100vh;
   width: 100vw;
-  /*background: #ccc;*/
+  background: #ccc;
+}
+
+.logo-wrapper {
   display: flex;
   justify-content: center;
+}
+
+#logo {
+  background: #ccc;
+  font-size: 10em;
+  padding: .5em;
+  transform: rotate(45deg);
+  position: relative;
+}
+
+.title-wrapper {
+  position: absolute;
+  text-align: center;
+  margin-top: 20em;
+}
+
+h3 {
+  margin-top: 10em;
+}
+
+.button-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 19em;
 }
