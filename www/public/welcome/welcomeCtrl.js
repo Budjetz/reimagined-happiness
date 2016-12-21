@@ -31,6 +31,5 @@ angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, p
   // };
 
 
-  $scope
 
 });

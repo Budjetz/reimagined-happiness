@@ -21,4 +21,3 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
       };
 
   });
-  www/public/menu/menu.html  www/public/services/barChart.js www/public/services/pieChart.js www/public/welcome/welcomeCtrl.js www/public/welcome/welcomeSlides.html
