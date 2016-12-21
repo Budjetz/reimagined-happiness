@@ -1,4 +1,5 @@
-angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, barChart) {
+angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dataService, barChart) {
+
 
     $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');
@@ -10,9 +11,14 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, bar
     }
 
       $scope.setPieChart = function(){
-        var data = pieChart.setData();
-        console.log(data);
-        if(data){pieChart.makePieChart(data);}
+        if(pieChart){
+          var data = dataService.setData();
+          if(data){
+            pieChart.makePieChart(data);
+            barChart.makeBarChart();
+          }
+        }
       };
 
   });
+  www/public/menu/menu.html  www/public/services/barChart.js www/public/services/pieChart.js www/public/welcome/welcomeCtrl.js www/public/welcome/welcomeSlides.html
