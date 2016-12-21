@@ -20,6 +20,11 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static('./public'));
+//database
+const massiveInstance = massive.connectSync({connectionString : config.db});
+app.set('db', massiveInstance);
+const db = app.get('db');
 
 //Facebook Authorization
 passport.use(new FacebookStrategy({
@@ -81,7 +86,22 @@ app.get('/logout', (req, res) => {
 });
 
 //Other
-app.use(express.static('./public'));
+
+app.get('/tableMaker', (req,res) => {
+  db.get_expenditures(function(err,resp) {
+     res.json(resp);
+  })
+});
+
+
+
+
+
+
+
+
+
+
 
 app.listen(8080, () => {
   console.log('listening on port 8080');
