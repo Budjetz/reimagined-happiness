@@ -21,6 +21,14 @@ angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, p
     $scope.previousIndex = data.slider.previousIndex;
   });
 
-  $scope.setPieChart = pieChart.makePieChart;
+  $scope.setPieChart = function(){
+    var data = pieChart.setData();
+    console.log(data);
+    if(data){pieChart.makePieChart(data);}
+
+  };
+
+
+  $scope
 
 });

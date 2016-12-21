@@ -1,6 +1,6 @@
-angular.module('budjetz').controller('homeCtrl', function ($scope, $timeout, $mdSidenav) {
+angular.module('budjetz').controller('homeCtrl', function ($scope, $timeout, $mdSidenav, pieChart) {
 
-    console.log('home working');
+    $scope.logg('home working');
 
     $scope.toggleLeft = buildToggler('left');
     $scope.toggleRight = buildToggler('right');
@@ -10,4 +10,10 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, $timeout, $md
         $mdSidenav(componentId).toggle();
       }
     }
+
+      $scope.setPieChart = function(){
+        var data = pieChart.setData();
+        console.log(data);
+        if(data){pieChart.makePieChart(data);}
+      };
   });
