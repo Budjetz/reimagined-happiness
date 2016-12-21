@@ -1,20 +1,6 @@
 angular.module('budjetz').service('pieChart', function($state) {
 
-  this.setData = function(){
-    function ChartData(value,label){
-      this.value = value;
-      this.label = label;
-    }
-
-    if(document.getElementById('startingMoney')){var start = new ChartData(document.getElementById('startingMoney').value, 'Starting Money' );
-    var payCheck = new ChartData(document.getElementById('monthlyPayCheck').value, 'Pay check');
-    var gasBudget = new ChartData(document.getElementById('gasBudget').value, 'Gas');
-    var rentBudget = new ChartData(document.getElementById('rentBudget').value, 'Rent');
-
-    var data = [start, payCheck, gasBudget, rentBudget]
-    return data;
-  }
-  };
+  
 
 
   this.makePieChart = function(data) {
@@ -65,6 +51,8 @@ angular.module('budjetz').service('pieChart', function($state) {
 
     // append a path element to each g tag, and make it a colorful arc
     g.append("path")
+      .transition()
+      .delay(700)
       .attr("d", arc)
       .style("fill", function(d,i){
       	return color(d.value);
@@ -72,9 +60,11 @@ angular.module('budjetz').service('pieChart', function($state) {
 
     var labelArc = d3.svg.arc()
       .outerRadius(r - 40)
-      .innerRadius(r - 40);
+      .innerRadius(r - 20);
 
     g.append("text")
+      .transition()
+      .delay(800)
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .text(function(d) { if(d.data){ return '$' + d.data.label;} });

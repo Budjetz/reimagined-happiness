@@ -8,16 +8,16 @@
         <div class="box blue"><h1>BLUE</h1></div>
         <form name='budgetInput' >
           Starting Money
-          <input id='startingMoney' type="text" name="" ng-model='startingMoney'/>
+          <input id='startingMoney' type="text"  ng-model='startingMoney'/>
           Monthly Pay Check
-          <input id='monthlyPayCheck' type="text" name="" ng-model='monthlyPayCheck'/>
+          <input id='monthlyPayCheck' type="text"  ng-model='monthlyPayCheck'/>
           Gas
-          <input id='gasBudget'type="text" name="" ng-model='gasBudget'/>
+          <input id='gasBudget'type="text" ng-model='gasBudget'/>
           Rent
-          <input id='rentBudget'type="text" name="" ng-model='rentBudget'/>
+          <input id='rentBudget'type="text" ng-model='rentBudget'/>
         </form>
 
-        <button class="button button-clear button-positive" ui-sref='app.home' ng-click='setPieChart()' > Skip </button>
+        <button class="button button-clear button-positive" ui-sref='app.home' ng-click='setPieChart([startingMoney,monthlyPayCheck,gasBudget,rentBudget])' > Skip </button>
       </div>
       </ion-slide-page>
 

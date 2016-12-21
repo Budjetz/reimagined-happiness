@@ -13,23 +13,24 @@ angular.module('budjetz').service('barChart', function() {
         rentBudget.value
       ];
 
-      var body = d3.select('div');
+      var body = d3.select('.barGraph')
+      .selectAll('.barChart');
 
-      var goodies = body.selectAll('.div')
-      .data(data);
-
-      goodies.enter().append('div')
-      .attr('class', 'div')
-      .style('width', function(d) { return '0%'})
-      .style('background','green')
+      var goodies = body.data(data)
+      .enter().append('div')
+      .attr('class', 'barChart')
+      .style('width', function(d) { return '100%'})
+      .style('background','red')
       .style('margin','5px')
-      .html(function(d) {return d;});
-
-      goodies.transition()
+      .append('div')
+      .style('background','green')
+      .html(function(d) {return d;})
+      .transition()
       .style('width', function(d) { return d + '%'})
       .text(d3.format());
 
-      goodies.exit().remove();
+      console.log(goodies , 'good');
+
 
 
     }

@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, pieChart) {
+angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, pieChart, dataService) {
 
   $scope.options = {
     loop: false,
@@ -21,12 +21,14 @@ angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, p
     $scope.previousIndex = data.slider.previousIndex;
   });
 
-  $scope.setPieChart = function(){
-    var data = pieChart.setData();
-    console.log(data);
-    if(data){pieChart.makePieChart(data);}
-
-  };
+  // $scope.setPieChart = function(stuff){
+  //   var data = dataService.setData(stuff);
+  //   if(data){
+  //     pieChart.makePieChart(data);
+  //     barChart.makeBarChart();
+  //   }
+  //
+  // };
 
 
   $scope
