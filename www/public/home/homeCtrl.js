@@ -19,5 +19,9 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
           }
         }
       };
-
+      $scope.load = () => {
+        $scope.loadCheck = true;
+        console.log($scope.loadCheck);
+      }
+      console.log($scope.loadCheck);
   });

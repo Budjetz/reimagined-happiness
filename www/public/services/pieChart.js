@@ -1,14 +1,14 @@
 angular.module('budjetz').service('pieChart', function($state) {
 
-  
+
 
 
   this.makePieChart = function(data) {
 
-        color = d3.scale.category20();
+        color = d3.scale.category20b();
 
-        var w = 300,
-        h = 300,
+        var w = 250,
+        h = 250,
         r = 100;
 
         // make a pie constructor
@@ -30,7 +30,9 @@ angular.module('budjetz').service('pieChart', function($state) {
            var svg = d3.select('.circle')
  	         .append('svg')
  	         .attr('width',w)
- 	         .attr('height',h);
+ 	         .attr('height',h)
+           .style('margin','auto')
+           .style('display','flex');
 
 
 

@@ -21,14 +21,14 @@ angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, p
     $scope.previousIndex = data.slider.previousIndex;
   });
 
-  // $scope.setPieChart = function(stuff){
-  //   var data = dataService.setData(stuff);
-  //   if(data){
-  //     pieChart.makePieChart(data);
-  //     barChart.makeBarChart();
-  //   }
-  //
-  // };
+  $scope.setPieChart = function(stuff){
+    var data = dataService.setData(stuff);
+    if(data){
+      pieChart.makePieChart(data);
+      barChart.makeBarChart();
+    }
+
+  };
 
 
 
