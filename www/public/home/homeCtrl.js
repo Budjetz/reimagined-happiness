@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dataService, barChart) {
+angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dataService, barChart, getService) {
 
 
     $scope.toggleLeft = buildToggler('left');
@@ -9,7 +9,6 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
         $mdSidenav(componentId).toggle();
       }
     }
-
       $scope.setPieChart = function(){
         if(pieChart){
           var data = dataService.setData();
@@ -19,9 +18,32 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
           }
         }
       };
-      $scope.load = () => {
-        $scope.loadCheck = true;
-        console.log($scope.loadCheck);
+
+
+
+      $scope.getBudgets = () => {
+        getService.getBudgets().then((res)=>{
+          console.log(res.data);
+        })
       }
-      console.log($scope.loadCheck);
+      $scope.getExpenditures = () => {
+        getService.getExpenditures().then((res)=>{
+          console.log(res.data);
+        })
+      }
+      $scope.getUsers = () => {
+        getService.getUsers().then((res)=>{
+          console.log(res.data);
+        })
+      }
+      $scope.getMoneyTotal = () => {
+        getService.getMoneyTotal().then((res)=>{
+          console.log(res.data);
+        })
+      }
+      $scope.getBudgetExpenditures = () => {
+        getService.getBudgetExpenditures().then((res)=>{
+          console.log(res.data);
+        })
+      }
   });
