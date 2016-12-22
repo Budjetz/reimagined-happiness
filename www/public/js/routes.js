@@ -23,7 +23,8 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
             url: '/settings',
             views: {
               'menuContent' :{
-                templateUrl: "./settings/settings.html"
+                templateUrl: "./settings/settings.html",
+                controller: "settingsCtrl"
               }
             }
           })

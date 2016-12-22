@@ -8,13 +8,46 @@
     </section>
 
     <ion-list>
-      <ion-item class="settings-list-item">
-        Add Income  <button class="button button-icon button-black ion-chevron-right" id="chevron"></button>
+      <ion-item class="settings-list-item" ng-click="openModal(1)">
+        Add Income  <button class="button button-icon button-black ion-chevron-right" id="chevron" ng-click="openModal(1)"></button>
       </ion-item>
-      <ion-item class="settings-list-item">
-        Edit Categories <button class="button button-icon button-black ion-chevron-right" id="chevron"></button>
+      <ion-item class="settings-list-item" ng-click="openModal(2)">
+        Edit Categories <button class="button button-icon button-black ion-chevron-right" id="chevron" ng-click="openModal(2)"></button>
       </ion-items>
     </ion-list>
   </ion-content>
+
+<!-- Income Modal -->
+<script id="incomeModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <h1 class="title">Edit Income</h1>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(1)"></button>
+    </ion-header-bar>
+    <ion-content>
+      <div> This page will display their starting income entered from the welcome slides and it gives them
+            opportunity to add to it. This will change the bars on the other pages. </div>
+      <div class="save-button-wrapper">
+        <button class="button button-positive" ng-click="closeModal(1)">Save</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<!-- Category Modal -->
+<script id="categoryModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <h1 class="title">Edit Categories</h1>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(2)"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div> This page will display the categories created and their set values from the welcome slides </div>
+        <div class="save-button-wrapper">
+          <button class="button button-positive" ng-click="closeModal(2)">Save</button>
+        </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
 
 </ion-view>
