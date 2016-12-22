@@ -17,8 +17,4 @@ function ChartData(value,label){
       return data;
     }
   };
-
-
-
-
 })
