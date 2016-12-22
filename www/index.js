@@ -37,7 +37,7 @@ passport.use(new FacebookStrategy({
     db.users.findOne({facebook_id: profile.id}, (err, dbRes) => {
       if (!dbRes) {
         console.log("User not found. Creating...");
-        db.users.insert({user_name: profile.displayName, facebook_id: profile.id} , (err, dbRes) => {
+        db.users.insert({ fb_id: profile.id, name: profile.displayName, pic: profile.picture} , (err, dbRes) => {
           return next(null, dbRes);
         });
       } else {
