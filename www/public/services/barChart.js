@@ -23,7 +23,7 @@ angular.module('budjetz').service('barChart', function($state) {
       var goodies = body.data(data)
       .enter().append('div')
       .attr('class', 'barChart')
-      .on('click',function(d){ $state.go('welcome')})
+      .on('click',function(d){ $state.go('budget',{id: d})})
       .style('width', '99%')
       .style('display', 'flex')
       .style('justify-content', 'space-between')

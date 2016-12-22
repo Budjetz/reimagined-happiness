@@ -25,6 +25,7 @@ app.use(express.static('./public'));
 const massiveInstance = massive.connectSync({connectionString : config.db});
 app.set('db', massiveInstance);
 const db = app.get('db');
+const serverController = require('./serverController.js');
 
 //Facebook Authorization
 passport.use(new FacebookStrategy({
@@ -87,12 +88,11 @@ app.get('/logout', (req, res) => {
 
 //Other
 
-app.get('/tableMaker', (req,res) => {
-  db.get_expenditures(function(err,resp) {
-     res.json(resp);
-  })
-});
-
+app.get('/getExpenditures', serverController.getExpenditures);
+app.get('/getBudgets', serverController.getBudgets);
+app.get('/getUsers', serverController.getUsers);
+app.get('/getMoneyTotal', serverController.getMoneyTotal);
+app.get('/getBudgetExpenditures', serverController.getBudgetExpenditures);
 
 
 
