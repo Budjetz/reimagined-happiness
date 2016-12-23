@@ -66,7 +66,7 @@ angular.module('budjetz').service('pieChart', function($state) {
 
     g.append("text")
       .transition()
-      .delay(800)
+      .delay(500)
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .text(function(d) { if(d.data){ return '$' + d.data.label;} });

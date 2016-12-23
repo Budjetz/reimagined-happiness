@@ -4,7 +4,7 @@ angular.module('budjetz').service('getService', function ($http){
     return $http({
       method: "GET",
       url: '/getBudgets'
-    })
+    }).then((res)=>{return res.data})
   }
   this.getExpenditures = () => {
     return $http({
