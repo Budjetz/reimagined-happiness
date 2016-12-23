@@ -29,6 +29,10 @@ module.exports = {
       res.json(resp);
     })
   },
-
+  addExpenditure : (req,res) => {
+    db.add_expenditure([req.body.user_id, req.body.category, req.body.amount , req.body.date , req.body.notes , req.body.location],(err,resp)=>{
+      res.json('data Sent')
+    })
+  }
 
 }

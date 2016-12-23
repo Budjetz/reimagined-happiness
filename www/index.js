@@ -93,7 +93,7 @@ app.get('/getBudgets', serverController.getBudgets);
 app.get('/getUsers', serverController.getUsers);
 app.get('/getMoneyTotal', serverController.getMoneyTotal);
 app.get('/getBudgetExpenditures', serverController.getBudgetExpenditures);
-
+app.post('/addExpenditure', serverController.addExpenditure)
 
 
 

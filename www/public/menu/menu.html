@@ -57,16 +57,17 @@
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
     </ion-header-bar>
     <ion-content>
-      <form name='budgetInput' >
-        Starting Money
-        <input id='startingMoney' type="text" name="" ng-model='startingMoney'/>
-        Monthly Pay Check
-        <input id='monthlyPayCheck' type="text" name="" ng-model='monthlyPayCheck'/>
-        Gas
-        <input id='gasBudget'type="text" name="" ng-model='gasBudget'/>
-        Rent
-        <input id='rentBudget'type="text" name="" ng-model='rentBudget'/>
-      </form>
+      <!-- <form name='Expenditure' > -->
+        Category
+        <input id='category' type="text" name="" ng-model='ex.category'/>
+        amount
+        <input id='amount' type="text" name="" ng-model='ex.amount'/>
+        notes
+        <input id='notes'type="text" name="" ng-model='ex.notes'/>
+        location
+        <input id='location'type="text" name=""  ng-model='ex.location'/>
+        <div ng-click='addExpenditure(ex); closeModal()'>Add Expense</div>
+      <!-- </form> -->
     </ion-content>
   </ion-modal-view>
 </script>
