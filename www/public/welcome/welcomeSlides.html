@@ -3,12 +3,36 @@
   <ion-content scroll="false">
     <ion-slides  options="options" slider="data.slider">
 
-      <ion-slide-page>
+      <ion-slide-page class="blurb-container">
         <div ng-controller='welcomeCtrl'>
-        <div class="box blue"><h1>BLUE</h1></div>
+          <div><h1 class="welcome-title">Welcome to Budjetz</h1></div>
+          <p class="blurb">
+            With this app, we will take your starting money and compare it to your monthly expenses.
+            Through easy to understand charts and progress bars, we will show you where you stand on your monthly spending.
+            One of our goals is to help you keep track of your money so you can increase your savings account.
+          </p>
+          <!-- <button class="button button-clear button-positive" ui-sref="app.home" ng-click="setPieChart()" id="next-button" > Next </button> -->
+        </div>
+      </ion-slide-page>
+
+      <ion-slide-page class="blurb-container2">
+        <div ng-controller='welcomeCtrl'>
+          <div class="welcome2-wrapper"><h1 class="welcome-title2">Starting Amount</h1></div>
+          <form name='budgetInput' class="starting-money-wrapper">
+            <input id='startingMoney' type='text' ng-model='startingMoney' placeholder="Starting Money" />
+          </form>
+          <p class="starting-blurb">
+            We need your starting amount so we can help you budget your spending.
+          </p>
+          <!-- <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Finish </button> -->
+        </div>
+
+      </ion-slide-page>
+
+      <ion-slide-page class="blurb-container3">
+        <div ng-controller='welcomeCtrl'>
+        <div class="welcome3-wrapper"><h1>Setting Your Budget</h1></div>
         <form name='budgetInput' >
-          Starting Money
-          <input id='startingMoney' type="text"  ng-model='startingMoney'/>
           Monthly Pay Check
           <input id='monthlyPayCheck' type="text"  ng-model='monthlyPayCheck'/>
           Gas
@@ -17,23 +41,8 @@
           <input id='rentBudget'type="text" ng-model='rentBudget'/>
         </form>
 
-        <button class="button button-clear button-positive" ui-sref='app.home' ng-click='setPieChart([startingMoney,monthlyPayCheck,gasBudget,rentBudget])' > Skip </button>
+        <button class="button button-clear button-positive" ui-sref='app.home' ng-click='setPieChart([startingMoney,monthlyPayCheck,gasBudget,rentBudget])' id="finish-button"> Next </button>
       </div>
-      </ion-slide-page>
-
-      <ion-slide-page>
-        <div ng-controller='welcomeCtrl'>
-          <div class="box yellow"><h1>YELLOW</h1></div>
-          <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Skip </button>
-        </div>
-      </ion-slide-page>
-
-      <ion-slide-page>
-        <div ng-controller='welcomeCtrl'>
-          <div class="box yellow"><h1>Pink</h1></div>
-          <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Skip </button>
-        </div>
-
       </ion-slide-page>
 
     </ion-slides>
