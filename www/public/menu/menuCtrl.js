@@ -17,7 +17,9 @@ angular.module('budjetz').controller('menuCtrl', function($state, $scope, $ionic
     postService.addExpenditure(ex).then((data)=>{
       console.log(data,'expenditure added');
       $scope.ex = '';
+      // $scope.modal.hide();
     })
+
   }
 
 })
