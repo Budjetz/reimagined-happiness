@@ -1,4 +1,27 @@
-angular.module('budjetz').service('dataService', function($state) {
+angular.module('budjetz').service('dataService', function($state, getService, $q) {
+
+  this.budgetData = () => {
+    var budgetObj = [];
+    var def = $q.defer();
+    getService.getBudgets().then((data) => {
+      data.forEach((val)=>{
+        budgetObj.push({category: val.category,
+        amount: val.budget_amount})
+      })
+      def.resolve(budgetObj);
+    });
+    return def.promise;
+  };
+
+  this.expendituresData = () => {
+    var expData = [];
+    var def = $q.defer();
+    getService.getBudgetExpenditures().then((data)=>{
+
+      console.log(data);
+    })
+  }
+this.expendituresData();
 
 function ChartData(value,label){
     this.value = value;
