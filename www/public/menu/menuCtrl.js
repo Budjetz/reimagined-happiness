@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('menuCtrl', function($state, $scope, $ionicModal, postService) {
+angular.module('budjetz').controller('menuCtrl', function($state, $scope, $ionicModal, postService, $ionicPopup) {
 
   $ionicModal.fromTemplateUrl('my-modal.html', {
     scope: $scope,
@@ -16,10 +16,7 @@ angular.module('budjetz').controller('menuCtrl', function($state, $scope, $ionic
   $scope.addExpenditure = (ex) => {
     postService.addExpenditure(ex).then((data)=>{
       console.log(data,'expenditure added');
-      $scope.ex = '';
-      // $scope.modal.hide();
     })
-
   }
 
 })

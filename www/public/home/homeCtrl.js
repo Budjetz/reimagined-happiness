@@ -9,6 +9,7 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
         $mdSidenav(componentId).toggle();
       }
     }
+
       $scope.setPieChart = function(){
         if(pieChart){
           var data = dataService.setData();
@@ -18,8 +19,6 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
           }
         }
       };
-
-
 
       $scope.getBudgets = () => {
         getService.getBudgets().then((res)=>{

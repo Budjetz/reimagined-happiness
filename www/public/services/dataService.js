@@ -17,11 +17,9 @@ angular.module('budjetz').service('dataService', function($state, getService, $q
     var expData = [];
     var def = $q.defer();
     getService.getBudgetExpenditures().then((data)=>{
-
-      console.log(data);
     })
   }
-this.expendituresData();
+  this.expendituresData();
 
 function ChartData(value,label){
     this.value = value;

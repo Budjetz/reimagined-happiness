@@ -57,7 +57,7 @@
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
     </ion-header-bar>
     <ion-content>
-      <!-- <form name='Expenditure' > -->
+      <form name='Expenditure' >
         Category
         <input id='category' type="text" name="" ng-model='ex.category'/>
         amount
@@ -66,8 +66,8 @@
         <input id='notes'type="text" name="" ng-model='ex.notes'/>
         location
         <input id='location'type="text" name=""  ng-model='ex.location'/>
-        <div ng-click='addExpenditure(ex);'>Add Expense</div>
-      <!-- </form> -->
+        <div ng-click='addExpenditure(ex); ex = ""'>Add Expense</div>
+      </form>
     </ion-content>
   </ion-modal-view>
 </script>
