@@ -13,13 +13,8 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
       $scope.setPieChart = function(){
         getService.getBudgetExpenditures().then((data) => {
           barChart.makeBarChart(data.data);
+          pieChart.makePieChart(data.data);
         })
-        if(pieChart){
-          var data = dataService.setData();
-          if(data){
-            pieChart.makePieChart(data);
-          }
-        }
       };
 
       $scope.getBudgets = () => {
