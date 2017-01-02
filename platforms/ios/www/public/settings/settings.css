@@ -1,0 +1,21 @@
+.settings-header-wrapper {
+  height: 10vh;
+  background: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#picture {
+  float: right;
+}
+
+.settings-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chevron {
+  float: right;
+}

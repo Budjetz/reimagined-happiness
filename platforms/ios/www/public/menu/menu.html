@@ -1,0 +1,73 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+  <ion-side-menu-content>
+
+    <ion-nav-bar class="bar-balanced">
+
+      <ion-nav-buttons side="right">
+        <button class="ion-ios-compose-outline" style="color: white; font-size: 31px" ng-click="openModal()"></button>
+      </ion-nav-buttons>
+
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <!--
+      Use primary and secondary, so buttons correctly map to the side familiar to users of each platform.
+      ion-nav-buttons must be immediate descendants of the ion-view or ion-nav-bar element
+      (basically, don't wrap it in another div).
+      -->
+
+      <ion-nav-buttons side="primary">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-energized">
+      <!-- <h1 class="title">Menu</h1> -->
+    </ion-header-bar>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item menu-close ui-sref="app.settings">
+          Settings
+        </ion-item>
+        <ion-item menu-close ui-sref="app.goals">
+          Goals
+        </ion-item>
+        <ion-item menu-close ui-sref="app.home">
+          Home
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
+<!-- Modal for adding expenditure -->
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <button class="button button-icon ion-camera"></button>
+      <h1 class="title">Add Expense</h1>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
+    </ion-header-bar>
+    <ion-content>
+      <form name='Expenditure' >
+        Category
+        <input id='category' type="text" name="" ng-model='ex.category'/>
+        amount
+        <input id='amount' type="text" name="" ng-model='ex.amount'/>
+        notes
+        <input id='notes'type="text" name="" ng-model='ex.notes'/>
+        location
+        <input id='location'type="text" name=""  ng-model='ex.location'/>
+        <div ng-click='addExpenditure(ex); ex = ""'>Add Expense</div>
+      </form>
+    </ion-content>
+  </ion-modal-view>
+</script>

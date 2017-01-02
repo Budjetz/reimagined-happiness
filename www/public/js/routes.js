@@ -15,6 +15,11 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
       templateUrl: "./budget/budgetDetails.html",
       controller: 'budgetDetailsCtrl'
     })
+    .state('type', {
+      url: "/typeOfExpense",
+      templateUrl: "./menu/typeOfExpense.html",
+      controller: "menuCtrl"
+    })
     .state('app', {
       url: "/app",
       abstract: true,
@@ -42,7 +47,9 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
             url: '/goals',
             views: {
               'menuContent' :{
-                templateUrl: "./goals/goals.html"
+                templateUrl: "./goals/goals.html",
+                controller: "goalsCtrl",
+
               }
             }
           })
