@@ -68,8 +68,8 @@ module.exports = {
       db.add_budget([req.body.category], (err,resp) => {});
     }
       db.add_expenditure([req.body.user_id, req.body.category, req.body.amount , req.body.date , req.body.notes , req.body.location], (err,resp) => {})
+      res.json(resp)
     })
-    res.json('good')
   }
 
 }

@@ -5,7 +5,7 @@
     <ion-nav-bar class="bar-balanced">
 
       <ion-nav-buttons side="right">
-        <button class="ion-plus-circled" style="color: white; font-size: 31px" ng-click="openModal()"></button>
+        <button class="ion-plus-circled" style="color: white; font-size: 31px" ui-sref="type"></button>
       </ion-nav-buttons>
 
       <ion-nav-back-button>
@@ -46,28 +46,3 @@
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
-
-<!-- Modal for adding expenditure -->
-
-<script id="my-modal.html" type="text/ng-template">
-  <ion-modal-view>
-    <ion-header-bar class="bar-assertive">
-      <button class="button button-icon ion-camera"></button>
-      <h1 class="title">Add Expense</h1>
-        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
-    </ion-header-bar>
-    <ion-content>
-      <form name='Expenditure' >
-        Category
-        <input id='category' type="text" name="" ng-model='ex.category'/>
-        amount
-        <input id='amount' type="text" name="" ng-model='ex.amount'/>
-        notes
-        <input id='notes'type="text" name="" ng-model='ex.notes'/>
-        location
-        <input id='location'type="text" name=""  ng-model='ex.location'/>
-        <div ng-click='addExpenditure(ex); ex = ""'>Add Expense</div>
-      </form>
-    </ion-content>
-  </ion-modal-view>
-</script>
