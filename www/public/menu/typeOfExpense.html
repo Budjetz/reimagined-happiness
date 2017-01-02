@@ -49,7 +49,7 @@
         <input id='notes'type="text" name="" ng-model='ex.notes'/>
         Location
         <input id='location'type="text" name="" ng-model='ex.location'/>
-        <div ng-click='addExpenditure(ex); ex = ""'>Add Expense</div>
+        <div ng-click='addExpenditure(ex); ex = ""; showConfirm()'>Show Popup</div>
       </form>
     </ion-content>
   </ion-modal-view>
