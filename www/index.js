@@ -21,6 +21,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('./public'));
+app.use('/ocr', express.static(__dirname + '/ocrWork/www'));
 //database
 const massiveInstance = massive.connectSync({connectionString : config.db});
 app.set('db', massiveInstance);
@@ -93,6 +94,7 @@ app.get('/getUsers', serverController.getUsers);
 app.get('/getMoneyTotal', serverController.getMoneyTotal);
 app.get('/getBudgetExpenditures', serverController.getBudgetExpenditures);
 app.post('/addExpenditure', serverController.addExpenditure)
+
 
 
 
