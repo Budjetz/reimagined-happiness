@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('menuCtrl', function($state, $scope, $ionicModal, postService, $ionicPopup) {
+angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ionicModal, postService, getService, barChart, pieChart, $ionicPopup) {
 
   $ionicModal.fromTemplateUrl('expenseModal.html', {
     scope: $scope,
@@ -23,12 +23,16 @@ angular.module('budjetz').controller('menuCtrl', function($state, $scope, $ionic
   $scope.closeModal = function(index) {
     if (index == 1) $scope.modal1.hide();
     else $scope.modal2.hide();
-  };
+  }
 
 
   $scope.addExpenditure = (ex) => {
     postService.addExpenditure(ex).then((data)=>{
-      console.log(data,'expenditure added');
+        getService.getBudgetExpenditures().then((data) => {
+          barChart.makeBarChart(data.data);
+          pieChart.makePieChart(data.data);
+          console.log(data.data);
+        })
     })
   }
 
