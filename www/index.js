@@ -33,16 +33,15 @@ passport.use(new FacebookStrategy({
     clientSecret: config.facebookSecret,
     callbackURL: "/auth/facebook/callback"
   }, (accessToken, refreshToken, profile, next) => {
-    // console.log('FB Profile: ', profile);
+   console.log('FB Profile: ', profile);
     //db. query to check if user exists in database
     db.users.findOne({fb_id: profile.id}, (err, dbRes) => {
       if (!dbRes) {
-        // console.log("User not found. Creating...");
+        console.log("User not found. Creating...");
         db.users.insert({fb_id: profile.id, name: profile.displayName, pic: profile.picture} , (err, dbRes) => {
           return next(null, dbRes);
         });
       } else {
-        // console.log("Existing user found.");
         return next(null, dbRes);
       }
     });
@@ -94,8 +93,6 @@ app.get('/getUsers', serverController.getUsers);
 app.get('/getMoneyTotal', serverController.getMoneyTotal);
 app.get('/getBudgetExpenditures', serverController.getBudgetExpenditures);
 app.post('/addExpenditure', serverController.addExpenditure)
-
-
 
 
 
