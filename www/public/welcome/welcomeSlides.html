@@ -7,9 +7,9 @@
         <div ng-controller='welcomeCtrl'>
           <div><h1 class="welcome-title">Welcome to Budjetz</h1></div>
           <p class="blurb">
-            With this app, we will take your starting money and compare it to your monthly expenses.
-            Through easy to understand charts and progress bars, we will show you where you stand on your monthly spending.
-            One of our goals is to help you keep track of your money so you can increase your savings account.
+            It's easy! Give us the total amount of money you spend each month and we'll help you build a budget.
+            Using easy to understand charts and progress bars, you will see your monthly spending in real-time.
+            This will help you save money, which should be everyone's goal!
           </p>
           <!-- <button class="button button-clear button-positive" ui-sref="app.home" ng-click="setPieChart()" id="next-button" > Next </button> -->
         </div>
@@ -17,32 +17,19 @@
 
       <ion-slide-page class="blurb-container2">
         <div ng-controller='welcomeCtrl'>
-          <div class="welcome2-wrapper"><h1 class="welcome-title2">Starting Amount</h1></div>
+          <div class="welcome2-wrapper"><h1 class="welcome-title2">Starting Budget</h1></div>
           <form name='budgetInput' class="starting-money-wrapper">
-            <input id='startingMoney' type='text' ng-model='startingMoney' placeholder="Starting Money" />
+            <input id='startingMoney' type='text' ng-model='startingMoney' placeholder="Starting Budget" />
           </form>
           <p class="starting-blurb">
-            We need your starting amount so we can help you budget your spending.
+            So we can help you understand your budget, how much, total, do you spend each month?
           </p>
+          <div class="setBudget-button-wrapper">
+            <button class="button button-stable" id="setBudget-button" ui-sref="setBudget">Next</button>
+          </div>
           <!-- <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Finish </button> -->
         </div>
 
-      </ion-slide-page>
-
-      <ion-slide-page class="blurb-container3">
-        <div ng-controller='welcomeCtrl'>
-        <div class="welcome3-wrapper"><h1>Setting Your Budget</h1></div>
-        <form name='budgetInput' >
-          Monthly Pay Check
-          <input id='monthlyPayCheck' type="text"  ng-model='monthlyPayCheck'/>
-          Gas
-          <input id='gasBudget'type="text" ng-model='gasBudget'/>
-          Rent
-          <input id='rentBudget'type="text" ng-model='rentBudget'/>
-        </form>
-
-        <button class="button button-clear button-positive" ui-sref='app.home' ng-click='setPieChart([startingMoney,monthlyPayCheck,gasBudget,rentBudget])' id="finish-button"> Next </button>
-      </div>
       </ion-slide-page>
 
     </ion-slides>
