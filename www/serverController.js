@@ -59,9 +59,17 @@ module.exports = {
     })
   },
   addExpenditure : (req,res) => {
-    db.add_expenditure([req.body.user_id, req.body.category, req.body.amount , req.body.date , req.body.notes , req.body.location],(err,resp)=>{
-      res.json('data Sent')
+    var makeBudget = [];
+     db.get_budgets( (err,resp) => {
+      makeBudget = resp.filter(val => {
+        return (val.category == req.body.category)
+      })
+    if(makeBudget[0] == undefined){
+      db.add_budget([req.body.category], (err,resp) => {});
+    }
+      db.add_expenditure([req.body.user_id, req.body.category, req.body.amount , req.body.date , req.body.notes , req.body.location], (err,resp) => {})
     })
+    res.json('good')
   }
 
 }
