@@ -5,6 +5,11 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
       url: '/welcome',
       templateUrl: "./welcome/welcomeSlides.html"
     })
+    .state('setBudget', {
+      url: '/setBudget',
+      templateUrl: "./welcome/setBudget.html",
+      controller: "homeCtrl"
+    })
     .state('budget', {
       url: "/budget/:id",
       templateUrl: "./budget/budgetDetails.html",

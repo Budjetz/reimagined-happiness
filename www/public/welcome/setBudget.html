@@ -1,0 +1,20 @@
+<ion-view>
+
+<ion-content class="blurb-container3">
+  <div ng-controller='welcomeCtrl'>
+  <div class="welcome3-wrapper"><h1 class="blurb3-title">Setting Your Budget</h1></div>
+    <p class="p-information"> *This is to get you started. You will be able to add additional categories in your settings </p>
+      <form name='budgetInput' class="budgetInput-container">
+        Gas
+        <input id='gasBudget'type="text" ng-model='gasBudget'/>
+        Rent
+        <input id='rentBudget'type="text" ng-model='rentBudget'/>
+      </form>
+<div class="setBudget-button-wrapper2">
+  <button class="button button-stable" id="setBudget-button" ui-sref='app.home'> Next </button>
+</div>
+
+</div>
+</ion-content>
+
+</ion-view>
