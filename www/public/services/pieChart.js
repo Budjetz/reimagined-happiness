@@ -4,7 +4,7 @@ angular.module('budjetz').service('pieChart', function($state) {
         color = ['red','blue','green']
         var w = 250,
         h = 250,
-        r = 100;
+        r = 115;
         // make a pie constructor
         var pie = d3.layout.pie()
         .value(function(d) { return d.expenditures});
@@ -63,13 +63,13 @@ angular.module('budjetz').service('pieChart', function($state) {
       .attr('id','text')
       .transition()
       .delay(100)
-      // .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+      .style("transform", function(d) { return "translateX( -" + d.data.name.length*5 + "px )"; })
       .attr("dy", ".35em")
       .attr('fill','rgba(255, 255, 255, 0)')
       .style('font-family','comic sans')
       .style('font-size','25px')
       .text(function(d) { if(d.data){ return d.data.name;} })
-      .style('transform','translate(-15px,0px)');
+      // .style('transform','translate(-15px,0px)');
       console.log('pieMade');
   }
 
