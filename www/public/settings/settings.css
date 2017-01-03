@@ -1,3 +1,7 @@
+.bar .title.title-left {
+  text-align: center;
+}
+
 .settings-header-wrapper {
   height: 10vh;
   background: #ccc;

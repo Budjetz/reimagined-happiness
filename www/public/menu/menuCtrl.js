@@ -40,28 +40,24 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
     var confirmPopup = $ionicPopup.confirm({
       title: 'Your Expense has been added',
       template: 'Would you like to add another one?',
-      // buttons: [
-      //   {
-      //     text: 'YES'
-      //     onTap: function(e) {
-      //       return scope.data.response;
-      //     }
-      // },
-      //   {
-      //     text: 'NO'
-      //   }
-      // ]
+      buttons: [
+        {
+          text: 'YES',
+          onTap: function() {
+            console.log("You clicked YES");
+            // $state.go('app.home');
+          }
+      },
+        {
+          text: 'NO',
+          onTap: function() {
+            console.log("You clicked NO");
+            $scope.closeModal(1);
+          }
+        }
+      ]
     });
 
-    confirmPopup.then(function(res) {
-      if(res) {
-        console.log('You are sure');
-        $state.go('app.home');
-      } else {
-        console.log('You are not sure');
-        $state.go('app.home');
-      }
-    });
   };
 
 })

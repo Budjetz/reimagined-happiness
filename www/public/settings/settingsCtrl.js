@@ -1,30 +1,28 @@
 angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModal) {
 
-  $ionicModal.fromTemplateUrl('my-modal.html', {
+  // $ionicModal.fromTemplateUrl('incomeModal.html', {
+  //   scope: $scope,
+  //   animation: 'slide-in-up',
+  //   id: '3'
+  // }).then(function(modal) {
+  //   $scope.modal3 = modal;
+  // });
+
+  $ionicModal.fromTemplateUrl('categoryModal.html', {
     scope: $scope,
-    animation: 'slide-in-up'
+    animation: 'slide-in-up',
+    id: '4'
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.modal4 = modal;
   });
 
-  $scope.openModal = function() {
-    $scope.modal.show();
+  $scope.openModal = function(index) {
+    if (index == 3) $scope.modal3.show();
+     else $scope.modal4.show();
   };
-  $scope.closeModal = function() {
-    $scope.modal.hide();
-  };
-  
-  // Cleanup the modal when we're done with it!
-  $scope.$on('$destroy', function() {
-    $scope.modal.remove();
-  });
-  // Execute action on hide modal
-  $scope.$on('modal.hidden', function() {
-    // Execute action
-  });
-  // Execute action on remove modal
-  $scope.$on('modal.removed', function() {
-    // Execute action
-  });
+  $scope.closeModal = function(index) {
+    if (index == 3) $scope.modal3.hide();
+    else $scope.modal4.hide();
+  }
 
 })
