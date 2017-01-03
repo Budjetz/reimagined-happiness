@@ -45,7 +45,7 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
           text: 'YES',
           onTap: function() {
             console.log("You clicked YES");
-            $state.go('app.home');
+            // $state.go('app.home');
           }
       },
         {
@@ -58,15 +58,6 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
       ]
     });
 
-    // confirmPopup.then(function(res) {
-    //   if(res) {
-    //     console.log('You are sure');
-    //     $state.go('app.home');
-    //   } else {
-    //     console.log('You are not sure');
-    //     $state.go('app.home');
-    //   }
-    // });
   };
 
 })
