@@ -1,4 +1,4 @@
-<ion-view title="Settings">
+<ion-view title="Settings" class="settings-title">
 
   <ion-content>
 
@@ -8,9 +8,9 @@
     </section>
 
     <ion-list>
-      <ion-item class="settings-list-item" ng-click="openModal(3)">
+      <!-- <ion-item class="settings-list-item" ng-click="openModal(3)">
         Add Income  <button class="button button-icon button-black ion-chevron-right" id="chevron" ng-click="openModal(3)"></button>
-      </ion-item>
+      </ion-item> -->
       <ion-item class="settings-list-item" ng-click="openModal(4)">
         Edit Categories <button class="button button-icon button-black ion-chevron-right" id="chevron" ng-click="openModal(4)"></button>
       </ion-items>
@@ -43,6 +43,9 @@
     </ion-header-bar>
     <ion-content>
         <div> This page will display the categories created and their set values from the welcome slides </div>
+        <div class="add-category-button-wrapper">
+
+        </div>
         <div class="save-button-wrapper">
           <button class="button button-positive" ng-click="closeModal(4)">Save</button>
         </div>
