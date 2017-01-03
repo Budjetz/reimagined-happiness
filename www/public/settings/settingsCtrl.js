@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModal) {
+angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModal,getService) {
 
   // $ionicModal.fromTemplateUrl('incomeModal.html', {
   //   scope: $scope,
@@ -24,5 +24,12 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
     if (index == 3) $scope.modal3.hide();
     else $scope.modal4.hide();
   }
+
+  $scope.getBudgets = () => {
+    getService.getBudgets().then((res)=>{
+      $scope.budgets = res.data;
+    })
+  }
+  $scope.getBudgets();
 
 })
