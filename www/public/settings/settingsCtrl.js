@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModal,getService) {
+angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModal, $stateParams, getService, postService) {
 
   // $ionicModal.fromTemplateUrl('incomeModal.html', {
   //   scope: $scope,
@@ -31,5 +31,12 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
     })
   }
   $scope.getBudgets();
+
+  $scope.getSpecificExpenditure = (cat) => {
+    postService.getSpecificExpenditure(cat).then((res) => {
+      $scope.specificExpenditures = res.data;
+      console.log(res.data);
+    })
+  }
 
 })
