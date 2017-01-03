@@ -16,7 +16,6 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
           pieChart.makePieChart(data.data);
         })
       };
-
       $scope.getBudgets = () => {
         getService.getBudgets().then((res)=>{
           console.log(res.data);
@@ -42,4 +41,5 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
           console.log(res.data);
         })
       }
+
   });

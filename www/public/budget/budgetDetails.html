@@ -1,10 +1,13 @@
-<ion-view title="Home" ng-controller='homeCtrl'>
+<ion-view title="Home" ng-controller='budgetDetailsCtrl'>
 
 
 <ion-content>
+<div ng-repeat='expenditure in specificExpenditures'>
+  {{expenditure.category}}
+  {{expenditure.amount}}
 
+</div>
   This is the details page
-
   {{budget}}
 </ion-content>
 

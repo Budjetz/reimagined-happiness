@@ -70,6 +70,19 @@ module.exports = {
       db.add_expenditure([req.body.user_id, req.body.category, req.body.amount , req.body.date , req.body.notes , req.body.location], (err,resp) => {})
       res.json(resp)
     })
+  },
+  getSpecificExpenditure : (req,res) => {
+    db.get_specific_expenditures([req.body.category],(err,resp) => {
+      res.json(resp);
+    })
+  },
+  editBudgets : (req,res) => {
+    db.edit_budgets([req.body.current, req.body.update],(err,resp) => {
+      res.json(resp);
+    })
   }
+
+
+
 
 }
