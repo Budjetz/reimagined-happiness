@@ -23,3 +23,18 @@
 #chevron {
   float: right;
 }
+
+/* Edit Categories Modal */
+#edit-categories {
+  right: 0px !important;
+}
+
+.edit-categories-wrapper {
+  padding: 7px;
+}
+
+.edit-categories-section div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
