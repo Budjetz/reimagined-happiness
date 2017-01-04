@@ -55,7 +55,7 @@
           <hr>
         <div>
           Category*
-          <button class="button button-icon ion-chevron-right"></button>
+          <button class="button button-icon ion-chevron-right" ng-click="openModal(5)"></button>
           <!-- <input id='category' type="text" name="" ng-model='ex.category'/> -->
         </div>
           <hr>
@@ -83,7 +83,7 @@
     <ion-header-bar class="bar-assertive">
       <button class="button button-icon ion-camera"></button>
       <h1 class="title">Add Credit</h1>
-        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(2)" ui-sref="app.home"></button>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(2)"></button>
     </ion-header-bar>
 
 
@@ -101,7 +101,7 @@
           <hr>
         <div>
           Category*
-          <button class="button button-icon ion-chevron-right"></button>
+          <button class="button button-icon ion-chevron-right" ng-click="openModal(6)"></button>
           <!-- <input id='category' type="text" name="" ng-model='ex.category'/> -->
         </div>
           <hr>
@@ -120,5 +120,16 @@
 
     </ion-content>
 
+  </ion-modal-view>
+</script>
+
+<!-- Choose Category Modal -->
+
+<script id="chooseCategoryModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+        <button class="button button-icon ion-chevron-left" ng-click="closeModal(5); closeModal(6)"></button>
+        <h1 class="title" id="category-title">Choose Category</h1>
+    </ion-header-bar>
   </ion-modal-view>
 </script>
