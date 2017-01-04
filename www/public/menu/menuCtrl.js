@@ -1,4 +1,5 @@
-angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ionicModal, postService, getService, barChart, pieChart, $ionicPopup) {
+angular.module('budjetz')
+.controller('menuCtrl', function($state , $scope, $ionicModal, postService, getService, barChart, pieChart, $ionicPopup) {
 
   $ionicModal.fromTemplateUrl('expenseModal.html', {
     scope: $scope,
@@ -16,15 +17,50 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
     $scope.modal2 = modal;
   });
 
+  $ionicModal.fromTemplateUrl('chooseCategoryModal.html', {
+    scope: $scope,
+    animation: 'slide-in-up',
+    id: '5'
+  }).then(function(modal) {
+    $scope.modal5 = modal;
+  });
+
+  $ionicModal.fromTemplateUrl('chooseCategoryModal.html', {
+    scope: $scope,
+    animation: 'slide-in-up',
+    id: '6'
+  }).then(function(modal) {
+    $scope.modal6 = modal;
+  });
+
   $scope.openModal = function(index) {
-    if (index == 1) $scope.modal1.show();
-     else $scope.modal2.show();
+    if (index == 1) {
+      $scope.modal1.show();
+    }
+    else if (index == 2) {
+      $scope.modal2.show();
+    }
+    else if (index == 5) {
+      $scope.modal5.show();
+    }
+    else {
+      $scope.modal6.show();
+    }
   };
   $scope.closeModal = function(index) {
-    if (index == 1) $scope.modal1.hide();
-    else $scope.modal2.hide();
-  }
-
+    if (index == 1) {
+      $scope.modal1.hide();
+    }
+    else if (index == 2) {
+      $scope.modal2.hide();
+    }
+    else if (index == 5) {
+      $scope.modal5.hide();
+    }
+    else {
+      $scope.modal6.hide();
+    }
+  };
   $scope.addExpenditure = (ex) => {
     postService.addExpenditure(ex).then((data)=>{
         getService.getBudgetExpenditures().then((data) => {
@@ -82,15 +118,16 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
     });
 
   };
-  $scope.user = () => {}
+  // $scope.user = () => {}
 
   $scope.getBudgets = () => {
     getService.getBudgets().then((res)=>{
       $scope.budgets = res.data;
       console.log($scope.budgets);
     })
-  }
+  };
   $scope.getBudgets();
+
 
   $scope.setPieChart = () => {
     getService.getBudgetExpenditures().then((data) => {
@@ -100,3 +137,6 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
   };
 
 })
+
+});
+
