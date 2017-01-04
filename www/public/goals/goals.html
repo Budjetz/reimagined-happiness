@@ -1,7 +1,7 @@
-<ion-view title="Goals">
+<ion-view title="Goals" ng-controller="goalsCtrl">
 
-  <ion-content>
-    <h1> Goals </h1>
+  <!-- <ion-content>
+    <h1> Camera </h1>
     This button
     <br>
     goes here
@@ -11,6 +11,28 @@
 
 <a class="button" href="/ocr">Go to camApp!</a>
 
+  </ion-content> -->
+
+  <ion-content class="has-header padding" >
+    <h4> Camera/Photo Page</h4>
+    <br>
+    <button class="button button-full button-energized" ng-click="addMedia()">
+      Add image
+    </button>
+    <!-- <button class="button button-full button-positive" ng-click="sendEmail()">
+      Send mail
+    </button> -->
+    <br><br>
+    <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+      <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+    </ion-scroll>
+
+    This button
+    goes here
+    for now:
+    <br>
+
+<a class="button button-full button-balanced" href="/ocr">Go to camApp!</a>
   </ion-content>
 
 </ion-view>
