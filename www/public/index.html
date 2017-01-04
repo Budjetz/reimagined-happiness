@@ -23,7 +23,7 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- css animations -->
-    <link rel="stylesheet" href="animate.min.css">
+    <!-- <link rel="stylesheet" href="animate.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <!-- Other JS Files -->
@@ -68,8 +68,9 @@
         <section class="login-wrapper">
           <section class="border">
             <div class="logo-wrapper">
-              <button class="button ion-android-plane" id="logo"></button>
-
+              <div class="animated bounceInDown">
+                <button class="button ion-android-plane" id="logo"></button>
+            </div>
             <div class="title-wrapper" >
               <h3 class="animated bounceInLeft">BUDJETZ</h3> <br>
               <p class="animated bounceInRight"> Helping you keep money in your pocket! </p>
@@ -77,7 +78,7 @@
             </div>
 
             </div>
-            <div class="button-wrapper">
+            <div class="button-wrapper animated bounceInUp">
               <a class="button" id="login-button" href="/auth/facebook">
                   Login via Facebook
               </a>
