@@ -5,7 +5,7 @@ angular.module('budjetz')
     scope: $scope,
     animation: 'slide-in-up',
     id: '1'
-  }).then(function(modal) {
+    }).then(function(modal) {
     $scope.modal1 = modal;
   });
 
@@ -13,7 +13,7 @@ angular.module('budjetz')
     scope: $scope,
     animation: 'slide-in-up',
     id: '2'
-  }).then(function(modal) {
+    }).then(function(modal) {
     $scope.modal2 = modal;
   });
 
@@ -128,4 +128,15 @@ angular.module('budjetz')
   };
   $scope.getBudgets();
 
+
+  $scope.setPieChart = () => {
+    getService.getBudgetExpenditures().then((data) => {
+      barChart.makeBarChart(data.data);
+      pieChart.makePieChart(data.data);
+    })
+  };
+
+})
+
 });
+

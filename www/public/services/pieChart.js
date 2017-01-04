@@ -51,7 +51,6 @@ angular.module('budjetz').service('pieChart', function($state) {
     // append a path element to each g tag, and make it a colorful arc
     g.append("path")
       .transition()
-      .delay(700)
       .attr("d", arc)
       .style("fill", function(d,i){
       	return color[i];
@@ -62,7 +61,7 @@ angular.module('budjetz').service('pieChart', function($state) {
     g.append("text")
       .attr('id','text')
       .transition()
-      .delay(100)
+      .transition(100)
       .style("transform", function(d) { return "translateX( -" + d.data.name.length*5 + "px )"; })
       .attr("dy", ".35em")
       .attr('fill','rgba(255, 255, 255, 0)')
