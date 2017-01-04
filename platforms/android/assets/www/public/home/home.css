@@ -1,0 +1,8 @@
+.header-wrapper {
+  display: flex;
+  background: #ccc;
+}
+
+.home-content-wrapper {
+  padding: 5px;
+}

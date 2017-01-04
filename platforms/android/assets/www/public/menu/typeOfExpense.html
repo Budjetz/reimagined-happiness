@@ -1,0 +1,81 @@
+<ion-view>
+
+  <ion-header-bar align-title="left" class="bar-royal">
+    <!-- <div class="buttons">
+      <button class="button" ng-click="doSomething()">Left Button</button>
+    </div> -->
+    <h1 class="title">Type of Transaction</h1>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-close-empty" ui-sref="app.home"></button>
+    </div>
+  </ion-header-bar>
+
+    <ion-content>
+      <br><br>
+      <button class="button button-block button-assertive" ng-click="openModal(1)">
+        Expense
+      </button>
+      <button class="button button-block button-balanced" ng-click="openModal(2)">
+        Credit
+      </button>
+
+      <br><br>
+      <hr>
+      <br><br>
+
+      <p> Click on the "Expense" button if you are spending money </p>
+      <br>
+      <p> Click on the "Credit" button if you have received any money </p>
+    </ion-content>
+
+</ion-view>
+
+<!-- Modal for adding expenditure -->
+
+<script id="expenseModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <button class="button button-icon ion-camera"></button>
+      <h1 class="title">Add Expense</h1>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(1)" ui-sref="app.home"></button>
+    </ion-header-bar>
+    <ion-content>
+      <form name='Expenditure' >
+        Category
+        <input id='category' type="text" name="" ng-model='ex.category'/>
+        Amount
+        <input id='amount' type="text" name="" ng-model='ex.amount'/>
+        Notes
+        <input id='notes'type="text" name="" ng-model='ex.notes'/>
+        Location
+        <input id='location'type="text" name="" ng-model='ex.location'/>
+        <div ng-click='addExpenditure(ex); ex = ""; showConfirm()'>Show Popup</div>
+      </form>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<!-- Modal for adding credit -->
+
+<script id="creditModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <button class="button button-icon ion-camera"></button>
+      <h1 class="title">Add Credit</h1>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(2)" ui-sref="app.home"></button>
+    </ion-header-bar>
+    <ion-content>
+      <form name='Expenditure' >
+        Category
+        <input id='category' type="text" name="" ng-model='ex.category'/>
+        Amount
+        <input id='amount' type="text" name="" ng-model='ex.amount'/>
+        Notes
+        <input id='notes'type="text" name="" ng-model='ex.notes'/>
+        Location
+        <input id='location'type="text" name=""  ng-model='ex.location'/>
+        <div ng-click='addExpenditure(ex); ex = ""'>Add Expense</div>
+      </form>
+    </ion-content>
+  </ion-modal-view>
+</script>
