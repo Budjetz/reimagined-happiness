@@ -57,7 +57,8 @@ angular.module('budjetz')
       $scope.modal6.hide();
     }
   };
-  $scope.addExpenditure = (ex) => {
+  $scope.addExpenditure = (ex, cat) => {
+    ex.category = cat;
     postService.addExpenditure(ex).then((data)=>{
         getService.getBudgetExpenditures().then((data) => {
           barChart.makeBarChart(data.data);
@@ -114,7 +115,6 @@ angular.module('budjetz')
   $scope.getBudgets = () => {
     getService.getBudgets().then((res)=>{
       $scope.budgets = res.data;
-      console.log($scope.budgets);
     })
   };
   $scope.getBudgets();
@@ -125,7 +125,6 @@ angular.module('budjetz')
     })
   };
   $scope.setCategory = (cat) => {
-    console.log(cat);
     $scope.category = cat;
   }
 
