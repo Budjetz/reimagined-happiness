@@ -3,7 +3,9 @@
   "version": "1.1.1",
   "description": "budjetz: An Ionic project",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "body-parser": "^1.15.2",
+    "cordova-plugin-file": "^4.3.1",
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
@@ -14,6 +16,7 @@
     "gulp-sass": "^2.0.4",
     "massive": "^2.5.0",
     "moment": "^2.17.1",
+    "ng-cordova": "^0.1.27-alpha",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1"
   },
