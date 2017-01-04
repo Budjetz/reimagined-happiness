@@ -8,7 +8,6 @@ angular.module('budjetz')
     }).then(function(modal) {
     $scope.modal1 = modal;
   });
-
   $ionicModal.fromTemplateUrl('creditModal.html', {
     scope: $scope,
     animation: 'slide-in-up',
@@ -16,23 +15,20 @@ angular.module('budjetz')
     }).then(function(modal) {
     $scope.modal2 = modal;
   });
-
   $ionicModal.fromTemplateUrl('chooseCategoryModal.html', {
     scope: $scope,
     animation: 'slide-in-up',
     id: '5'
-  }).then(function(modal) {
+    }).then(function(modal) {
     $scope.modal5 = modal;
   });
-
   $ionicModal.fromTemplateUrl('chooseCategoryModal.html', {
     scope: $scope,
     animation: 'slide-in-up',
     id: '6'
-  }).then(function(modal) {
+    }).then(function(modal) {
     $scope.modal6 = modal;
   });
-
   $scope.openModal = function(index) {
     if (index == 1) {
       $scope.modal1.show();
@@ -70,7 +66,6 @@ angular.module('budjetz')
         })
     })
   }
-
   $scope.showConfirm = function() {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Your Expense has been added',
@@ -93,8 +88,6 @@ angular.module('budjetz')
       ]
     });
   };
-
-
   $scope.showCreditConfirm = function() {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Your Credit has been added',
@@ -118,8 +111,6 @@ angular.module('budjetz')
     });
 
   };
-  // $scope.user = () => {}
-
   $scope.getBudgets = () => {
     getService.getBudgets().then((res)=>{
       $scope.budgets = res.data;
@@ -127,14 +118,16 @@ angular.module('budjetz')
     })
   };
   $scope.getBudgets();
-
-
   $scope.setPieChart = () => {
     getService.getBudgetExpenditures().then((data) => {
       barChart.makeBarChart(data.data);
       pieChart.makePieChart(data.data);
     })
   };
+  $scope.setCategory = (cat) => {
+    console.log(cat);
+    $scope.category = cat;
+  }
 
 
 });

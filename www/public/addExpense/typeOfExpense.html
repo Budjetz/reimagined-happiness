@@ -56,7 +56,7 @@
         <div>
           Category*
           <button class="button button-icon ion-chevron-right" ng-click="openModal(5)"></button>
-          <!-- <input id='category' type="text" name="" ng-model='ex.category'/> -->
+          {{category}}
         </div>
           <hr>
         <div>
@@ -131,5 +131,14 @@
         <button class="button button-icon ion-chevron-left" ng-click="closeModal(5); closeModal(6)"></button>
         <h1 class="title" id="category-title">Choose Category</h1>
     </ion-header-bar>
+    <ion-content>
+      <div ng-repeat='budget in budgets' ng-click='setCategory(budget.category); closeModal(5); closeModal(6)'>
+        {{budget.category}}
+      </div>
+      <input id='category' type="text" placeholder="Other" ng-model='otherCategory'/>
+      <div ng-click='setCategory(otherCategory); closeModal(5); closeModal(6)'>
+        New Category
+      </div>
+    </ion-content>
   </ion-modal-view>
 </script>
