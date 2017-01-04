@@ -18,7 +18,7 @@
   </ion-content>
 
 <!-- Income Modal -->
-<script id="incomeModal.html" type="text/ng-template">
+<!-- <script id="incomeModal.html" type="text/ng-template">
   <ion-modal-view>
     <ion-header-bar class="bar-assertive">
       <h1 class="title">Edit Income</h1>
@@ -32,7 +32,7 @@
       </div>
     </ion-content>
   </ion-modal-view>
-</script>
+</script> -->
 
 <!-- Category Modal -->
 <script id="categoryModal.html" type="text/ng-template">
@@ -42,7 +42,13 @@
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(4)"></button>
     </ion-header-bar>
     <ion-content>
-        <div> This page will display the categories created and their set values from the welcome slides </div>
+        <div ng-repeat='budget in budgets'>
+          <div style='display: flex'>
+            {{budget.category}}
+            <input type="text" value='{{budget.budget_amount}}'>
+          </div>
+        </div>
+
         <div class="add-category-button-wrapper">
 
         </div>

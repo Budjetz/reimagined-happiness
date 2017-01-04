@@ -77,7 +77,7 @@ module.exports = {
     })
   },
   editBudgets : (req,res) => {
-    db.edit_budgets([req.body.current, req.body.update],(err,resp) => {
+    db.edit_budgets([req.body.category, req.body.newAmount],(err,resp) => {
       res.json(resp);
     })
   }

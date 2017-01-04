@@ -26,6 +26,16 @@ angular.module('budjetz').service('postService', function($state, getService, $q
       }
     })
   }
+  this.editBudgets = () => {
+    return $http({
+      method: 'POST',
+      url: '/editBudgets',
+      data : {
+        category: cat,
+        newAmount: amount
+      }
+    })
+  }
 
 
 });
