@@ -84,6 +84,7 @@ angular.module('budjetz')
           onTap: function() {
             console.log("You clicked NO");
             $scope.closeModal(1);
+            $scope.closeModal(5);
           }
         }
       ]
