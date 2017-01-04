@@ -39,10 +39,12 @@ passport.use(new FacebookStrategy({
     db.users.findOne({fb_id: profile.id}, (err, dbRes) => {
       if (!dbRes) {
         console.log("User not found. Creating...");
-        db.users.insert({fb_id: profile.id, name: profile.displayName, pic: profile.picture} , (err, dbRes) => {
+        db.users.insert({fb_id: profile.id, name: profile.displayName, pic: profile.picture}, (err, dbRes) => {
+          console.log(dbRes);
           return next(null, dbRes);
         });
       } else {
+        console.log('here',dbRes);
         return next(null, dbRes);
       }
     });
@@ -50,12 +52,12 @@ passport.use(new FacebookStrategy({
 ));
 
 passport.serializeUser((profile, done) => {
-  // console.log('ser');
+  console.log('profile',profile);
   done(null, profile);
 });
 
 passport.deserializeUser((deserializedUser, done) => {
-  // console.log('des');
+  //console.log('des');
   done(null, deserializedUser);
 });
 
@@ -68,6 +70,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', {
 
 const checkAuth = (req, res, next) => {
   // console.log("checkAuth");
+  console.log(req.user);
   if (req.isAuthenticated()) {
     next();
   }
@@ -88,6 +91,7 @@ app.get('/logout', (req, res) => {
 
 //Other
 
+app.get('/getUser', serverController.getUser);
 app.get('/getExpenditures', serverController.getExpenditures);
 app.get('/getBudgets', serverController.getBudgets);
 app.get('/getUsers', serverController.getUsers);
@@ -95,9 +99,12 @@ app.get('/getMoneyTotal', serverController.getMoneyTotal);
 app.get('/getBudgetExpenditures', serverController.getBudgetExpenditures);
 app.post('/addExpenditure', serverController.addExpenditure);
 app.post('/getSpecificExpenditure', serverController.getSpecificExpenditure);
-app.post('/editBudgets',serverController.editBudgets);
-
-
+app.post('/editBudget',serverController.editBudget);
+app.post('/deleteBudget',serverController.deleteBudget);
+app.post('/deleteEmptyBudget',serverController.deleteEmptyBudget);
+app.post('/addBudget', serverController.addBudget);
+app.post('/editExpenditure', serverController.editExpenditure);
+app.post('/deleteExpenditure', serverController.deleteExpenditure);
 
 
 

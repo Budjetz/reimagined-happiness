@@ -28,8 +28,7 @@ angular.module('budjetz').service('barChart', function($state) {
           return '<div style="background: gold; width: 100%; border-radius: 10px"> </div>';}});
       goodies.append('div')
       .html(function(d) {return d.name})
-      .style('text-align','center')
-      console.log('bar made');
+      .style('text-align','center');
     }
 
 });

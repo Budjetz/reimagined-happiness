@@ -1,15 +1,14 @@
 angular.module('budjetz').service('postService', function($state, getService, $q, $http) {
 
   this.addExpenditure = (ex) => {
-    // var newCat = ex.category.toLowerCase();
-    // newCat = newCat.charAt(0).toUpperCase() + newCat.slice(1);
-    // console.log(newCat,'fun');
+    var newCat = ex.category.toLowerCase();
+    newCat = newCat.charAt(0).toUpperCase() + newCat.slice(1);
     return $http({
       method: 'POST',
       url: '/addExpenditure',
       data: {
         user_id: 3,
-        category: ex.category,
+        category: newCat,
         amount: ex.amount,
         date: new Date(),
         notes: ex.notes,
@@ -26,16 +25,67 @@ angular.module('budjetz').service('postService', function($state, getService, $q
       }
     })
   }
-  this.editBudgets = () => {
+  this.editBudget = (bud) => {
     return $http({
       method: 'POST',
-      url: '/editBudgets',
+      url: '/editBudget',
       data : {
-        category: cat,
-        newAmount: amount
+        category: bud.category,
+        newAmount: bud.budget_amount
       }
     })
   }
-
-
+  this.deleteBudget = (cat) => {
+    if(!cat){
+      return $http({
+        method: 'POST',
+        url: '/deleteEmptyBudget',
+        data : {
+        }
+      })
+    } else {
+      return $http({
+        method: 'POST',
+        url: '/deleteBudget',
+        data : {
+          category: cat,
+        }
+      })
+    }
+  }
+  this.addBudget = (bud) => {
+    var newCat = bud.category.toLowerCase();
+    newCat = newCat.charAt(0).toUpperCase() + newCat.slice(1);
+    return $http({
+      method: 'POST',
+      url: '/addBudget',
+      data: {
+        category: newCat,
+        budget_amount: bud.amount
+      }
+    })
+  }
+  this.editExpenditure = (ex) => {
+    return $http({
+      method : 'POST',
+      url: '/editExpenditure',
+      data: {
+        category: ex.category,
+        amount: ex.amount,
+        location: ex.location
+      }
+    })
+  }
+  this.deleteExpenditure = (ex) => {
+    return $http({
+      method : 'POST',
+      url: '/deleteExpenditure',
+      data: {
+        category: ex.category,
+        amount: ex.amount,
+        location: ex.location,
+        date: ex.date
+      }
+    })
+  }
 });

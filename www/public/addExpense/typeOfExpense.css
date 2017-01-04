@@ -46,3 +46,11 @@
   color: white;
   font-weight: bold;
 }
+
+.popup-title {
+  font-size: 35px !important;
+}
+
+#category-title {
+  left: 0px !important;
+}

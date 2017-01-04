@@ -4,6 +4,11 @@ const config = require('./config.js')
 
 module.exports = {
 
+
+  getUser: (req, res) => {
+    console.log(req.user);
+    res.send(req.user);
+  },
   getExpenditures: (req,res) => {
     db.get_expenditures((err,resp) => {
        res.json(resp);
@@ -65,7 +70,7 @@ module.exports = {
         return (val.category == req.body.category)
       })
     if(makeBudget[0] == undefined){
-      db.add_budget([req.body.category], (err,resp) => {});
+      db.add_budget([req.body.category, req.body.amount], (err,resp) => {});
     }
       db.add_expenditure([req.body.user_id, req.body.category, req.body.amount , req.body.date , req.body.notes , req.body.location], (err,resp) => {})
       res.json(resp)
@@ -76,13 +81,36 @@ module.exports = {
       res.json(resp);
     })
   },
-  editBudgets : (req,res) => {
+  editBudget : (req,res) => {
     db.edit_budgets([req.body.category, req.body.newAmount],(err,resp) => {
       res.json(resp);
     })
+  },
+  deleteBudget: (req,res) => {
+    db.delete_budget([req.body.category], (err, resp) => {
+      res.json('deleted');
+    })
+  },
+  deleteEmptyBudget: (req,res) => {
+    db.delete_empty_budget((err, resp) => {
+      res.json('deleted');
+    })
+  },
+  addBudget: (req,res) => {
+    db.add_budget([req.body.category, req.body.budget_amount], (err,resp) => {
+      res.json(resp);
+    })
+  },
+  editExpenditure : (req, res) => {
+    db.edit_expenditure([],(err,resp) => {
+      res.json(resp);
+    })
+  },
+  deleteExpenditure : (req,res) => {
+    db.delete_expenditure([],(err,resp) => {
+      res.json(resp);
+    })
   }
-
-
 
 
 }
