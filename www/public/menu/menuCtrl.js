@@ -136,7 +136,5 @@ angular.module('budjetz')
     })
   };
 
-})
 
 });
-
