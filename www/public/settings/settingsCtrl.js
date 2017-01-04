@@ -35,8 +35,20 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
   $scope.getSpecificExpenditure = (cat) => {
     postService.getSpecificExpenditure(cat).then((res) => {
       $scope.specificExpenditures = res.data;
-      console.log(res.data);
     })
   }
+  $scope.editBudget = (bud) => {
+    postService.editBudget(bud).then( (res) => {
+      console.log(res.data);
+      $scope.getBudgets();
+    })
+  }
+  $scope.deleteBudget = (bud) => {
+    postService.deleteBudget(bud).then( (res) => {
+      console.log(res.data)
+      $scope.getBudgets();
+    })
+  }
+
 
 })

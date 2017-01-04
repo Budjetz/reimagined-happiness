@@ -44,8 +44,12 @@
     <ion-content>
         <div ng-repeat='budget in budgets'>
           <div style='display: flex'>
-            {{budget.category}}
-            <input type="text" value='{{budget.budget_amount}}'>
+            <div ng-model='budget.category'>{{budget.category}}</div>
+            <input type="text" value='{{budget.budget_amount}}' ng-model='budget.budget_amount'>
+            <div>
+              <button ng-click='editBudget(budget)'>edit</button>
+              <button ng-click='deleteBudget(budget.category)'>delete</button>
+            </div>
           </div>
         </div>
 
@@ -53,7 +57,7 @@
 
         </div>
         <div class="save-button-wrapper">
-          <button class="button button-positive" ng-click="closeModal(4)">Save</button>
+          <button class="button button-positive" ng-click="closeModal(4)">add category</button>
         </div>
     </ion-content>
   </ion-modal-view>
