@@ -39,13 +39,11 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
   }
   $scope.editBudget = (bud) => {
     postService.editBudget(bud).then( (res) => {
-      console.log(res.data);
       $scope.getBudgets();
     })
   }
   $scope.deleteBudget = (bud) => {
     postService.deleteBudget(bud).then( (res) => {
-      console.log(res.data)
       $scope.getBudgets();
     })
   }

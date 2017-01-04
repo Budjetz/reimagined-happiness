@@ -101,8 +101,10 @@ app.post('/addExpenditure', serverController.addExpenditure);
 app.post('/getSpecificExpenditure', serverController.getSpecificExpenditure);
 app.post('/editBudget',serverController.editBudget);
 app.post('/deleteBudget',serverController.deleteBudget);
+app.post('/deleteEmptyBudget',serverController.deleteEmptyBudget);
 app.post('/addBudget', serverController.addBudget);
-
+app.post('/editExpenditure', serverController.editExpenditure);
+app.post('/deleteExpenditure', serverController.deleteExpenditure);
 
 
 
