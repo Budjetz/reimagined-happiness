@@ -37,4 +37,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.edit-categories-section input {
+  text-align: right;
+  width: 6em;
+  font-size: 18px;
+}
+
+#delete-button {
+  color: red;
+  font-size: 1.3em;
+}
+
+#edit-button {
+  font-size: 1.3em;
 }
