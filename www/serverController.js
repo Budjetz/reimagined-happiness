@@ -92,7 +92,7 @@ module.exports = {
     })
   },
   addBudget: (req,res) => {
-    db.addBudget([req.body.category, req.body.budget_amount], (err,resp) => {
+    db.add_budget([req.body.category, req.body.budget_amount], (err,resp) => {
       res.json(resp);
     })
   }

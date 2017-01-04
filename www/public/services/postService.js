@@ -42,7 +42,7 @@ angular.module('budjetz').service('postService', function($state, getService, $q
         method: 'POST',
         url: '/deleteBudget',
         data : {
-          category: '',
+          category: NULL,
         }
       })
     } else {
@@ -59,9 +59,9 @@ angular.module('budjetz').service('postService', function($state, getService, $q
     return $http({
       method: 'POST',
       url: '/addBudget',
-      body: {
+      data: {
         category: bud.category,
-        budget_amount: bud.budget_amount
+        budget_amount: bud.amount
       }
     })
   }
