@@ -36,12 +36,11 @@ angular.module('budjetz').service('postService', function($state, getService, $q
     })
   }
   this.deleteBudget = (cat) => {
-    if(cat == null){
+    if(!cat){
       return $http({
         method: 'POST',
-        url: '/deleteBudget',
+        url: '/deleteEmptyBudget',
         data : {
-          category: NULL,
         }
       })
     } else {
