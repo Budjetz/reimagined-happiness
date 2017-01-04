@@ -1,13 +1,5 @@
 angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModal, $stateParams, getService, postService, $ionicPopup) {
 
-  // $ionicModal.fromTemplateUrl('incomeModal.html', {
-  //   scope: $scope,
-  //   animation: 'slide-in-up',
-  //   id: '3'
-  // }).then(function(modal) {
-  //   $scope.modal3 = modal;
-  // });
-
   $ionicModal.fromTemplateUrl('categoryModal.html', {
     scope: $scope,
     animation: 'slide-in-up',

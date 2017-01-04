@@ -8,49 +8,34 @@
     </section>
 
     <ion-list>
-      <!-- <ion-item class="settings-list-item" ng-click="openModal(3)">
-        Add Income  <button class="button button-icon button-black ion-chevron-right" id="chevron" ng-click="openModal(3)"></button>
-      </ion-item> -->
       <ion-item class="settings-list-item" ng-click="openModal(4)">
         Edit Categories <button class="button button-icon button-black ion-chevron-right" id="chevron" ng-click="openModal(4)"></button>
       </ion-items>
     </ion-list>
   </ion-content>
 
-<!-- Income Modal -->
-<!-- <script id="incomeModal.html" type="text/ng-template">
-  <ion-modal-view>
-    <ion-header-bar class="bar-assertive">
-      <h1 class="title">Edit Income</h1>
-        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(3)"></button>
-    </ion-header-bar>
-    <ion-content>
-      <div> This page will display their starting income entered from the welcome slides and it gives them
-            opportunity to add to it. This will change the bars on the other pages. </div>
-      <div class="save-button-wrapper">
-        <button class="button button-positive" ng-click="closeModal(3)">Save</button>
-      </div>
-    </ion-content>
-  </ion-modal-view>
-</script> -->
-
 <!-- Category Modal -->
+
 <script id="categoryModal.html" type="text/ng-template">
   <ion-modal-view>
     <ion-header-bar class="bar-assertive">
-      <h1 class="title">Edit Categories</h1>
+      <h1 class="title" id="edit-categories">Edit Categories</h1>
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(4)"></button>
     </ion-header-bar>
-    <ion-content>
-        <div ng-repeat='budget in budgets'>
+    <ion-content class="edit-categories-wrapper">
+        <div ng-repeat='budget in budgets' class="edit-categories-section">
+
           <div style='display: flex'>
+            <button class="button button-icon ion-minus-circled" ng-click='deleteBudget(budget.category)'></button>
             <div ng-model='budget.category'>{{budget.category}}</div>
             <input type="text" value='{{budget.budget_amount}}' ng-model='budget.budget_amount'>
             <div>
-              <button ng-click='editBudget(budget)'>edit</button>
-              <button ng-click='deleteBudget(budget.category)'>delete</button>
+              <button class="button button-icon ion-checkmark-circled" ng-click='editBudget(budget)'></button>
             </div>
           </div>
+
+          <hr>
+
         </div>
 
         <div class="add-category-button-wrapper">
