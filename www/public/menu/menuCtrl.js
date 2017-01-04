@@ -58,6 +58,30 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
     });
   };
 
+
+  $scope.showCreditConfirm = function() {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Your Credit has been added',
+      template: 'Would you like to add another one?',
+      buttons: [
+        {
+          text: 'YES',
+          onTap: function() {
+            console.log("You clicked YES");
+            // $state.go('app.home');
+          }
+      },
+        {
+          text: 'NO',
+          onTap: function() {
+            console.log("You clicked NO");
+            $scope.closeModal(2);
+          }
+        }
+      ]
+    });
+
+  };
   $scope.user = () => {}
 
   $scope.getBudgets = () => {
