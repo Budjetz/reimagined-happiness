@@ -1,0 +1,48 @@
+.addExpense-wrapper {
+  padding: 10px;
+  font-size: 23px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.expense-form input {
+  border: 1px solid grey;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.expense-form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#location {
+  width: 49%;
+}
+
+.required-field {
+  font-size: 15px;
+  padding-left: 0px;
+}
+
+.add-expense-button-wrapper {
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-expense-button {
+  border: 1px solid;
+  width: 4em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #19a008;
+  color: white;
+  font-weight: bold;
+}
