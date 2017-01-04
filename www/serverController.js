@@ -4,6 +4,11 @@ const config = require('./config.js')
 
 module.exports = {
 
+
+  getUser: (req, res) => {
+    console.log(req.user);
+    res.send(req.user);
+  },
   getExpenditures: (req,res) => {
     db.get_expenditures((err,resp) => {
        res.json(resp);
@@ -79,6 +84,11 @@ module.exports = {
   editBudgets : (req,res) => {
     db.edit_budgets([req.body.category, req.body.newAmount],(err,resp) => {
       res.json(resp);
+    })
+  },
+  deleteBudgets: (req,res) => {
+    db.delete_budgets([req.body], (err, resp) => {
+
     })
   }
 

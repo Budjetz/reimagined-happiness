@@ -25,7 +25,6 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
     else $scope.modal2.hide();
   }
 
-
   $scope.addExpenditure = (ex) => {
     postService.addExpenditure(ex).then((data)=>{
         getService.getBudgetExpenditures().then((data) => {
@@ -57,7 +56,16 @@ angular.module('budjetz').controller('menuCtrl', function($state , $scope, $ioni
         }
       ]
     });
-
   };
+
+  $scope.user = () => {}
+
+  $scope.getBudgets = () => {
+    getService.getBudgets().then((res)=>{
+      $scope.budgets = res.data;
+      console.log($scope.budgets);
+    })
+  }
+  $scope.getBudgets();
 
 })
