@@ -23,7 +23,7 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
     $scope.ex = ex;
     var addPopup = $ionicPopup.show({
       template:
-      ' <input type="text" placeholder="location" ng-model="ex.location"> <input type="text" placeholder="amount" ng-model="ex.amount">',
+      ' <input type="text" placeholder="location" ng-model="ex.location"> <input type="text" placeholder="amount" ng-model="ex.amount"> <input type="text" placeholder="notes" ng-model="ex.notes">',
       title: 'Edit Expenditure',
       scope: $scope,
       buttons: [
