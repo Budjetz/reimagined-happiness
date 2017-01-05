@@ -1,6 +1,10 @@
 angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: "./index.html"
+    })
     .state('welcome', {
       url: '/welcome',
       templateUrl: "./welcome/welcomeSlides.html"
