@@ -1,6 +1,18 @@
 
 angular.module('starter', ['ionic','ngCordova'])
 
+.controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
+
+  $scope.returnToMainApp = function() {
+      $window.location.href = "http://localhost:8080/#/app/home"
+    }
+  })
+
+
+
+
+// KEYBOARD, IONIC:
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -14,15 +26,10 @@ angular.module('starter', ['ionic','ngCordova'])
   });
 })
 
-.controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
 
-  $scope.returnToMainApp = function() {
-      $window.location.href = "http://localhost:8080/#/app/home"
-    }
 
-  });
+// ---- ---- -------- ---------- ----- ----
 
-// -------------------------------------------------
 // OCR CAMERA; COMMENTED OUT FOR NOW DUE TO ISSUES:
 
 // .controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
