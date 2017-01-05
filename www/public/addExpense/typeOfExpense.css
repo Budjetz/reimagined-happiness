@@ -54,3 +54,16 @@
 #category-title {
   left: 0px !important;
 }
+
+#expense-paragraph {
+  color: black;
+  font-size: 23px;
+  font-family: "Indie Flower", cursive;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#transaction-title {
+  right: 0px !important;
+  left: 0px !important;
+}
