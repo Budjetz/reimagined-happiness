@@ -2,9 +2,9 @@ angular.module('budjetz').service('pieChart', function($state) {
 
   this.makePieChart = function(data) {
         color = ['red','pink','darkred','blue','lightgreen','green','darkgreen']
-        var w = 250,
-        h = 250,
-        r = 115;
+        var w = 220,
+        h = 220,
+        r = 90;
         // make a pie constructor
         var pie = d3.layout.pie()
         .value(function(d) { return d.expenditures});
@@ -59,11 +59,11 @@ angular.module('budjetz').service('pieChart', function($state) {
       .innerRadius(r - 20);
     g.append("text")
       .attr('id','text')
-      .style("transform", function(d) { return "translateX( -" + d.data.name.length*5 + "px )"; })
+      .style("transform", function(d) { return "translateX( -" + d.data.name.length*4.5 + "px )"; })
       .attr("dy", ".35em")
       .attr('fill','rgba(255, 255, 255, 0)')
-      .style('font-family','comic sans')
-      .style('font-size','25px')
+      .attr('font-family','Indie Flower')
+      .style('font-size','20px')
       .text(function(d) { if(d.data){ return d.data.name;} });
   }
 
