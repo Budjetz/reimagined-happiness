@@ -15,10 +15,10 @@
 .welcome-title {
   text-align: center;
   font-family: 'Amatic SC', cursive;
-  font-size: 64px;
+  font-size: 65px;
   line-height: 53px;
   margin-bottom: 20px;
-  padding-top: 26px;
+  padding-top: 29px;
 }
 
 .swiper-container {
@@ -38,6 +38,7 @@
   padding: 13px;
   text-align: center;
   line-height: 27px;
+  font-size: 27px;
 }
 
 
@@ -78,6 +79,7 @@
   padding: 13px;
   text-align: center;
   line-height: 27px;
+  font-size: 27px;
 }
 
 .setBudget-button-wrapper {
@@ -88,6 +90,7 @@
 
 #setBudget-button {
   font-family: 'Indie Flower', curvise;
+
 }
 
 /* Third Slide -- Collect Budget Information */
@@ -127,7 +130,7 @@
 }
 
 #gasBudget, #rentBudget {
-  margin-left: 5.5em;
+  margin-left: 6.5em;
   margin-bottom: 10px;
   text-align: center;
 }
