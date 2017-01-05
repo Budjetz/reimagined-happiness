@@ -1,7 +1,9 @@
 .login-wrapper {
   height: 100vh;
   width: 100vw;
-  background: #209800;
+  /*background: #209800;*/
+  background-color:rgb(124, 174, 132);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,31 +17,37 @@
 
 .logo-wrapper {
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 #logo {
-  background: #209800;
+  /*background: #209800;*/
+  background-color:rgb(124, 174, 132);
   color: #D4C31C;
   font-size: 10em;
-  padding: 50px;
-  transform: rotate(45deg);
+  /*padding: 90px;*/
+  /*padding-left: 0px;*/
+  padding-top: 70px;
+
+  /*transform: rotate(45deg);*/
   position: relative;
 }
 
 .title-wrapper {
   position: absolute;
   text-align: center;
-  margin-top: 15em;
+  margin-top: 12em;
 }
 
 h3 {
   /*margin-top: 10em;*/
+  color: black;
   font-size: 81px;
   font-family: 'Amatic SC', cursive;
 }
 
 p {
+  color: white;
   font-size: 23px;
   font-family: 'Indie Flower', cursive;
   padding-left: 15px;
@@ -50,11 +58,14 @@ p {
   width: 100vw;
   display: flex;
   justify-content: center;
-  margin-top: 14em;
+  /*margin-top: 14em;*/
 }
 
 #login-button {
-  background: #D4C31C;
+  /*background: #D4C31C;*/
+  background: white;
   color: #000;
+  font-family: 'Indie Flower', cursive;
+  /*font-family: 'Amatic SC', cursive;*/
   font-weight: bold;
 }

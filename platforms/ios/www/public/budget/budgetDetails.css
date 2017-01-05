@@ -1,0 +1,16 @@
+.details-wrapper {
+  padding: 7px;
+}
+
+.expenditure-category {
+  display: flex;
+  justify-content: space-between;
+  background: #ccc;
+  padding: 5px;
+}
+
+.expenditure-amount {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}

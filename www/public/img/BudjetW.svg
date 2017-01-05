@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="122px" height="71px" viewBox="0 0 122 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>512 - Play Store</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="43 88.0231049 164.987806 60 111.185912 129.676716 92.4785251 115.71419 73.1303216 129.676716 66.9891173 100.971053"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="121.987806" height="69.676716" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="512---Play-Store" transform="translate(-43.000000, -59.000000)">
+            <use id="Rectangle" stroke="#0D0C0C" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" opacity="0.838852612" xlink:href="#path-1"></use>
+            <polygon id="Triangle" stroke="#0B0B0B" fill="#A29C9C" opacity="0.998542444" points="73.4788588 128.990588 85.3397919 110.524826 164.854885 60.1009005 67.6405986 100.808584"></polygon>
+            <polygon id="Triangle-2" stroke="#1C1A1A" fill="#292727" points="85.0518454 111.532092 91.6687963 115.53729 74.7579846 128.041524"></polygon>
+            <polygon id="Triangle-3" fill="#1B1A1A" points="85.1864383 110.286586 92.7199316 114.763993 84.6642638 116.792866"></polygon>
+        </g>
+    </g>
+</svg>
