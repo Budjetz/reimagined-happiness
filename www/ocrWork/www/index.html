@@ -24,15 +24,32 @@
 
   <body ng-app="starter">
 
-    <ion-pane>
+    <ion-pane ng-controller="CaptureCtrl">
       <ion-header-bar class="bar-balanced">
         <h1 class="title">Ionic OCR </h1>
       </ion-header-bar>
 
-      <ion-content ng-controller="CaptureCtrl">
+        <ion-nav-bar class="bar-balanced">
+
+          <ion-nav-buttons side="left">
+            <button ng-click="returnToMainApp()" class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
+          </ion-nav-buttons>
+
+        </ion-nav-bar>
+
+        <!-- <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view> -->
+
+
+
+
+
+
+
+
+      <ion-content >
 
         <img style="width: 100%;" id="pic" src="">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/ReceiptSwiss.jpg" style="height:40%; width:40%;">
+        <img src="http://cdn1.buuteeq.com/upload/2023196/placeholder.png.1236x617_default.png" style="width:100%;">
 
         <div class="padding" ng-if="showAnalyzeButton">
 
@@ -52,6 +69,8 @@
          <button ng-click="returnToMainApp()" class="button button-outline button-block button-energized">
            Return to app
          </button>
+
+         <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/ReceiptSwiss.jpg" style="height:40%; width:40%;">
 
 
       </ion-content>
