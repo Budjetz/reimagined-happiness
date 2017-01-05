@@ -79,19 +79,13 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
     });
   };
 
-//   $scope.editBudget = (bud) => {
-//     postService.editBudget(bud).then( (res) => {
-//       $scope.getBudgets();
-//     });
-//
-// };
-
   $scope.confirmEditBudget = function(budget) {
     var addPopup = $ionicPopup.show({
       template:
       '<input type="text" placeholder="' + budget.category + '" ng-model="bud.category"></input><input type="text" placeholder="' + budget.budget_amount + '" ng-model="bud.amount">',
       title: 'Edit Budget Info',
       scope: $scope,
+      cssClass: 'confirm-edit-popup',
       buttons: [
         {text: 'Cancel'},
         {
