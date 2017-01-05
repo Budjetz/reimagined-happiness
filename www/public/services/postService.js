@@ -72,7 +72,9 @@ angular.module('budjetz').service('postService', function($state, getService, $q
       data: {
         category: ex.category,
         amount: ex.amount,
-        location: ex.location
+        notes: ex.notes,
+        location: ex.location,
+        date: ex.date
       }
     })
   }
@@ -83,7 +85,6 @@ angular.module('budjetz').service('postService', function($state, getService, $q
       data: {
         category: ex.category,
         amount: ex.amount,
-        location: ex.location,
         date: ex.date
       }
     })
