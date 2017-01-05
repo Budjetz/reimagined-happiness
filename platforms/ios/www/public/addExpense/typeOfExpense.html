@@ -1,0 +1,136 @@
+<!-- Tied to the menuCtrl -->
+<ion-view>
+
+  <ion-header-bar align-title="left" class="bar-royal">
+    <div class="buttons">
+      <a class="button button-icon ion-camera" href="/ocr"></a>
+    </div>
+
+    <h1 class="title">Type of Transaction</h1>
+    <div class="buttons">
+      <button class="button button-icon ion-ios-close-empty" ui-sref="app.home" ng-click='setPieChart()'></button>
+    </div>
+  </ion-header-bar>
+
+    <ion-content>
+      <br><br>
+      <button class="button button-block button-assertive" ng-click="openModal(1)">
+        Expense
+      </button>
+      <button class="button button-block button-balanced" ng-click="openModal(2)">
+        Credit
+      </button>
+
+      <br><br>
+      <hr>
+      <br><br>
+
+      <p> Click on the "Expense" button if you are spending money </p>
+      <br>
+      <p> Click on the "Credit" button if you have received any money </p>
+    </ion-content>
+
+</ion-view>
+
+<!-- Modal for adding expenditure -->
+
+<script id="expenseModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <button class="button button-icon ion-camera"></button>
+      <h1 class="title">Add Expense</h1>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(1)" ui-sref="app.home"></button>
+    </ion-header-bar>
+
+    <ion-content class="addExpense-wrapper">
+      <form name='Expenditure' class="expense-form">
+        <div>
+          Payee*
+          <input id='location' type="text" name="" ng-model='ex.location' placeholder="Who received payment?"/>
+        </div>
+          <hr>
+        <div>
+          Amount*
+          <input id='amount' type="text" name="" ng-model='ex.amount' placeholder="Amt"/>
+        </div>
+          <hr>
+        <div>
+          Category*
+          <button class="button button-icon ion-chevron-right" ng-click="openModal(5)"></button>
+          <!-- <input id='category' type="text" name="" ng-model='ex.category'/> -->
+        </div>
+          <hr>
+        <div>
+          Notes
+          <input id='notes'type="text" name="" ng-model='ex.notes'/>
+        </div>
+          <hr>
+        <p class="required-field"> * Indicates required field </p>
+      </form>
+
+      <div class="add-expense-button-wrapper">
+        <div ng-click='addExpenditure(ex); ex = ""; showConfirm()' class="add-expense-button">Save</div>
+      </div>
+
+    </ion-content>
+
+  </ion-modal-view>
+</script>
+
+<!-- Modal for adding credit -->
+
+<script id="creditModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+      <button class="button button-icon ion-camera"></button>
+      <h1 class="title">Add Credit</h1>
+        <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(2)"></button>
+    </ion-header-bar>
+
+
+    <ion-content class="addExpense-wrapper">
+      <form name='Expenditure' class="expense-form">
+        <div>
+          Payer*
+          <input id='location' type="text" name="" ng-model='ex.location' placeholder="Who paid you?"/>
+        </div>
+          <hr>
+        <div>
+          Amount*
+          <input id='amount' type="text" name="" ng-model='ex.amount' placeholder="Amt"/>
+        </div>
+          <hr>
+        <div>
+          Category*
+          <button class="button button-icon ion-chevron-right" ng-click="openModal(6)"></button>
+          <!-- <input id='category' type="text" name="" ng-model='ex.category'/> -->
+        </div>
+          <hr>
+        <div>
+          Notes
+          <input id='notes'type="text" name="" ng-model='ex.notes'/>
+        </div>
+          <hr>
+        <p class="required-field"> * Indicates required field </p>
+
+      </form>
+
+      <div class="add-expense-button-wrapper">
+        <div ng-click='addExpenditure(ex); ex = ""; showCreditConfirm()' class="add-expense-button">Save</div>
+      </div>
+
+    </ion-content>
+
+  </ion-modal-view>
+</script>
+
+<!-- Choose Category Modal -->
+
+<script id="chooseCategoryModal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+        <button class="button button-icon ion-chevron-left" ng-click="closeModal(5); closeModal(6)"></button>
+        <h1 class="title" id="category-title">Choose Category</h1>
+    </ion-header-bar>
+  </ion-modal-view>
+</script>

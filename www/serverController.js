@@ -102,12 +102,12 @@ module.exports = {
     })
   },
   editExpenditure : (req, res) => {
-    db.edit_expenditure([],(err,resp) => {
+    db.edit_expenditure([req.body.category, req.body.amount, req.body.notes, req.body.location, req.body.date,],(err,resp) => {
       res.json(resp);
     })
   },
   deleteExpenditure : (req,res) => {
-    db.delete_expenditure([],(err,resp) => {
+    db.delete_expenditure([req.body.category, req.body.amount, req.body.date ],(err,resp) => {
       res.json(resp);
     })
   }

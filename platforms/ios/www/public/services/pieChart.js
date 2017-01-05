@@ -50,8 +50,6 @@ angular.module('budjetz').service('pieChart', function($state) {
       });
     // append a path element to each g tag, and make it a colorful arc
     g.append("path")
-      .transition()
-      .delay(700)
       .attr("d", arc)
       .style("fill", function(d,i){
       	return color[i];
@@ -61,16 +59,12 @@ angular.module('budjetz').service('pieChart', function($state) {
       .innerRadius(r - 20);
     g.append("text")
       .attr('id','text')
-      .transition()
-      .delay(100)
       .style("transform", function(d) { return "translateX( -" + d.data.name.length*5 + "px )"; })
       .attr("dy", ".35em")
       .attr('fill','rgba(255, 255, 255, 0)')
       .style('font-family','comic sans')
       .style('font-size','25px')
-      .text(function(d) { if(d.data){ return d.data.name;} })
-      // .style('transform','translate(-15px,0px)');
-      console.log('pieMade');
+      .text(function(d) { if(d.data){ return d.data.name;} });
   }
 
 });

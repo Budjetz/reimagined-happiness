@@ -1,4 +1,4 @@
-angular.module('budjetz', ['ionic', 'ngCordova'])
+angular.module('budjetz', ['ionic', 'ngCordova', 'ionic-native-transitions'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
