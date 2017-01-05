@@ -3,3 +3,22 @@
   display: block;
   width: 100%;
 }
+
+.custom {
+  background-color: whitesmoke;
+  background-image: url("../img/BudjetShdw.png");
+  background-position: -55px 242px;
+  background-size: 116%;
+  background-repeat: no-repeat;
+}
+
+.menu-list {
+  font-size: 20px;
+  line-height: 45px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.menu-home {
+  padding-top: 9px;
+}
