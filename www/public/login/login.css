@@ -27,7 +27,7 @@
   font-size: 10em;
   /*padding: 90px;*/
   /*padding-left: 0px;*/
-  padding-top: 80px;
+  padding-top: 70px;
 
   /*transform: rotate(45deg);*/
   position: relative;
@@ -36,7 +36,7 @@
 .title-wrapper {
   position: absolute;
   text-align: center;
-  margin-top: 15em;
+  margin-top: 12em;
 }
 
 h3 {
