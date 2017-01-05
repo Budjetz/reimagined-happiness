@@ -22,7 +22,7 @@ angular.module('budjetz').service('barChart', function($state) {
             if(d.budget_amount < d.expenditures){
               return '<div style="display: flex;"> <div style="background: gold; width: 100%; border-radius: 10px"> <div style="background:red; padding-left: 5px; border-radius: 10px; width : 100%">' + d.expenditures + '</div> </div> <div>' + d.budget_amount + '</div> </div>';
             } else {
-              return '<div style="display: flex;"> <div style="background: gold; width: 100%; border-radius: 10px"> <div style="background:green; padding-left: 5px; border-radius: 10px; width:'+ x(d.expenditures) + '%">'+d.expenditures+'</div> </div> <div>' + d.budget_amount + '</div> </div>';
+              return '<div style="display: flex;"> <div style="background: gold; width: 100%; border-radius: 10px"> <div style="background:#7cae84; padding-left: 5px; border-radius: 10px; width:'+ x(d.expenditures) + '%">'+d.expenditures+'</div> </div> <div>' + d.budget_amount + '</div> </div>';
             }
         } else {
           return '<div style="background: gold; width: 100%; border-radius: 10px"> </div>';}});

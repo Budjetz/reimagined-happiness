@@ -27,12 +27,14 @@
 }
 
 .blurb-container {
-  background: #19a008;
+  /*background: #19a008;*/
+  background-color:rgb(124, 174, 132);
   padding: 1em;
 }
 
 .blurb {
   /*border: 2px solid #D4C31C;*/
+  font-size: 20px;
   padding: 13px;
   text-align: center;
   line-height: 27px;
@@ -50,7 +52,9 @@
 }
 
 .blurb-container2 {
-  background: #19af07;
+  /*background: #19af07;*/
+  background-color:rgb(124, 185, 132);
+
   padding: 1em;
 }
 
@@ -81,12 +85,18 @@
 .setBudget-button-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 12em;
+  margin-top: 4em;
+}
+
+#setBudget-button {
+  font-family: 'Indie Flower', curvise;
+
 }
 
 /* Third Slide -- Collect Budget Information */
 .blurb-container3 {
-  background: #19af07;
+  /*background: #19af07;*/
+  background-color:rgb(124, 185, 132);
   padding: 1em;
 }
 
