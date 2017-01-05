@@ -92,8 +92,8 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
           text: '<div>Save</div>',
           type: 'button-positive',
           onTap: function(e){
-            if($scope.bud.category && $scope.bud.amount ==1) {
-              postService.editBudget(bud).then( (res) => {
+            if(budget.category && budget.amount == 1) {
+              postService.editBudget(budget).then( (res) => {
                 $scope.getBudgets();
               });
             }
