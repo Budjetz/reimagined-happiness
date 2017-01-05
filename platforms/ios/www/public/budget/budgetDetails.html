@@ -1,14 +1,31 @@
 <ion-view title="Home" ng-controller='budgetDetailsCtrl'>
 
+<ion-header-bar align-title="left" class="bar-balanced">
+  <div class="buttons">
+    <button class="button ion-chevron-left" ui-sref="app.home"></button>
+  </div>
+  <h1 class="title">{{budget}} details</h1>
+</ion-header-bar>
 
-<ion-content>
-<div ng-repeat='expenditure in specificExpenditures'>
-  {{expenditure.category}}
-  {{expenditure.amount}}
+<ion-content class="details-wrapper">
 
-</div>
-  This is the details page
-  {{budget}}
+  <div> This is a placeholder for the bar graph to be displayed </div>
+
+  <hr>
+
+<section ng-repeat='expenditure in specificExpenditures'>
+  <section class="expenditure-detail-wrapper">
+    <section class="expenditure-category">
+      <div> {{expenditure.date | date: 'longDate'}} </div>
+      <div> *Amount
+    </section>
+    <section class="expenditure-amount">
+      <div> {{expenditure.location}} </div>
+      <div> ${{expenditure.amount}} </div>
+    </section>
+</section>
+  <hr>
+</section>
 </ion-content>
 
 
