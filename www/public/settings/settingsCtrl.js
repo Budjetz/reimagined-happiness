@@ -80,6 +80,7 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
   };
 
   $scope.confirmEditBudget = function(budget) {
+    $scope.bud = {};
     var addPopup = $ionicPopup.show({
       template:
       '<input type="text" placeholder="' + budget.category + '" ng-model="bud.category"></input><input type="text" placeholder="' + budget.budget_amount + '" ng-model="bud.amount">',
@@ -92,8 +93,10 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
           text: '<div>Save</div>',
           type: 'button-positive',
           onTap: function(e){
-            if(budget.category && budget.amount == 1) {
-              postService.editBudget(budget).then( (res) => {
+            console.log($scope.bud);
+            console.log(budget);
+            if($scope.bud.category && $scope.bud.amount) {
+              postService.editBudget($scope.bud, budget.category).then( (res) => {
                 $scope.getBudgets();
               });
             }
