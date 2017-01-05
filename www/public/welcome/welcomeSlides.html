@@ -10,8 +10,8 @@
 
             <div><h1 class="welcome-title">Welcome to Budjetz</h1></div>
             <p class="blurb">
-              It's easy! Give us the total amount of money you spend each month and we'll help you build a budget. <br>
-              Using easy to understand charts and progress bars, you will see your monthly spending in real-time. <br>
+              It's easy! Give us the total amount of money you spend each month and we'll help you build a budget. <br><br>
+              With easy to understand charts and progress bars, you can see your monthly spending in real-time. <br><br>
               This will help you save money, which should be everyone's goal!
             </p>
         </div>
@@ -22,14 +22,25 @@
       <ion-slide-page class="blurb-container2">
         <div ng-controller='welcomeCtrl'>
           <div class="welcome2-wrapper"><h1 class="welcome-title2">Starting Budget</h1></div>
+
           <form name='budgetInput' class="starting-money-wrapper">
             <input id='startingMoney' type='text' ng-model='startingMoney' placeholder="Starting Budget" />
           </form>
+
+          <!-- <ion-item>
+            <ion-label color="primary" </ion-label>
+            <ion-input type="text" placeholder="Starting Budget" ng-model='startingMoney'></ion-input>
+          </ion-item -->
+
+
+
+
+
           <p class="starting-blurb">
             So we can help you understand your budget, how much, total, do you spend each month?
           </p>
           <div class="setBudget-button-wrapper">
-            <button class="button button-stable" id="setBudget-button" ui-sref="setBudget">Next</button>
+            <button class="button button-light" id="setBudget-button" ui-sref="setBudget">Next</button>
           </div>
           <!-- <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Finish </button> -->
         </div>
