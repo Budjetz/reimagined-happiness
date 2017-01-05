@@ -23,8 +23,36 @@
   </head>
 
   <body ng-app="starter">
-
     <ion-pane ng-controller="CaptureCtrl">
+      
+      <ion-header-bar class="bar-balanced">
+        <!-- <h1 class="title">Ionic OCR </h1> -->
+      </ion-header-bar>
+
+        <ion-nav-bar class="bar-balanced">
+          <ion-nav-buttons side="left">
+            <button ng-click="returnToMainApp()" class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+
+
+
+      <ion-content >
+
+      </ion-content>
+
+    </ion-pane>
+
+
+
+
+
+
+
+
+
+
+    <!-- <ion-pane ng-controller="CaptureCtrl">
       <ion-header-bar class="bar-balanced">
         <h1 class="title">Ionic OCR </h1>
       </ion-header-bar>
@@ -77,6 +105,6 @@
 
 
       </ion-content>
-    </ion-pane>
+    </ion-pane> -->
   </body>
 </html>
