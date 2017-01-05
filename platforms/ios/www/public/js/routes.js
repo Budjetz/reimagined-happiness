@@ -17,7 +17,7 @@ angular.module('budjetz', ['ui.router', 'ionic', 'ngMaterial']).config(function(
     })
     .state('type', {
       url: "/typeOfExpense",
-      templateUrl: "./menu/typeOfExpense.html",
+      templateUrl: "./addExpense/typeOfExpense.html",
       controller: "menuCtrl"
     })
     .state('app', {

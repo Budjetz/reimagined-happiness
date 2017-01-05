@@ -14,7 +14,7 @@ angular.module('starter', ['ionic','ngCordova'])
   });
 })
 
-.controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $window) {
+.controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
 
   $ionicPlatform.ready(function() {
 
