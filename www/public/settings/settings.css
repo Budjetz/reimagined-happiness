@@ -55,3 +55,12 @@
 #edit-button {
   font-size: 1.3em;
 }
+
+/* Confirm Edit Popup */
+.confirm-edit-popup input {
+  text-align: center;
+}
+
+.confirm-edit-popup input-placeholder {
+  color: black;
+}
