@@ -25,13 +25,14 @@
   <body ng-app="starter">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
+      <ion-header-bar class="bar-balanced">
         <h1 class="title">Ionic OCR </h1>
       </ion-header-bar>
 
       <ion-content ng-controller="CaptureCtrl">
 
         <img style="width: 100%;" id="pic" src="">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/ReceiptSwiss.jpg" style="height:40%; width:40%;">
 
         <div class="padding" ng-if="showAnalyzeButton">
 
@@ -43,12 +44,12 @@
               Reset
             </button>
 
-            <button ng-click="returnToMainApp()" class="button button-full button-positive">
+            <button ng-click="returnToMainApp()" class="button button-block button-positive">
               Return to app
             </button>
          </div>
 
-         <button ng-click="returnToMainApp()" class="button button-full button-positive">
+         <button ng-click="returnToMainApp()" class="button button-outline button-block button-energized">
            Return to app
          </button>
 
