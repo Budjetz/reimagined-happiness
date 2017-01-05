@@ -1,7 +1,7 @@
 angular.module('budjetz').service('pieChart', function($state) {
 
   this.makePieChart = function(data) {
-        color = ['red','pink','darkred','blue','lightgreen','green','darkgreen']
+        color = ['red', '#fff6a5', '#160084', 'pink', '#b7ffff', 'lightgreen', '#6d6dff', 'darkred', 'green', 'salmon', '#985c8d', '#ffac32', '#ffff35']
         var w = 220,
         h = 220,
         r = 90;
