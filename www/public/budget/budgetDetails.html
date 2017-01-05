@@ -13,7 +13,7 @@
 
   <hr>
 
-<section ng-repeat='expenditure in specificExpenditures'>
+<section ng-repeat='expenditure in specificExpenditures | orderBy : "date"'>
   <section class="expenditure-detail-wrapper">
     <section class="expenditure-category">
       <div> {{expenditure.date | date: 'longDate'}} </div>
@@ -21,7 +21,7 @@
     </section>
     <section class="expenditure-amount">
       <div> {{expenditure.location}} </div>
-      <div> ${{expenditure.amount}} </div>
+      <div ng-model='amount'> ${{expenditure.amount}} </div>
     </section>
     <div ng-click='showEditor(expenditure)'>edit</div>
     <div ng-click='deleteExpenditure(expenditure)'>delete</div>
