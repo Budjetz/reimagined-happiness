@@ -25,9 +25,9 @@
       <hr>
       <br><br>
 
-      <p> Click on the "Expense" button if you are spending money </p>
+      <p id="expense-paragraph"> Click on the "Expense" button if you are spending money </p>
       <br>
-      <p> Click on the "Credit" button if you have received any money </p>
+      <p id="expense-paragraph"> Click on the "Credit" button if you have received any money </p>
     </ion-content>
 
 </ion-view>
@@ -38,7 +38,7 @@
   <ion-modal-view>
     <ion-header-bar class="bar-assertive">
       <button class="button button-icon ion-camera"></button>
-      <h1 class="title">Add Expense</h1>
+      <h1 class="title" id="transaction-title">Add Expense</h1>
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(1)" ui-sref="app.home"></button>
     </ion-header-bar>
 
@@ -85,7 +85,7 @@
   <ion-modal-view>
     <ion-header-bar class="bar-assertive">
       <button class="button button-icon ion-camera"></button>
-      <h1 class="title">Add Credit</h1>
+      <h1 class="title" id="transaction-title">Add Credit</h1>
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(2)"></button>
     </ion-header-bar>
 
