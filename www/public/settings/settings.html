@@ -26,11 +26,12 @@
         <div ng-repeat='budget in budgets' class="edit-categories-section">
 
           <div style='display: flex'>
-            <button class="button button-icon ion-minus-circled" id="delete-button" ng-click='deleteBudget(budget.category)'></button>
+            <div class="button button-icon ion-minus-circled" id="delete-button"
+                    ng-click='showConfirm(budget)'></div>
             <div ng-model='budget.category'>{{budget.category}}</div>
             <input type="text" value='{{budget.budget_amount}}' ng-model='budget.budget_amount'>
             <div>
-              <button class="button button-icon ion-compose" id="edit-button" ng-click='editBudget(budget)'></button>
+              <div class="button button-icon ion-compose" id="edit-button" ng-click='confirmEditBudget(budget)'></div>
             </div>
           </div>
 
