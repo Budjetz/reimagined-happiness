@@ -1,6 +1,18 @@
 
 angular.module('starter', ['ionic','ngCordova'])
 
+.controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
+
+  $scope.returnToMainApp = function() {
+      $window.location.href = "http://localhost:8080/#/app/home"
+    }
+  })
+
+
+
+
+// KEYBOARD, IONIC:
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -14,80 +26,86 @@ angular.module('starter', ['ionic','ngCordova'])
   });
 })
 
-.controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
 
-  $ionicPlatform.ready(function() {
 
-    $scope.showAnalyzeButton = false;
+// ---- ---- -------- ---------- ----- ----
 
-    var self = this;
+// OCR CAMERA; COMMENTED OUT FOR NOW DUE TO ISSUES:
 
-    this.showLoading = function() {
-      $ionicLoading.show({
-        template: '<ion-spinner></ion-spinner>'
-      });
-    };
-
-    this.hideLoading = function(){
-      $ionicLoading.hide();
-    };
-
-    this.getPicture = function(index){
-
-      var sourceType = index === 0 ? Camera.PictureSourceType.PHOTOLIBRARY : Camera.PictureSourceType.CAMERA;
-      var options = {
-        quality: 100,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: sourceType,
-        allowEdit: true,
-        encodingType: Camera.EncodingType.JPEG,
-        popoverOptions: CameraPopoverOptions,
-        saveToPhotoAlbum: false,
-        correctOrientation:true
-      };
-
-      $cordovaCamera.getPicture(options).then(function(imageData) {
-        var image = document.getElementById('pic');
-        image.src = "data:image/jpeg;base64," + imageData;
-        $scope.showAnalyzeButton = true;
-      }, function(err) {
-          console.log(err);
-      });
-
-    };
-
-  });
-
-  $scope.showActionSheet = function(){
-    var hideSheet = $ionicActionSheet.show({
-      buttons: [
-       { text: 'Choose Photo' },
-       { text: 'Take Photo' }
-      ],
-      cancelText: 'Cancel',
-      cancel: function() {
-        console.log('cancel');
-      },
-      buttonClicked: function(index) {
-        getPicture(index);
-       return true;
-      }
-    });
-  };
-
-  $scope.showActionSheet();
-
-  $scope.testOcrad = function(){
-    self.showLoading();
-    OCRAD(document.getElementById("pic"), function(text){
-      self.hideLoading();
-      console.log(text);
-      alert(text);
-    });
-  } ;
-
-  $scope.returnToMainApp = function() {
-    $window.location.href = "http://localhost:8080/#/app/home"
-  }
-
-});
+// .controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
+//
+//   $ionicPlatform.ready(function() {
+//
+//     $scope.showAnalyzeButton = false;
+//
+//     var self = this;
+//
+//     this.showLoading = function() {
+//       $ionicLoading.show({
+//         template: '<ion-spinner></ion-spinner>'
+//       });
+//     };
+//
+//     this.hideLoading = function(){
+//       $ionicLoading.hide();
+//     };
+//
+//     this.getPicture = function(index){
+//
+//       var sourceType = index === 0 ? Camera.PictureSourceType.PHOTOLIBRARY : Camera.PictureSourceType.CAMERA;
+//       var options = {
+//         quality: 100,
+//         destinationType: Camera.DestinationType.DATA_URL,
+//         sourceType: sourceType,
+//         allowEdit: true,
+//         encodingType: Camera.EncodingType.JPEG,
+//         popoverOptions: CameraPopoverOptions,
+//         saveToPhotoAlbum: false,
+//         correctOrientation:true
+//       };
+//
+//       $cordovaCamera.getPicture(options).then(function(imageData) {
+//         var image = document.getElementById('pic');
+//         image.src = "data:image/jpeg;base64," + imageData;
+//         $scope.showAnalyzeButton = true;
+//       }, function(err) {
+//           console.log(err);
+//       });
+//
+//     };
+//
+//   });
+//
+//   $scope.showActionSheet = function(){
+//     var hideSheet = $ionicActionSheet.show({
+//       buttons: [
+//        { text: 'Choose Photo' },
+//        { text: 'Take Photo' }
+//       ],
+//       cancelText: 'Cancel',
+//       cancel: function() {
+//         console.log('cancel');
+//       },
+//       buttonClicked: function(index) {
+//         getPicture(index);
+//        return true;
+//       }
+//     });
+//   };
+//
+//   $scope.showActionSheet();
+//
+//   $scope.testOcrad = function(){
+//     self.showLoading();
+//     OCRAD(document.getElementById("pic"), function(text){
+//       self.hideLoading();
+//       console.log(text);
+//       alert(text);
+//     });
+//   } ;
+//
+//   $scope.returnToMainApp = function() {
+//     $window.location.href = "http://localhost:8080/#/app/home"
+//   }
+//
+// });
