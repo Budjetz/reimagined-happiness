@@ -3,7 +3,6 @@
   width: 100vw;
   /*background: #209800;*/
   background-color:rgb(124, 174, 132);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +63,7 @@ p {
 #login-button {
   /*background: #D4C31C;*/
   background: white;
-  color: #000;
+  /*color: #000;*/
   font-family: 'Indie Flower', cursive;
   /*font-family: 'Amatic SC', cursive;*/
   font-weight: bold;
