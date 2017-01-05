@@ -29,7 +29,7 @@
             <div class="button button-icon ion-minus-circled" id="delete-button"
                     ng-click='showConfirm(budget)'></div>
             <div ng-model='budget.category'>{{budget.category}}</div>
-            <input type="text" value='{{budget.budget_amount}}' ng-model='budget.budget_amount'>
+            <div ng-model='budget.budget_amount'>{{budget.budget_amount}} </div>
             <div>
               <div class="button button-icon ion-compose" id="edit-button" ng-click='confirmEditBudget(budget)'></div>
             </div>

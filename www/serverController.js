@@ -82,7 +82,7 @@ module.exports = {
     })
   },
   editBudget : (req,res) => {
-    db.edit_budgets([req.body.category, req.body.newAmount],(err,resp) => {
+    db.edit_budgets([req.body.category, req.body.newAmount, req.body.newCategory],(err,resp) => {
       res.json(resp);
     })
   },
