@@ -31,4 +31,8 @@ angular.module('budjetz').service('barChart', function($state) {
       .style('text-align','center');
     }
 
+    this.makeSavingsBar = (data) => {
+
+    }
+
 });
