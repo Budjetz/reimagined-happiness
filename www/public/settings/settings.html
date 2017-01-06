@@ -8,8 +8,8 @@
     </section>
 
     <ion-list>
-      <ion-item class="settings-list-item" ng-click="openModal(4)">
-        Edit Categories <button class="button button-icon button-black ion-chevron-right" id="chevron" ng-click="openModal(4)"></button>
+      <ion-item class="settings-list-item" ng-click="openModal(4); getBudgets()">
+        Edit Budgets <div class="button button-icon button-black ion-chevron-right" id="chevron"></div>
       </ion-items>
     </ion-list>
   </ion-content>
@@ -19,7 +19,7 @@
 <script id="categoryModal.html" type="text/ng-template">
   <ion-modal-view>
     <ion-header-bar class="bar-assertive">
-      <h1 class="title" id="edit-categories">Edit Categories</h1>
+      <h1 class="title" id="edit-categories">Edit Budgets</h1>
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(4)"></button>
     </ion-header-bar>
     <ion-content class="edit-categories-wrapper">

@@ -18,6 +18,7 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
   };
 
   $scope.getBudgets = () => {
+    console.log('budgets');
     getService.getBudgets().then((res)=>{
       $scope.budgets = res.data;
     });
