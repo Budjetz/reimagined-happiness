@@ -15,7 +15,7 @@
       <div> {{expenditure.date | date: 'longDate'}} </div>
       <div> *Amount
     </section>
-    <section class="expenditure-amount">
+    <section class="expenditure-amount" ng-click="seeDetails(expenditure)">
       <div> {{expenditure.location}} </div>
       <div ng-model='amount'> ${{expenditure.amount}} </div>
     </section>
