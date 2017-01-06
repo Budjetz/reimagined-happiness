@@ -5,21 +5,25 @@
 <ion-content class="animated bounceInDown">
 
   <div class="circle"></div>
-  <p class="home-paragraph"> The chart will show you the money spent in each category in comparison with
-    other categories. Click on individual sections to see what category they correspond to.</p>
+    <p class="home-paragraph"> The chart will show you the money spent in each category in comparison with
+      other categories. Click on individual sections to see what category they correspond to.</p>
   <div class="divideLine" style="background: grey; height:1px;"></div>
+<section style="background-color: #ece8e8; margin-right: 2px; margin-left: 2px; margin-top: -3px; padding-bottom: 1px">
   <div class="home-graph-wrapper">
     <p class="home-budget-p1"> Amt Left </p>
     <p class="home-category-title"> Monthy Budget </p>
     <p class="home-budget-p2"> Amt Budgeted </p>
   </div>
-  <div class="totalBar"></div>
-  <div class="divideLine" style="background: grey; height:1px;"></div>
-    <p class="home-category-title"> Categories </p>
-  <div class="barGraph"></div>
-  <div class="divideLine" style="background: grey; height:1px;"></div>
-    <p class="home-category-title"> Totals </p>
-  <div class="savingsBar"></div>
+
+    <div class="totalBar"></div>
+    <div class="divideLine" style="background: grey; height:1px;"></div>
+      <p class="home-category-title"> Categories </p>
+    <div class="barGraph"></div>
+    <div class="divideLine" style="background: grey; height:1px;"></div>
+      <p class="home-category-title"> Totals </p>
+    <div class="savingsBar"></div>
+  </section>
+
 
 <div data-ng-init="setPieChart()"></div>
 </ion-content>
