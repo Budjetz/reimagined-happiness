@@ -93,7 +93,7 @@ app.get('/logout', (req, res) => {
 });
 
 //Other
-
+app.get('/getImage', serverController.getImage);
 app.get('/getUser', serverController.getUser);
 app.get('/getExpenditures', serverController.getExpenditures);
 app.get('/getBudgets', serverController.getBudgets);
@@ -108,7 +108,7 @@ app.post('/deleteEmptyBudget',serverController.deleteEmptyBudget);
 app.post('/addBudget', serverController.addBudget);
 app.post('/editExpenditure', serverController.editExpenditure);
 app.post('/deleteExpenditure', serverController.deleteExpenditure);
-app.post('/api/camera', serverController.postS3);
+app.post('/api/addImage', serverController.postS3);
 
 
 

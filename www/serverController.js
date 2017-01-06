@@ -30,6 +30,12 @@ module.exports = {
     console.log(req.user);
     res.send(req.user);
   },
+  getImage: (req,res) => {
+    db.get_image((err,resp) => {
+      console.log(req.user);
+      res.json(resp);
+    })
+  },
   getExpenditures: (req,res) => {
     db.get_expenditures((err,resp) => {
        res.json(resp);
