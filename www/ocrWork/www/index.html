@@ -11,6 +11,7 @@
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
+    <script src="lib/s3-image-uploader/dist/image-uploader.min.js"></script>
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -23,10 +24,40 @@
   </head>
 
   <body ng-app="starter">
-    <ion-pane >
+
+
+    <ion-pane>
+        <ion-header-bar class="bar-stable">
+          <h1 class="title">BudCam</h1>
+        </ion-header-bar>
+
+        <ion-content ng-controller="ExampleController">
+          <input type="file" fileread accept="image/*">
+
+      <!-- <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
+      <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
+      <button class="button" ng-click="takePicture()">Take Picture</button> -->
+  </ion-content>
+      </ion-pane>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- testing" -->
+    <!-- <ion-pane >
 
         <ion-header-bar class="bar-balanced">
-          <!-- <h1 class="title">Ionic OCR </h1> -->
+
         </ion-header-bar>
 
         <ion-nav-bar class="bar-balanced" ng-controller="CaptureCtrl">
@@ -51,7 +82,7 @@
             </ion-scroll>
         </ion-content>
 
-    </ion-pane>
+    </ion-pane> -->
 
 
 

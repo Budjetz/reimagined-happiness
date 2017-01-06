@@ -4,6 +4,7 @@
   "description": "budjetz: An Ionic project",
   "dependencies": {
     "animate.css": "^3.5.2",
+    "aws-sdk": "^2.7.21",
     "body-parser": "^1.15.2",
     "cordova-plugin-file": "^4.3.1",
     "cors": "^2.8.1",
