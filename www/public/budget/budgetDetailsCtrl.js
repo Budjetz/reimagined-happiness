@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stateParams, $ionicPopup, postService) {
+angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stateParams, $ionicPopup, postService, getService, pieChart, barChart) {
 
   $scope.budget = $stateParams.id;
   $scope.getSpecificExpenditure = (cat) => {
@@ -9,13 +9,11 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
   $scope.getSpecificExpenditure($scope.budget);
   $scope.editExpenditure = (ex) => {
     postService.editExpenditure(ex).then((res) => {
-      console.log('edited', res);
       $scope.getSpecificExpenditure($scope.budget);
     })
   }
   $scope.deleteExpenditure = (ex) => {
     postService.deleteExpenditure(ex).then((res) => {
-      console.log('gone', res);
       $scope.getSpecificExpenditure($scope.budget);
     })
   }
@@ -55,7 +53,12 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
       ]
     });
   }
-
-
+  $scope.setPieChart = function(){
+    getService.getBudgetExpenditures().then((data) => {
+      barChart.makeBarChart(data.data);
+      barChart.makeSavingsBar();
+      pieChart.makePieChart(data.data);
+    })
+  };
 
 })

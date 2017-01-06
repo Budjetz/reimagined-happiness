@@ -18,6 +18,7 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
   };
 
   $scope.getBudgets = () => {
+    console.log('budgets');
     getService.getBudgets().then((res)=>{
       $scope.budgets = res.data;
     });
@@ -83,8 +84,8 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
     $scope.bud = {};
     var addPopup = $ionicPopup.show({
       template:
-      '<input type="text" placeholder="' + budget.category + '" ng-model="bud.category"></input><input type="text" placeholder="' + budget.budget_amount + '" ng-model="bud.amount">',
-      title: 'Edit Budget Info',
+      '</input><input type="text" placeholder="' + budget.budget_amount + '" ng-model="bud.amount">',
+      title: 'Edit "' + budget.category + '" Info',
       scope: $scope,
       cssClass: 'confirm-edit-popup',
       buttons: [
@@ -95,8 +96,8 @@ angular.module('budjetz').controller('settingsCtrl', function($scope, $ionicModa
           onTap: function(e){
             console.log($scope.bud);
             console.log(budget);
-            if($scope.bud.category && $scope.bud.amount) {
-              postService.editBudget($scope.bud, budget.category).then( (res) => {
+            if($scope.bud.amount) {
+              postService.editBudget($scope.bud.amount, budget.category).then( (res) => {
                 $scope.getBudgets();
               });
             }

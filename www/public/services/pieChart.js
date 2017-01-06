@@ -64,6 +64,7 @@ angular.module('budjetz').service('pieChart', function($state) {
       .attr('fill','rgba(255, 255, 255, 0)')
       .attr('font-family','Indie Flower')
       .style('font-size','20px')
+      .style('background','white')
       .text(function(d) { if(d.data){ return d.data.name;} });
   }
 

@@ -82,14 +82,16 @@ module.exports = {
     })
   },
   editBudget : (req,res) => {
-    db.edit_budgets([req.body.category, req.body.newAmount, req.body.newCategory],(err,resp) => {
+    db.edit_budgets([req.body.category, req.body.newAmount],(err,resp) => {
       res.json(resp);
     })
   },
   deleteBudget: (req,res) => {
     db.delete_budget([req.body.category], (err, resp) => {
-      res.json('deleted');
-    })
+      db.delete_budget_expenditures([req.body.category],(err, resp)=>{
+        res.json('deleted');
+      });
+    });
   },
   deleteEmptyBudget: (req,res) => {
     db.delete_empty_budget((err, resp) => {
@@ -106,11 +108,15 @@ module.exports = {
       res.json(resp);
     })
   },
-  deleteExpenditure : (req,res) => {
+  deleteExpenditure : (req, res) => {
     db.delete_expenditure([req.body.category, req.body.amount, req.body.date ],(err,resp) => {
       res.json(resp);
     })
-  }
-
+  },
+  setTotalBudget : (req, res) => {
+    db.set_total([req.body.total], (err, resp) => {
+      res.json(resp);
+    })
+  },
 
 }
