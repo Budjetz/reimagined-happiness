@@ -23,7 +23,7 @@
         <button class="button button-icon ion-ios-close-empty" ng-click="closeModal(4)"></button>
     </ion-header-bar>
     <ion-content class="edit-categories-wrapper">
-        <div ng-repeat='budget in budgets' class="edit-categories-section">
+        <div ng-repeat='budget in budgets | orderBy : "-budget_amount"' class="edit-categories-section">
 
           <div style='display: flex'>
             <div class="button button-icon ion-minus-circled" id="delete-button"

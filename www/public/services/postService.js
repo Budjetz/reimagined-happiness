@@ -25,14 +25,13 @@ angular.module('budjetz').service('postService', function($state, getService, $q
       }
     })
   }
-  this.editBudget = (bud, category) => {
+  this.editBudget = (amount, category) => {
     return $http({
       method: 'POST',
       url: '/editBudget',
       data : {
         category: category,
-        newCategory: bud.category,
-        newAmount: bud.amount
+        newAmount: amount
       }
     })
   }
