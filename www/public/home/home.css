@@ -26,4 +26,35 @@
   display: flex;
   justify-content: center;
   color: black;
+  margin: auto;
+}
+
+.home-graph-wrapper {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.home-budget-p1 {
+  /*padding-left: 6px;
+  padding-right: 0px;*/
+  margin: auto;
+}
+
+.home-budget-p2 {
+  /*padding-left: 0px;
+  padding-right: 0px;*/
+  margin: auto;
+}
+
+.home-budget-p1, .home-budget-p2 {
+  font-family: 'Indie Flower', cursive;
+  color: black;
+  font-size: 18px;
+}
+
+.barGraph {
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
 }
