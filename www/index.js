@@ -97,6 +97,7 @@ app.get('/getBudgets', serverController.getBudgets);
 app.get('/getUsers', serverController.getUsers);
 app.get('/getMoneyTotal', serverController.getMoneyTotal);
 app.get('/getBudgetExpenditures', serverController.getBudgetExpenditures);
+app.post('/setTotalBudget', serverController.setTotalBudget);
 app.post('/addExpenditure', serverController.addExpenditure);
 app.post('/getSpecificExpenditure', serverController.getSpecificExpenditure);
 app.post('/editBudget',serverController.editBudget);

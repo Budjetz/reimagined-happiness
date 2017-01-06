@@ -108,11 +108,15 @@ module.exports = {
       res.json(resp);
     })
   },
-  deleteExpenditure : (req,res) => {
+  deleteExpenditure : (req, res) => {
     db.delete_expenditure([req.body.category, req.body.amount, req.body.date ],(err,resp) => {
       res.json(resp);
     })
-  }
-
+  },
+  setTotalBudget : (req, res) => {
+    db.set_total([req.body.total], (err, resp) => {
+      res.json(resp);
+    })
+  },
 
 }

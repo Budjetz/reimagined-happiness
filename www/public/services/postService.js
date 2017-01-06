@@ -89,4 +89,13 @@ angular.module('budjetz').service('postService', function($state, getService, $q
       }
     })
   }
+  this.setTotalBudget = (budget) => {
+    return $http({
+      method: "POST",
+      url: '/setTotalBudget',
+      data: {
+        total: budget
+      }
+    })
+  }
 });
