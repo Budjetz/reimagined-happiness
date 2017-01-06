@@ -147,3 +147,13 @@
   font-family: "Indie Flower", cursive;
   font-size: 23px;
 }
+
+.setBudget-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dollar-sign {
+  margin-right: 2px;
+}
