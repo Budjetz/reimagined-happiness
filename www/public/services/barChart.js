@@ -31,8 +31,30 @@ angular.module('budjetz').service('barChart', function($state) {
       .style('text-align','center');
     }
 
-    this.makeSavingsBar = (data) => {
+    this.makeSavingsBar = () => {
+      console.log('savings');
+      var data = [{
+        one:50,
+        two:20
+      }]
+
+      var main = d3.select('.totalBar')
+        .selectAll('.totalBar')
+        .data(data)
+        .enter()
+        .append('div')
+        .attr('class', 'some')
+        .style('width','auto')
+        .style('margin','20px')
+        .style('height',function(d) {
+          return (d.one+'px')
+        })
+        .style('background','blue')
+        .html(function (d) {
+          return d.two
+        })
+
+
 
     }
-
 });

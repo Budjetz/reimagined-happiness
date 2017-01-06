@@ -42,4 +42,6 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
         })
       }
 
+      barChart.makeSavingsBar();
+
   });
