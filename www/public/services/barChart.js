@@ -74,10 +74,10 @@ angular.module('budjetz').service('barChart', function($state, getService) {
 
         makeTotalBar = (data) =>{
 
-          if(d3.select('.totals')[0]){
-            d3.selectAll('.totals').remove();
-          }
           getService.getMoneyTotal().then( (res) => {
+            if(d3.select('.totals')[0]){
+              d3.selectAll('.totals').remove();
+            }
             data[0].total = res.data[0].amount;
             console.log(res.data[0].amount);
             var main = d3.select('.totalBar')
@@ -93,7 +93,7 @@ angular.module('budjetz').service('barChart', function($state, getService) {
                   .domain([0, d.total])
                   .range([0, 100]);
                   if(d.total > d.two){
-                    return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:#fdde2c; padding-left: 5px; border-radius: 10px; width:'+ x(d.two) + '%">'+d.two+'</div> </div> <div>' + d.total + '</div> </div>'
+                    return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:#fdde2c; display:flex; padding-left: 5px; border-radius: 10px; width:'+ x(d.two) + '%">'+d.two+'</div> </div> <div>' + d.total + '</div> </div>'
                   } else {
                     return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:red; padding-left: 5px; border-radius: 10px; width:100%">'+d.two+'</div> </div> <div>' + d.total + '</div> </div>'
                   }
