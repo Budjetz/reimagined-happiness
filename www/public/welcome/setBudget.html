@@ -5,14 +5,28 @@
   <div class="welcome3-wrapper"><h1 class="blurb3-title">Setting Your Budget</h1></div>
     <p class="p-information"> *This is to get you started. You will be able to add additional categories in your settings </p>
       <form name='budgetInput' class="budgetInput-container">
-        <div class="gas-input">
+        <section class="gas-input">
           Gas
-          <input id='gasBudget'type="text" ng-model='gasBudget' placeholder="Gas"/>
-        </div>
-        <div class="rent-input">
+
+          <section class="setBudget-wrapper">
+            <div id="dollar-sign"> $ </div>
+            <div>
+              <input id='gasBudget'type="text" ng-model='gasBudget' placeholder="Gas"/>
+            </div>
+          </section>
+
+        </section>
+        <section class="rent-input">
           Rent
-          <input id='rentBudget'type="text" ng-model='rentBudget' placeholder="Rent"/>
-        </div>
+
+          <section class="setBudget-wrapper">
+            <div id="dollar-sign"> $ </div>
+            <div>
+              <input id='rentBudget'type="text" ng-model='rentBudget' placeholder="Rent"/>
+            </div>
+          </section>
+
+        </section>
       </form>
 <div class="setBudget-button-wrapper2">
   <button class="button button-stable" id="setBudget-button" ui-sref='app.home'> Next </button>
