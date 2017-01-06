@@ -88,8 +88,10 @@ module.exports = {
   },
   deleteBudget: (req,res) => {
     db.delete_budget([req.body.category], (err, resp) => {
-      res.json('deleted');
-    })
+      db.delete_budget_expenditures([req.body.category],(err, resp)=>{
+        res.json('deleted');
+      });
+    });
   },
   deleteEmptyBudget: (req,res) => {
     db.delete_empty_budget((err, resp) => {
