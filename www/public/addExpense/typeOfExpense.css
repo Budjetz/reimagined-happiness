@@ -4,6 +4,11 @@
   font-family: 'Indie Flower', cursive;
 }
 
+.title {
+  font-family: 'Amatic SC', cursive;
+  font-size: 37px !important;
+}
+
 .expense-form input {
   border: 1px solid grey;
   padding-left: 7px;
@@ -57,7 +62,7 @@
 
 #expense-paragraph {
   color: black;
-  font-size: 23px;
+  font-size: 20px;
   font-family: "Indie Flower", cursive;
   padding-left: 15px;
   padding-right: 15px;
@@ -66,4 +71,51 @@
 #transaction-title {
   right: 0px !important;
   left: 0px !important;
+}
+
+.expense-button-wrapper, .credit-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#expense-button, #credit-button {
+  font-family: "Indie Flower", cursive;
+  font-size: 23px;
+  width: 80%;
+}
+
+/* Choose Category Modal */
+.choose-category-wrapper {
+  padding: 5px;
+  font-family: "Indie Flower", cursive;
+  font-size: 23px;
+  background: whitesmoke;
+}
+
+#choose-category-repeat {
+  padding-top: 12px;
+}
+
+#new-category-button-wrapper {
+  /*width: 100vw;
+  display: flex;
+  justify-content: center;*/
+  margin-top: .5em;
+}
+
+#category {
+  border: 1px solid black;
+  padding: 5px;
+  background: transparent;
+  margin-top: 1em;
+}
+
+#new-category-button {
+  border: 1px solid black;
+  padding: 6px;
+  width: 7em;
+  text-align: center;
+  font-size: 18px;
+  background-color: tomato;
 }

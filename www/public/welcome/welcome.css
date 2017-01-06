@@ -130,7 +130,17 @@
 }
 
 #gasBudget, #rentBudget {
-  margin-left: 6.5em;
-  margin-bottom: 10px;
+  /*margin-left: 6.5em;
+  margin-bottom: 10px;*/
+  margin: auto;
   text-align: center;
+}
+
+.gas-input {
+  margin-bottom: 19px;
+}
+
+.gas-input, .rent-input {
+  font-family: "Indie Flower", cursive;
+  font-size: 23px;
 }

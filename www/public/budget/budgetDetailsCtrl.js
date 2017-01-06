@@ -17,6 +17,23 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
       $scope.getSpecificExpenditure($scope.budget);
     })
   }
+
+  $scope.confirmDeletion = (ex) => {
+    $scope.ex = ex;
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Delete Expense?',
+      template: 'Are you sure you want to delete this transaction?'
+    });
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('You are sure');
+        $scope.deleteExpenditure(ex);
+      } else {
+        console.log('You are not sure');
+      }
+    });
+  }
+
   $scope.showEditor = (ex) => {
     $scope.ex = ex;
     var addPopup = $ionicPopup.show({

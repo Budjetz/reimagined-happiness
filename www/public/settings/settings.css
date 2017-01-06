@@ -29,6 +29,11 @@
   right: 0px !important;
 }
 
+#edit-categories-menu {
+  font-family: "Indie Flower", cursive !important;
+  font-size: 23px;
+}
+
 .edit-categories-wrapper {
   padding: 7px;
 }
