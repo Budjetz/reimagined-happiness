@@ -13,6 +13,7 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
       $scope.setPieChart = function(){
         getService.getBudgetExpenditures().then((data) => {
           barChart.makeBarChart(data.data);
+          barChart.makeSavingsBar();
           pieChart.makePieChart(data.data);
         })
       };
@@ -42,6 +43,5 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
         })
       }
 
-      barChart.makeSavingsBar();
 
   });

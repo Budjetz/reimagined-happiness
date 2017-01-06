@@ -1,4 +1,4 @@
-angular.module('budjetz').service('barChart', function($state) {
+angular.module('budjetz').service('barChart', function($state, getService) {
 
   this.makeBarChart = function(data) {
       if(d3.select('.barChart')[0]){
@@ -32,26 +32,40 @@ angular.module('budjetz').service('barChart', function($state) {
     }
 
     this.makeSavingsBar = () => {
-      console.log('savings');
-      var data = [{
-        one:50,
-        two:20
-      }]
-
-      var main = d3.select('.totalBar')
-        .selectAll('.totalBar')
-        .data(data)
-        .enter()
-        .append('div')
-        .attr('class', 'some')
-        .style('width','auto')
-        .style('margin','20px')
-        .style('height',function(d) {
-          return (d.one+'px')
+      getService.getBudgetExpenditures().then( (res) => {
+        var data = {}
+            final = []
+            expenditures = 0
+            budgets = 0;
+        res.data.filter( (val) => {
+          expenditures += val.expenditures;
+        });
+        res.data.filter( (val) => {
+          budgets += val.budget_amount
         })
-        .style('background','blue')
-        .html(function (d) {
-          return d.two
+        data.one = budgets;
+        data.two = expenditures;
+        final.push(data)
+        return final
+      }).then( (data) => {
+          var main = d3.select('.totalBar')
+            .selectAll('.totalBar')
+            .data(data)
+            .enter()
+            .append('div')
+            .attr('class', 'some')
+            .style('width','auto')
+            .style('margin','10px')
+            .html(function (d) {
+              var x = d3.scale.linear()
+                .domain([0, d.one])
+                .range([0, 100]);
+                if(d.one > d.two){
+                  return '<div style="display: flex;"> <div style="background: #7cae84; width: 100%; border-radius: 10px"> <div style="background:#ff6600; padding-left: 5px; border-radius: 10px; width:'+ x(d.two) + '%">'+d.two+'</div> </div> <div>' + d.one + '</div> </div>'
+                } else {
+                  return '<div style="display: flex;"> <div style="background: #7cae84; width: 100%; border-radius: 10px"> <div style="background:red; padding-left: 5px; border-radius: 10px; width:100%">'+d.two+'</div> </div> <div>' + d.one + '</div> </div>'
+                }
+            })
         })
 
 
