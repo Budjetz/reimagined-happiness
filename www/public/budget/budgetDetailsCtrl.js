@@ -1,5 +1,4 @@
 angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stateParams, $ionicPopup, postService, getService, pieChart, barChart) {
-
   $scope.budget = $stateParams.id;
   $scope.getSpecificExpenditure = (cat) => {
     postService.getSpecificExpenditure(cat).then((res) => {
@@ -17,7 +16,6 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
       $scope.getSpecificExpenditure($scope.budget);
     })
   }
-
   $scope.confirmDeletion = (ex) => {
     $scope.ex = ex;
     var confirmPopup = $ionicPopup.confirm({
@@ -33,7 +31,6 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
       }
     });
   }
-
   $scope.showEditor = (ex) => {
     $scope.ex = ex;
     var addPopup = $ionicPopup.show({
@@ -60,5 +57,8 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
       pieChart.makePieChart(data.data);
     })
   };
+  $scope.$on('$ionicView.enter', function() {
+    $scope.getSpecificExpenditure($scope.budget);
+  })
 
 })

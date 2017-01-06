@@ -7,11 +7,7 @@
   <h1 class="title">{{budget}} details</h1>
 </ion-header-bar>
 
-<ion-content class="details-wrapper">
-
-  <div> This is a placeholder for the bar graph to be displayed </div>
-
-  <hr>
+<ion-content class="details-wrapper" ng-init='getSpecificExpenditure(budget)'>
 
 <section ng-repeat='expenditure in specificExpenditures | orderBy : "date"'>
   <section class="expenditure-detail-wrapper">

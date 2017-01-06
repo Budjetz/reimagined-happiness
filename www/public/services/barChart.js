@@ -79,7 +79,6 @@ angular.module('budjetz').service('barChart', function($state, getService) {
               d3.selectAll('.totals').remove();
             }
             data[0].total = res.data[0].amount;
-            console.log(res.data[0].amount);
             var main = d3.select('.totalBar')
               .selectAll('.totalBar')
               .data(data)
