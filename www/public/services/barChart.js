@@ -33,6 +33,9 @@ angular.module('budjetz').service('barChart', function($state, getService) {
 
     this.makeSavingsBar = () => {
       getService.getBudgetExpenditures().then( (res) => {
+        if(d3.select('.totals')[0]){
+          d3.selectAll('.totals').remove();
+        }
         var data = {}
             final = []
             expenditures = 0
@@ -53,7 +56,7 @@ angular.module('budjetz').service('barChart', function($state, getService) {
             .data(data)
             .enter()
             .append('div')
-            .attr('class', 'some')
+            .attr('class', 'totals')
             .style('width','auto')
             .style('margin','10px')
             .html(function (d) {
