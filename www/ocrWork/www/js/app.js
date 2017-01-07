@@ -56,14 +56,18 @@ angular.module('starter', ['ionic', 'ngCordova'])
   }
 })
 
-.controller("ExampleController", function($scope, $cordovaCamera, imagesService) {
+.controller("ExampleController", function($scope, $cordovaCamera, imagesService, $window) {
 
   $scope.getImage = () => {
     imagesService.getImage().then((res)=>{
       console.log(res[0].url);
       $scope.currentImage = res[0].url;
     })
-  };
+  }
+
+  $scope.returnToMainApp = function() {
+     $window.location.href = "http://localhost:8080/#/app/home"
+   }
 
 
 })
@@ -123,8 +127,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
       StatusBar.styleDefault();
     }
   });
-})
-
+});
 
 
 // ---- ---- -------- ---------- ----- ----
