@@ -1,4 +1,4 @@
-angular.module('budjetz').service('barChart', function($state) {
+angular.module('budjetz').service('barChart', function($state, getService) {
 
   this.makeBarChart = function(data) {
       if(d3.select('.barChart')[0]){
@@ -20,9 +20,9 @@ angular.module('budjetz').service('barChart', function($state) {
             .domain([0, d.budget_amount])
             .range([0, 100]);
             if(d.budget_amount < d.expenditures){
-              return '<div style="display: flex;"> <div style="background: #fdde2c; width: 100%; border-radius: 10px"> <div style="background:red; padding-left: 5px; border-radius: 10px; width : 100%">' + d.expenditures + '</div> </div> <div>' + d.budget_amount + '</div> </div>';
+              return '<div style="display: flex;"> <div style="background: #fdde2c; width: 100%; border-radius: 10px"> <div style="background: red; padding-left: 5px; border-radius: 10px; width : 100%">' + d.expenditures + '</div> </div> <div>' + d.budget_amount + '</div> </div>';
             } else {
-              return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:#fdde2c; padding-left: 5px; border-radius: 10px; width:'+ x(d.expenditures) + '%">'+d.expenditures+'</div> </div> <div>' + d.budget_amount + '</div> </div>';
+              return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:#fdde2c; padding-left: 5px; display:flex; border-radius: 10px; width:'+ x(d.expenditures) + '%">'+d.expenditures+'</div> </div> <div>' + d.budget_amount + '</div> </div>';
             }
         } else {
           return '<div style="background: gold; width: 100%; border-radius: 10px"> </div>';}});
@@ -31,8 +31,73 @@ angular.module('budjetz').service('barChart', function($state) {
       .style('text-align','center');
     }
 
-    this.makeSavingsBar = (data) => {
+    this.makeSavingsBar = () => {
+      getService.getBudgetExpenditures().then( (res) => {
+        if(d3.select('.savings')[0]){
+          d3.selectAll('.savings').remove();
+        }
+        var data = {}
+            final = []
+            expenditures = 0
+            budgets = 0;
+        res.data.filter( (val) => {
+          expenditures += val.expenditures;
+        });
+        res.data.filter( (val) => {
+          budgets += val.budget_amount
+        })
+        data.one = budgets;
+        data.two = expenditures;
+        final.push(data)
+        return final
+      }).then( (data) => {
+          var main = d3.select('.savingsBar')
+            .selectAll('.savingsBar')
+            .data(data)
+            .enter()
+            .append('div')
+            .attr('class', 'savings')
+            .style('width','auto')
+            .style('margin','10px')
+            .html(function (d) {
+              var x = d3.scale.linear()
+                .domain([0, d.one])
+                .range([0, 100]);
+                if(d.one > d.two){
+                  return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:#fdde2c; padding-left: 5px; border-radius: 10px; width:'+ x(d.two) + '%">'+d.two+'</div> </div> <div>' + d.one + '</div> </div>'
+                } else {
+                  return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:red; padding-left: 5px; border-radius: 10px; width:100%">'+d.two+'</div> </div> <div>' + d.one + '</div> </div>'
+                }
+            })
+            makeTotalBar(data)
+        })
 
-    }
+        makeTotalBar = (data) =>{
 
+          getService.getMoneyTotal().then( (res) => {
+            if(d3.select('.totals')[0]){
+              d3.selectAll('.totals').remove();
+            }
+            data[0].total = res.data[0].amount;
+            var main = d3.select('.totalBar')
+              .selectAll('.totalBar')
+              .data(data)
+              .enter()
+              .append('div')
+              .attr('class', 'totals')
+              .style('width','auto')
+              .style('margin','10px')
+              .html(function (d) {
+                var x = d3.scale.linear()
+                  .domain([0, d.total])
+                  .range([0, 100]);
+                  if(d.total > d.two){
+                    return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:#fdde2c; display:flex; padding-left: 5px; border-radius: 10px; width:'+ x(d.two) + '%">'+d.two+'</div> </div> <div>' + d.total + '</div> </div>'
+                  } else {
+                    return '<div style="display: flex;"> <div style="background: #1a902d; width: 100%; border-radius: 10px"> <div style="background:red; padding-left: 5px; border-radius: 10px; width:100%">'+d.two+'</div> </div> <div>' + d.total + '</div> </div>'
+                  }
+              })
+            })
+        }
+      }
 });

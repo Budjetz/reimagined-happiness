@@ -24,7 +24,10 @@
           <div class="welcome2-wrapper"><h1 class="welcome-title2">Starting Budget</h1></div>
 
           <form name='budgetInput' class="starting-money-wrapper">
-            <input id='startingMoney' type='text' ng-model='startingMoney' placeholder="Starting Budget" />
+            <div style="font-size: 22px;">$</div>
+            <div>
+              <input id='startingMoney' type='number' ng-model='startingMoney' placeholder="Starting Budget" />
+            </div>
           </form>
 
           <!-- <ion-item>
@@ -32,15 +35,11 @@
             <ion-input type="text" placeholder="Starting Budget" ng-model='startingMoney'></ion-input>
           </ion-item -->
 
-
-
-
-
           <p class="starting-blurb">
             So we can help you understand your budget, how much, total, do you spend each month?
           </p>
           <div class="setBudget-button-wrapper">
-            <button class="button button-light" id="setBudget-button" ui-sref="setBudget">Next</button>
+            <button class="button button-light" id="setBudget-button" ui-sref="setBudget" ng-click='setTotalBudget(startingMoney)'>Next</button>
           </div>
           <!-- <button class="button button-clear button-positive" ui-sref="app.home" ng-click='setPieChart()' > Finish </button> -->
         </div>

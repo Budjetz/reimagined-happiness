@@ -63,6 +63,7 @@ angular.module('budjetz')
         getService.getBudgetExpenditures().then((data) => {
           barChart.makeBarChart(data.data);
           pieChart.makePieChart(data.data);
+          barChart.makeSavingsBar();
           console.log(data.data);
         })
     })
@@ -122,6 +123,7 @@ angular.module('budjetz')
   $scope.setPieChart = () => {
     getService.getBudgetExpenditures().then((data) => {
       barChart.makeBarChart(data.data);
+      barChart.makeSavingsBar();
       pieChart.makePieChart(data.data);
     })
   };

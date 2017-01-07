@@ -2,16 +2,12 @@
 
 <ion-header-bar align-title="left" class="bar-balanced">
   <div class="buttons">
-    <button class="button ion-chevron-left" ui-sref="app.home"></button>
+    <button class="button ion-chevron-left" ui-sref="app.home" ng-click='setPieChart()'></button>
   </div>
   <h1 class="title">{{budget}} details</h1>
 </ion-header-bar>
 
-<ion-content class="details-wrapper">
-
-  <div> This is a placeholder for the bar graph to be displayed </div>
-
-  <hr>
+<ion-content class="details-wrapper" ng-init='getSpecificExpenditure(budget)'>
 
 <section ng-repeat='expenditure in specificExpenditures | orderBy : "date"'>
   <section class="expenditure-detail-wrapper">
@@ -19,13 +15,13 @@
       <div> {{expenditure.date | date: 'longDate'}} </div>
       <div> *Amount
     </section>
-    <section class="expenditure-amount">
+    <section class="expenditure-amount" ng-click="seeDetails(expenditure)">
       <div> {{expenditure.location}} </div>
       <div ng-model='amount'> ${{expenditure.amount}} </div>
     </section>
     <section class="details-del-edit">
       <div ng-click='showEditor(expenditure)'>edit</div>
-      <div ng-click='deleteExpenditure(expenditure)' style="color: red">delete</div>
+      <div ng-click='confirmDeletion(expenditure)' style="color: red">delete</div>
     </section>
 </section>
   <hr>

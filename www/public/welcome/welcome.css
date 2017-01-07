@@ -47,6 +47,7 @@
   width: 91vw;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 2em;
   margin-top: 2.5em;
 }
@@ -72,6 +73,8 @@
 
 #startingMoney {
   text-align: center;
+  width: 9em;
+  margin-left: 2px;
 }
 
 .starting-blurb {
@@ -130,7 +133,27 @@
 }
 
 #gasBudget, #rentBudget {
-  margin-left: 6.5em;
-  margin-bottom: 10px;
+  /*margin-left: 6.5em;
+  margin-bottom: 10px;*/
+  margin: auto;
   text-align: center;
+}
+
+.gas-input {
+  margin-bottom: 19px;
+}
+
+.gas-input, .rent-input {
+  font-family: "Indie Flower", cursive;
+  font-size: 23px;
+}
+
+.setBudget-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dollar-sign {
+  margin-right: 2px;
 }
