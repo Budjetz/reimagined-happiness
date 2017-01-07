@@ -27,12 +27,22 @@
 
 
     <ion-pane>
-        <ion-header-bar class="bar-balanced">
-          <h1 class="title">BudCam</h1>
-        </ion-header-bar>
 
-        <ion-content ng-controller="ExampleController">
+      <ion-header-bar class="bar-balanced">
+        <h1 class="title">BudCam</h1>
+      </ion-header-bar>
+
+      <ion-nav-bar class="bar-balanced" ng-controller="ExampleController">
+          <ion-nav-buttons side="left" >
+              <button ng-click="returnToMainApp()" class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
+          </ion-nav-buttons>
+      </ion-nav-bar>
+
+
+      <ion-content >
+
           <input type="file" fileread accept="image/*">
+
           <div ng-click=getImage()>Get receipt</div>
           <img src="{{currentImage}}" style="width:75%;">
 
