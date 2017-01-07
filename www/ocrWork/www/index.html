@@ -26,13 +26,13 @@
   <body ng-app="starter">
 
 
-    <ion-pane>
+    <ion-pane ng-controller="ExampleController">
 
       <ion-header-bar class="bar-balanced">
         <h1 class="title">BudCam</h1>
       </ion-header-bar>
 
-      <ion-nav-bar class="bar-balanced" ng-controller="ExampleController">
+      <ion-nav-bar class="bar-balanced" >
           <ion-nav-buttons side="left" >
               <button ng-click="returnToMainApp()" class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
           </ion-nav-buttons>
