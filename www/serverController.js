@@ -1,6 +1,27 @@
 const app = require('./index.js');
 const db = app.get('db');
 const config = require('./config.js')
+var AWS = require('aws-sdk');
+
+var s3config = {
+  accessKeyId: "AKIAJDDLMBIFFIUWYCEA",
+  bucket: {},
+  bucketName: "com.thinkcrazy.ionicimageupload",
+  bucketUrl: "https://s3.amazonaws.com/com.thinkcrazy.ionicimageupload/",
+  file: {},
+  region: "us-east-1",
+  secretAccessKey: "gCF19auerZBOx9IvpPpKAlCJYbD0yUo+bLyNB+wA",
+  sizeLimit: 10485760,
+  uploadProgress: 0
+};
+AWS.config.update(s3config
+//   {
+//     accessKeyId: Keys.amazonAccess
+//   , secretAccessKey: Keys.amazonSecret
+//   , region: Keys.amazonRegion
+// }
+);
+var s3 = new AWS.S3();
 
 module.exports = {
 
@@ -8,6 +29,12 @@ module.exports = {
   getUser: (req, res) => {
     console.log(req.user);
     res.send(req.user);
+  },
+  getImage: (req,res) => {
+    db.get_image((err,resp) => {
+      console.log(req.user);
+      res.json(resp);
+    })
   },
   getExpenditures: (req,res) => {
     db.get_expenditures((err,resp) => {
@@ -113,10 +140,39 @@ module.exports = {
       res.json(resp);
     })
   },
+
   setTotalBudget : (req, res) => {
     db.set_total([req.body.total], (err, resp) => {
       res.json(resp);
     })
   },
+
+  postS3 : (req, res) => {
+    var buf = new Buffer(req.body.fileread.replace(/^data:image\/\w+;base64,/, ""), 'base64');
+
+    // bucketName var below crates a "folder" for each user
+    var params = {
+        Bucket: "com.thinkcrazy.ionicimageupload"
+      , Key: req.body.fileName
+      , Body: buf
+      , ContentType: req.body.fileType
+      , ACL: 'public-read'
+    };
+
+    s3.upload(params, function (err, data) {
+      if (err) return res.status(500).send(err);
+
+      console.log(data.Location);
+      // hard coded for now for user 9, need to fix so can call on req.user.id:
+      db.add_image([9, req.body.fileName, data.Location], function(err, image){
+        console.log(err);
+        console.log(req.user);
+  //full product with new id returned
+          res.json(data.Location);
+      });
+      // res.json(data);
+    });
+
+  }
 
 }
