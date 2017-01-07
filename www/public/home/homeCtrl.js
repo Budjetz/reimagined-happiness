@@ -41,5 +41,6 @@ angular.module('budjetz').controller('homeCtrl', function ($scope, pieChart, dat
           console.log(res.data);
         })
       }
+      
 
   });

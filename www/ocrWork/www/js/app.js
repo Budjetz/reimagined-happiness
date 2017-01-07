@@ -13,6 +13,15 @@ angular.module('starter', ['ionic', 'ngCordova'])
     }
     console.log(newImage);
     // return $http.post('/api/newimage', newImage)
+  };
+  this.getImage = function (){
+    return $http({
+      method:"GET",
+      url: '/getImage'
+    }).then((res)=>{
+    // console.log(res.data[0].url);
+    return res.data;
+    })
   }
 
 })
@@ -47,7 +56,15 @@ angular.module('starter', ['ionic', 'ngCordova'])
   }
 })
 
-.controller("ExampleController", function($scope, $cordovaCamera) {
+.controller("ExampleController", function($scope, $cordovaCamera, imagesService) {
+
+  $scope.getImage = () => {
+    imagesService.getImage().then((res)=>{
+      console.log(res[0].url);
+      $scope.currentImage = res[0].url;
+    })
+  };
+
 
 })
     // $scope.takePicture = function() {
