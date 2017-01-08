@@ -8,11 +8,11 @@
 }
 
 .home-paragraph {
+  color: black;
   font-size: 20px;
   font-family: 'Indie Flower', cursive;
   padding-left: 15px;
   padding-right: 15px;
-  color: black;
   text-align:center;
 }
 
