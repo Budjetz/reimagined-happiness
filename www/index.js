@@ -114,7 +114,6 @@ app.post('/api/addImage', serverController.postS3);
 
 
 
-
 app.listen(8080, () => {
   console.log('listening on port 8080');
 });
