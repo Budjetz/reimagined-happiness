@@ -41,7 +41,9 @@ angular.module('starter', ['ionic', 'ngCordova'])
           var fileName = elem[0].files[0].name;
           var fileType = elem[0].files[0].type;
           console.log(fileName, fileType);
-          $http.post('/api/camera', {fileread, fileName, fileType})
+          // $http.post('/api/camera', {fileread, fileName, fileType})
+          $http.post('/getImage', {fileread, fileName, fileType})
+
           .then(function (result) {
             console.log(result.data);
           })
