@@ -3,7 +3,7 @@
   width: 100vw;
   /*background: #209800;*/
   /*background-color:rgb(124, 174, 132);*/
-  background-color: whitesmoke;
+  background-color: #98bce5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@
 #logo {
   /*background: #209800;*/
   /*background-color:rgb(124, 174, 132);*/
-  background-color: whitesmoke;
+  background-color: #98bce5;
   color: #D4C31C;
   font-size: 10em;
   /*padding: 90px;*/
@@ -41,15 +41,15 @@
 
 h3 {
   /*margin-top: 10em;*/
-  /*color: black;*/
-  color:rgb(124, 174, 132);
+  color: black;
+  /*color:rgb(124, 174, 132);*/
   font-size: 81px;
   font-family: 'Amatic SC', cursive;
 }
 
 p {
   /*color: white;*/
-  color:rgb(124, 174, 132);
+  /*color:rgb(124, 174, 132);*/
   font-size: 23px;
   font-family: 'Indie Flower', cursive;
   padding-left: 15px;
@@ -63,7 +63,7 @@ p {
 }
 
 #login-button {
-  background-color:rgb(124, 174, 132);
+  /*background-color:rgb(124, 174, 132);*/
   /*color: #000;*/
   font-family: 'Indie Flower', cursive;
   font-size: 21px;
