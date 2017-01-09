@@ -29,8 +29,7 @@ angular.module('budjetz').service('barChart', function($state, getService) {
       goodies.append('div')
       .html(function(d) {return d.name})
       .style('text-align','center');
-    }
-
+  }
     this.makeSavingsBar = () => {
       getService.getBudgetExpenditures().then( (res) => {
         if(d3.select('.savings')[0]){
@@ -100,4 +99,6 @@ angular.module('budjetz').service('barChart', function($state, getService) {
             })
         }
       }
+
+    this.specificBar = () => {}
 });
