@@ -1,4 +1,4 @@
-angular.module('budjetz', ['ionic', 'ngCordova', 'ionic-native-transitions'])
+angular.module('budjetz', ['ionic', 'ngCordova', 'ionic-native-transitions', 'ion-gallery'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

@@ -32,7 +32,7 @@ module.exports = {
   },
   getImage: (req,res) => {
     db.get_image((err,resp) => {
-      console.log(req.user);
+      // console.log(req.user);
       res.json(resp);
     })
   },
