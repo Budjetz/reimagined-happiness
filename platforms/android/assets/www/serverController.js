@@ -86,3 +86,4 @@ module.exports = {
 
 
 }
+// connectionString=postgres://xlbxbzkn:GkwWZ__uyE_KARHvvn52msM_NwZyQCov@elmer.db.elephantsql.com:5432/xlbxbzkn facebookId=717293048429695 facebookSecret=85809ca3ed55957e3175ade809065c25 npm start
