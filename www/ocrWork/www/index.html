@@ -50,6 +50,29 @@
       <!-- <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
       <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
       <button class="button" ng-click="takePicture()">Take Picture</button> -->
+
+      <img style="width: 100%;" id="pic" src="">
+
+      <div class="padding" ng-if="showAnalyzeButton">
+
+          <button ng-click="testOcrad()" class="button button-full button-positive">
+            Analyze text
+          </button>
+
+          <button ng-click="showActionSheet()" class="button button-full button-positive">
+            Reset
+          </button>
+
+          <button ng-click="returnToMainApp()" class="button button-full button-positive">
+            Return to app
+          </button>
+       </div>
+
+       <button ng-click="returnToMainApp()" class="button button-full button-positive">
+         Return to app
+       </button>
+
+
     </ion-content>
   </ion-pane>
 

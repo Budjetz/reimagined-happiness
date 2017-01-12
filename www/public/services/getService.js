@@ -31,7 +31,12 @@ angular.module('budjetz').service('getService', function ($http){
     })
   }
 
-  
+  this.getImages = function (){
+    return $http({
+      method:"GET",
+      url: '/getImage'
+    })
+  };
 
 
 

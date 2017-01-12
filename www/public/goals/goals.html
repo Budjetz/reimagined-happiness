@@ -1,45 +1,56 @@
-<ion-view title="Goals" >
-
-  <!-- <ion-content class="has-header padding" >
-    <h4> Camera/Photo Page</h4>
-    <br>
-    <button class="button button-full button-energized" ng-click="addMedia()">
-      Add image
-    </button>
-
-    <br><br>
-    <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
-      <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
-    </ion-scroll>
-
-    This button
-    goes here
-    for now:
-    <br>
-
-<a class="button button-full button-balanced" href="/ocr">Go to camApp!</a>
-  </ion-content> -->
-
+<ion-view title="Saved Receipts" >
 
   <ion-content class="has-header padding" >
-    <h4> Camera/Photo Page</h4>
     <br>
-    <button class="button button-full button-energized" ng-click="addMedia()">
+    <!-- <button class="button button-full button-energized" ng-click="addMedia()">
       Add image
-    </button>
+    </button> -->
 
     <br><br>
-    <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+    <!-- <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
       <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
-    </ion-scroll>
+    </ion-scroll> -->
+
+
+
+    <ion-gallery ion-gallery-items="items" ion-zoom-events="true">
+
+      <div ng-repeat="image in images">
+        <!-- {{image}} -->
+        <img ng-src="{{image.url}}" alt="" class="images">
+      </div>
+
+
+       {{items}}
+     </ion-gallery>
+<br>
+
 
     This button
     goes here
     for now:
-    <br>
+    <br><br>
+<a class="button button-full button-balanced" href="/ocr">Go to camApp!</a>
+
+  </ion-content>
+</ion-view>
+
+<!-- <ion-content class="has-header padding" >
+  <h4> Camera/Photo Page</h4>
+  <br>
+  <button class="button button-full button-energized" ng-click="addMedia()">
+    Add image
+  </button>
+
+  <br><br>
+  <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+    <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+  </ion-scroll>
+
+  This button
+  goes here
+  for now:
+  <br>
 
 <a class="button button-full button-balanced" href="/ocr">Go to camApp!</a>
-  </ion-content>
-
-
-</ion-view>
+</ion-content> -->
