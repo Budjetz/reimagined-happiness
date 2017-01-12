@@ -100,5 +100,19 @@ angular.module('budjetz').service('barChart', function($state, getService) {
         }
       }
 
-    this.specificBar = () => {}
+    this.specificBar = (data) => {
+      console.log(data);
+      d3.select('.specificBar')
+        .selectAll('.specificBar')
+        .data(data.data)
+        .enter()
+        .append('div')
+        .attr('class','specifics')
+        .style('width','auto')
+        .style('margin','10px')
+        .html('<div>help</div>')
+
+
+
+    }
 });
