@@ -9,6 +9,8 @@
 
 <ion-content class="details-wrapper" ng-init='getSpecificExpenditure(budget)'>
 
+<div class='specificBar'></div>
+
 <section ng-repeat='expenditure in specificExpenditures | orderBy : "date"'>
   <section class="expenditure-detail-wrapper">
     <section class="expenditure-category">

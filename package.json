@@ -1,5 +1,9 @@
 {
   "name": "budjetz",
+  "main": "www/index.js",
+  "scripts": {
+    "start": "node www/index.js"
+  },
   "version": "1.1.1",
   "description": "budjetz: An Ionic project",
   "dependencies": {

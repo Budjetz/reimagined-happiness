@@ -24,15 +24,15 @@ app.use(passport.session());
 app.use(express.static('./public'));
 app.use('/ocr', express.static(__dirname + '/ocrWork/www'));
 //database
-const massiveInstance = massive.connectSync({connectionString : config.db});
+const massiveInstance = massive.connectSync({connectionString : process.env.connectionString});
 app.set('db', massiveInstance);
 const db = app.get('db');
 const serverController = require('./serverController.js');
 
 //Facebook Authorization
 passport.use(new FacebookStrategy({
-    clientID: config.facebookID,
-    clientSecret: config.facebookSecret,
+    clientID: process.env.facebookID,
+    clientSecret: process.env.facebookSecret,
     callbackURL: "/auth/facebook/callback"
   }, (accessToken, refreshToken, profile, next) => {
    console.log('FB Profile: ', profile);
@@ -114,6 +114,6 @@ app.post('/api/addImage', serverController.postS3);
 
 
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('listening on port 8080');
 });

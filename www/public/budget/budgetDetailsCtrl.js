@@ -3,6 +3,7 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
   $scope.getSpecificExpenditure = (cat) => {
     postService.getSpecificExpenditure(cat).then((res) => {
       $scope.specificExpenditures = res.data;
+      barChart.specificBar(res);
     })
   }
   $scope.getSpecificExpenditure($scope.budget);
