@@ -1,6 +1,6 @@
 const app = require('./index.js');
 const db = app.get('db');
-const config = require('./config.js')
+// const config = require('./config.js')
 var AWS = require('aws-sdk');
 
 var s3config = {

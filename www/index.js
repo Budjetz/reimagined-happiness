@@ -6,7 +6,7 @@ const passport = require('passport');
 const massive = require('massive');
 const moment = require('moment');
 const FacebookStrategy = require('passport-facebook').Strategy;
-const config = require('./config.js');
+// const config = require('./config.js');
 
 const app = module.exports = express();
 
