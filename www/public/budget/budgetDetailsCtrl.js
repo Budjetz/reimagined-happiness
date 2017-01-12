@@ -17,6 +17,31 @@ angular.module('budjetz').controller('budgetDetailsCtrl', function($scope, $stat
       $scope.getSpecificExpenditure($scope.budget);
     })
   }
+  $scope.seeDetails = (ex) => {
+    $scope.ex = ex;
+    var detailsPopup = $ionicPopup.show({
+      template:
+        '<input type="text" placeholder="notes" ng-model="ex.notes" style="padding: 2px">',
+        title: 'Edit Notes',
+        scope: $scope,
+        buttons: [
+          {text: 'Cancel'},
+          {
+            text: '<div>Save</div>',
+            type: 'button-positive',
+            onTap: function(e){
+              $scope.editExpenditure($scope.ex);
+              $scope.showAlert();
+            }
+          }
+        ]
+    })
+  }
+  $scope.showAlert = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Your note has been saved'
+    });
+  };
   $scope.confirmDeletion = (ex) => {
     $scope.ex = ex;
     var confirmPopup = $ionicPopup.confirm({

@@ -1,98 +1,115 @@
 <!DOCTYPE html>
 <html ng-app="budjetz">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Budjetz</title>
 
-    <link rel="manifest" href="manifest.json">
-    <script src='http://d3js.org/d3.v3.min.js'></script>
-    <!-- Styling -->
-    <link href="./lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="./login/login.css" rel="stylesheet">
-    <link href="./welcome/welcome.css" rel="stylesheet">
-    <link href="./home/home.css" rel="stylesheet">
-    <link href="./settings/settings.css" rel="stylesheet">
-    <link href="./menu/menu.css" rel="stylesheet">
-    <link href="./budget/budgetDetails.css" rel="stylesheet">
-    <link href="./addExpense/typeOfExpense.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Budjetz</title>
 
-    <!-- Ionic Stuff -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <link rel="manifest" href="manifest.json">
+  <script src='http://d3js.org/d3.v3.min.js'></script>
+  <!-- Styling -->
+  <link href="./lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="./login/login.css" rel="stylesheet">
+  <link href="./welcome/welcome.css" rel="stylesheet">
+  <link href="./home/home.css" rel="stylesheet">
+  <link href="./settings/settings.css" rel="stylesheet">
+  <link href="./menu/menu.css" rel="stylesheet">
+  <link href="./budget/budgetDetails.css" rel="stylesheet">
+  <link href="./addExpense/typeOfExpense.css" rel="stylesheet">
+  <link href="./goals/goals.css" rel="stylesheet">
 
-    <!-- css animations -->
-    <!-- <link rel="stylesheet" href="animate.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower" rel="stylesheet">
 
-    <!-- Other JS Files -->
-    <script src="cordova.js"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <!-- Ionic Stuff -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <script src="js/app.js"></script>
-    <script src="js/routes.js"></script>
+  <!-- css animations -->
+  <!-- <link rel="stylesheet" href="animate.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-    <!-- Angular Material requires Angular.js Libraries -->
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <!-- camera page -->
+  <link href="lib/ion-gallery/dist/ion-gallery.css" rel="stylesheet">
+  <script src="lib/ion-gallery/dist/ion.gallery.min.js"></script>
 
-   <!-- Angular Material Library -->
-   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <!-- Other JS Files -->
 
-    <!-- Controllers -->
-    <script src="./welcome/welcomeCtrl.js"></script>
-    <script src="./login/loginCtrl.js"></script>
-    <script src="./home/homeCtrl.js"></script>
-    <script src="./menu/menuCtrl.js"></script>
-    <script src="./settings/settingsCtrl.js"></script>
-    <script src="./budget/budgetDetailsCtrl.js"></script>
-    <script src="./goals/goalsCtrl.js"></script>
+  <script src="cordova.js"></script>
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
 
-    <!-- Services -->
-    <script src="./services/camService.js"></script>
-    <script src="./services/barChart.js"></script>
-    <script src="./services/pieChart.js"></script>
-    <script src="./services/dataService.js"></script>
-    <script src="./services/getService.js"></script>
-    <script src="./services/postService.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/routes.js"></script>
 
-  </head>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 
-  <body ng-controller="loginCtrl">
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
-    <ion-nav-view></ion-nav-view>
+  <!-- Controllers -->
+  <script src="./welcome/welcomeCtrl.js"></script>
+  <script src="./login/loginCtrl.js"></script>
+  <script src="./home/homeCtrl.js"></script>
+  <script src="./menu/menuCtrl.js"></script>
+  <script src="./settings/settingsCtrl.js"></script>
+  <script src="./budget/budgetDetailsCtrl.js"></script>
+  <script src="./goals/goalsCtrl.js"></script>
 
-      <ion-content>
-        <section class="login-wrapper">
-          <section class="border">
-            <div class="logo-wrapper">
-              <!-- class="animated bounceInDown" -->
-              <!-- <div >
+  <!-- Services -->
+  <script src="./services/camService.js"></script>
+  <script src="./services/barChart.js"></script>
+  <script src="./services/pieChart.js"></script>
+  <script src="./services/dataService.js"></script>
+  <script src="./services/getService.js"></script>
+  <script src="./services/postService.js"></script>
+
+</head>
+
+<body ng-controller="loginCtrl">
+
+  <ion-nav-view></ion-nav-view>
+
+  <ion-content>
+    <section class="login-wrapper">
+      <section class="border">
+        <div class="logo-wrapper">
+          <!-- class="animated bounceInDown" -->
+          <!-- <div >
                 <button class="button ion-android-plane" id="logo"></button>
             </div> -->
-            <div id="logo">
-                <img src="img/budjetShdw.png" >
-            </div>
-            <div class="title-wrapper" >
-              <h3 class="animated bounceInLeft">BUDJETZ</h3> <br>
-              <p class="animated bounceInRight"> Helping you keep money in your pocket! </p>
-<!-- budget your money and reach your goals -->
-            </div>
+          <div id="logo" class="animated slideInLeft">
+            <img src="img/budjetShdw.png">
+          </div>
+          <div class="title-wrapper">
+            <h3>BUDJETZ</h3>
+            <p class="animated bounceInRight"> This helps it center, Budget and go far!
+          </p>
+            <!-- Helping you keep money in your pocket! -->
+            <!-- budget your money and reach your goals -->
+          </div>
 
-            </div>
-            <!-- class="button-wrapper animated bounceInUp" -->
-            <div class="button-wrapper">
-              <a class="button" id="login-button" href="/auth/facebook">
+        </div>
+        <br>
+        <!-- class="button-wrapper animated bounceInUp" -->
+        <br>
+        <br>
+        <br>
+        <div class="button-wrapper">
+
+          <a class="button" id="login-button" href="/auth/facebook">
                   Login via Facebook
               </a>
-<br>
-              <!-- <a class="button" href="/ocr">Go to camApp!</a> -->
-            </div>
-        </section>
+          <!-- style= "background:url(img/money.jpg)" -->
+          <br>
+          <!-- <a class="button" href="/ocr">Go to camApp!</a> -->
+        </div>
       </section>
+    </section>
 
-      </ion-content>
-  </body>
+  </ion-content>
+</body>
+
 </html>

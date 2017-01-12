@@ -1,12 +1,117 @@
 
-angular.module('starter', ['ionic','ngCordova'])
+angular.module('starter', ['ionic', 'ngCordova'])
 
-.controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
+.service('imagesService', function ($http) {
+  this.storeImage = function (imageData, fileName) {
+    var imageExtension = imageData.split(';')[0].split('/');
+    imageExtension = imageExtension[imageExtension.length - 1];
+
+    var newImage = {
+      imageName: fileName,
+      imageBody: imageData,
+      imageExtension: imageExtension,
+    }
+    console.log(newImage);
+    // return $http.post('/api/newimage', newImage)
+  };
+  this.getImage = function (){
+    return $http({
+      method:"GET",
+      url: '/getImage'
+    }).then((res)=>{
+    // console.log(res.data[0].url);
+    return res.data;
+    })
+  }
+
+})
+
+.directive('fileread', function($http) {
+  return {
+    restrict: 'A',
+    link: function (scope, elem, attrs) {
+      elem.bind("change", function (changeEvent) {
+        var reader = new FileReader();
+
+        reader.onloadend = function (loadEvent) {
+          console.log(loadEvent)
+          var fileread = loadEvent.target.result;
+          console.log(elem);
+
+          var fileName = elem[0].files[0].name;
+          var fileType = elem[0].files[0].type;
+          console.log(fileName, fileType);
+          // $http.post('/api/camera', {fileread, fileName, fileType})
+          $http.post('/api/addImage', {fileread, fileName, fileType})
+
+          .then(function (result) {
+            console.log(result.data);
+          })
+          .catch(function (err) {
+            console.error(err);
+          });
+        }
+
+        reader.readAsDataURL(changeEvent.target.files[0]);
+      });
+    }
+  }
+})
+
+.controller("ExampleController", function($scope, $cordovaCamera, imagesService, $window) {
+
+  $scope.getImage = () => {
+    imagesService.getImage().then((res)=>{
+      console.log(res[0].url);
+      $scope.currentImage = res[0].url;
+    })
+  }
 
   $scope.returnToMainApp = function() {
-      $window.location.href = "http://localhost:8080/#/app/home"
-    }
-  })
+     $window.location.href = "http://localhost:8080/#/app/home"
+   }
+
+
+})
+    // $scope.takePicture = function() {
+    //     var options = {
+    //         quality : 100,
+    //         destinationType : Camera.DestinationType.DATA_URL,
+    //         sourceType : Camera.PictureSourceType.CAMERA,
+    //         allowEdit : true,
+    //         encodingType: Camera.EncodingType.JPEG,
+    //         targetWidth: 300,
+    //         targetHeight: 300,
+    //         popoverOptions: CameraPopoverOptions,
+    //         saveToPhotoAlbum: false
+    //     };
+    //
+    //     $cordovaCamera.getPicture(options).then(function(imageData) {
+    //         $scope.imgURI = "data:image/jpeg;base64," + imageData;
+    //     }, function(err) {
+    //         // An error occured. Show a message to the user
+    //     });
+    // };
+// })
+
+
+
+
+
+
+
+
+
+
+
+// angular.module('starter', ['ionic','ngCordova'])
+//
+// .controller('CaptureCtrl', function($scope, $ionicActionSheet, $ionicLoading, $ionicPlatform, $cordovaCamera, $cordovaFile, $window) {
+//
+//   $scope.returnToMainApp = function() {
+//       $window.location.href = "http://localhost:8080/#/app/home"
+//     }
+//   })
 
 
 
@@ -24,8 +129,7 @@ angular.module('starter', ['ionic','ngCordova'])
       StatusBar.styleDefault();
     }
   });
-})
-
+});
 
 
 // ---- ---- -------- ---------- ----- ----

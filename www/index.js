@@ -11,7 +11,8 @@ const config = require('./config.js');
 const app = module.exports = express();
 
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit:'50mb'}));
+app.use(bodyParser.urlencoded({limit:'50mb',extended:true}))
 app.use(cors());
 app.use(session({
   secret: 'make up your own session secret',
@@ -41,6 +42,8 @@ passport.use(new FacebookStrategy({
         console.log("User not found. Creating...");
         db.users.insert({fb_id: profile.id, name: profile.displayName, pic: profile.picture}, (err, dbRes) => {
           console.log(dbRes);
+          req.user.id = dbRes.id;
+          console.log(req.user);
           return next(null, dbRes);
         });
       } else {
@@ -90,7 +93,7 @@ app.get('/logout', (req, res) => {
 });
 
 //Other
-
+app.get('/getImage', serverController.getImage);
 app.get('/getUser', serverController.getUser);
 app.get('/getExpenditures', serverController.getExpenditures);
 app.get('/getBudgets', serverController.getBudgets);
@@ -106,7 +109,7 @@ app.post('/deleteEmptyBudget',serverController.deleteEmptyBudget);
 app.post('/addBudget', serverController.addBudget);
 app.post('/editExpenditure', serverController.editExpenditure);
 app.post('/deleteExpenditure', serverController.deleteExpenditure);
-
+app.post('/api/addImage', serverController.postS3);
 
 
 
