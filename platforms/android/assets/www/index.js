@@ -6,7 +6,7 @@ const passport = require('passport');
 const massive = require('massive');
 const moment = require('moment');
 const FacebookStrategy = require('passport-facebook').Strategy;
-const config = require('./config.js');
+const config = process.env;
 
 const app = module.exports = express();
 
@@ -23,7 +23,7 @@ app.use(passport.session());
 app.use(express.static('./public'));
 app.use('/ocr', express.static(__dirname + '/ocrWork/www'));
 //database
-const massiveInstance = massive.connectSync({connectionString : config.db});
+const massiveInstance = massive.connectSync({connectionString : config.connectionString});
 app.set('db', massiveInstance);
 const db = app.get('db');
 const serverController = require('./serverController.js');
