@@ -3,15 +3,20 @@
 }
 
 .settings-header-wrapper {
-  height: 10vh;
-  background: #ccc;
+  height: 12vh;
+  background: #ececec;
+  font-size: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
 }
 
 #picture {
   float: right;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
 }
 
 .settings-list-item {
