@@ -27,7 +27,6 @@ angular.module('budjetz').controller('welcomeCtrl', function($scope, $state, bar
   $scope.setTotalBudget = (budget) => {
     if(budget){
       postService.setTotalBudget(budget).then((res)=>{
-        $state.go('setBudget')
     })
   }
   }
