@@ -26,8 +26,9 @@ angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, p
 
   };
   $scope.setTotalBudget = (budget) => {
-    postService.setTotalBudget(budget).then((res)=>{
-      console.log(res);
+    if(budget){
+      postService.setTotalBudget(budget).then((res)=>{
+    }
     })
   }
 
