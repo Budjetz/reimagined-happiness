@@ -57,7 +57,7 @@
 }
 
 .barGraph, .totalBar, .savingsBar {
-  font-family: 'Amatic SC', cursive;
-  /*font-family: 'Indie Flower', cursive;*/
+  /*font-family: 'Amatic SC', cursive;*/
+  font-family: 'Indie Flower', cursive;
   font-size: 18px;
 }

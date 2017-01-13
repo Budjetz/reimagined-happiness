@@ -42,16 +42,18 @@
 
     <ion-content>
 
+
+<img style="width: 100%;" id="pic" src="http://www.hutterites.org/wp-content/uploads/2012/03/placeholder.jpg">
+
       <input type="file" fileread accept="image/*">
 
-      <div class="button button-calm" ng-click=getImage()>Get receipt</div>
+      <!-- <div class="button button-calm" ng-click=getImage()>Get receipt</div> -->
       <img src="{{currentImage}}" style="width:75%;">
 
       <!-- <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
       <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
       <button class="button" ng-click="takePicture()">Take Picture</button> -->
 
-      <img style="width: 100%;" id="pic" src="">
 
       <div class="padding" ng-if="showAnalyzeButton">
 
@@ -68,9 +70,9 @@
           </button>
        </div>
 
-       <button ng-click="returnToMainApp()" class="button button-full button-positive">
+       <!-- <button ng-click="returnToMainApp()" class="button button-full button-positive">
          Return to app
-       </button>
+       </button> -->
 
 
     </ion-content>
