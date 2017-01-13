@@ -1,156 +1,37 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-  <script src="lib/s3-image-uploader/dist/image-uploader.min.js"></script>
 
-  <!-- ionic/angularjs js -->
-  <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-  <script src="cordova.js"></script>
-  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-  <script src="lib/ocrad.js"></script>
-  <!-- your app's js -->
-  <script src="js/app.js"></script>
-</head>
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/ocrad.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
 
-<body ng-app="starter">
+  <body ng-app="starter">
 
-
-  <ion-pane ng-controller="ExampleController">
-
-    <ion-header-bar class="bar-balanced">
-      <h1 class="title">BudCam</h1>
-    </ion-header-bar>
-
-    <ion-nav-bar class="bar-balanced">
-      <ion-nav-buttons side="left">
-        <button ng-click="returnToMainApp()" class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-
-
-    <ion-content>
-
-
-<img style="width: 100%;" id="pic" src="http://www.hutterites.org/wp-content/uploads/2012/03/placeholder.jpg">
-
-      <input type="file" fileread accept="image/*">
-
-      <!-- <div class="button button-calm" ng-click=getImage()>Get receipt</div> -->
-      <img src="{{currentImage}}" style="width:75%;">
-
-      <!-- <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}">
-      <img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300">
-      <button class="button" ng-click="takePicture()">Take Picture</button> -->
-
-
-      <div class="padding" ng-if="showAnalyzeButton">
-
-          <button ng-click="testOcrad()" class="button button-full button-positive">
-            Analyze text
-          </button>
-
-          <button ng-click="showActionSheet()" class="button button-full button-positive">
-            Reset
-          </button>
-
-          <button ng-click="returnToMainApp()" class="button button-full button-positive">
-            Return to app
-          </button>
-       </div>
-
-       <!-- <button ng-click="returnToMainApp()" class="button button-full button-positive">
-         Return to app
-       </button> -->
-
-
-    </ion-content>
-  </ion-pane>
-
-
-
-
-
-
-
-
-
-
-  <!-- testing" -->
-  <!-- <ion-pane >
-
-        <ion-header-bar class="bar-balanced">
-
-        </ion-header-bar>
-
-        <ion-nav-bar class="bar-balanced" ng-controller="CaptureCtrl">
-            <ion-nav-buttons side="left" >
-                <button ng-click="returnToMainApp()" class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
-            </ion-nav-buttons>
-        </ion-nav-bar>
-
-
-
-
-
-        <ion-content class="has-header padding" ng-controller="ImageController">
-            <button class="button button-full button-energized" ng-click="addMedia()">
-                Add image
-            </button>
-            <button class="button button-full button-positive" ng-click="sendEmail()">
-                Send mail
-            </button>
-            <br><br>
-
-            <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
-              <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
-            </ion-scroll>
-        </ion-content>
-
-    </ion-pane> -->
-
-
-
-
-
-
-
-
-
-
-  <!-- <ion-pane ng-controller="CaptureCtrl">
-      <ion-header-bar class="bar-balanced">
-        <h1 class="title">Ionic OCR </h1>
+    <ion-pane>
+      <ion-header-bar class="bar-stable" style="font-family:Amatic SC;">
+        <h1 class="title">Receipts</h1>
       </ion-header-bar>
 
-        <ion-nav-bar class="bar-balanced">
-
-          <ion-nav-buttons side="left">
-            <button ng-click="returnToMainApp()" class="button button-icon button-clear ion-navicon" menu-toggle="primary"></button>
-          </ion-nav-buttons>
-
-        </ion-nav-bar>
-
-        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
-
-
-
-
-      <ion-content >
+      <ion-content ng-controller="CaptureCtrl">
 
         <img style="width: 100%;" id="pic" src="">
-        <img src="http://cdn1.buuteeq.com/upload/2023196/placeholder.png.1236x617_default.png" style="width:100%;">
 
         <div class="padding" ng-if="showAnalyzeButton">
 
@@ -162,23 +43,22 @@
               Reset
             </button>
 
-            <button ng-click="returnToMainApp()" class="button button-block button-positive">
+            <button ng-click="returnToMainApp()" class="button button-full button-positive">
               Return to app
             </button>
          </div>
 
-         <button ng-click="returnToMainApp()" class="button button-outline button-block button-energized">
-           Return to app
-         </button>
-          <div id="imgContainer" >
-             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/ReceiptSwiss.jpg" style="height:40%; width:40%;" >
+         <img style="width: 100%;" id="pic" src="http://www.hutterites.org/wp-content/uploads/2012/03/placeholder.jpg">
 
-             <img src="http://www.makereceipts.com/receipt_preview.jpg" style="height:40%; width:40%;" >
-           </div>
+               <input type="file" fileread accept="image/*">
+
+         <button ng-click="returnToMainApp()" class="button button-positive button-full">
+           Analyze
+         </button>
+
 
 
       </ion-content>
-    </ion-pane> -->
-</body>
-
+    </ion-pane>
+  </body>
 </html>
