@@ -1,4 +1,4 @@
-angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, pieChart, dataService, postService) {
+angular.module('budjetz').controller('welcomeCtrl', function($scope, $state, barChart, pieChart, dataService, postService) {
 
   $scope.options = {
     loop: false,
@@ -17,19 +17,19 @@ angular.module('budjetz').controller('welcomeCtrl', function($scope, barChart, p
     $scope.activeIndex = data.slider.activeIndex;
     $scope.previousIndex = data.slider.previousIndex;
   });
-  $scope.setPieChart = function(stuff){
-    var data = dataService.setData(stuff);
-    if(data){
-      pieChart.makePieChart(data);
-      barChart.makeBarChart();
-    }
-
-  };
+  // $scope.setPieChart = function(stuff){
+  //   var data = dataService.setData(stuff);
+  //   if(data){
+  //     pieChart.makePieChart(data);
+  //     barChart.makeBarChart();
+  //   }
+  // };
   $scope.setTotalBudget = (budget) => {
     if(budget){
       postService.setTotalBudget(budget).then((res)=>{
-    }
+        $state.go('setBudget')
     })
+  }
   }
 
 
