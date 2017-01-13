@@ -28,7 +28,9 @@
 
 .blurb-container {
   /*background: #19a008;*/
-  background-color:rgb(124, 174, 132);
+  /*background-color:rgb(124, 174, 132);*/
+  background-color: #98bce5;
+
   padding: 1em;
 }
 
@@ -54,7 +56,8 @@
 
 .blurb-container2 {
   /*background: #19af07;*/
-  background-color:rgb(124, 185, 132);
+  /*background-color:rgb(124, 185, 132);*/
+  background-color: #98bce5;
 
   padding: 1em;
 }
@@ -99,7 +102,9 @@
 /* Third Slide -- Collect Budget Information */
 .blurb-container3 {
   /*background: #19af07;*/
-  background-color:rgb(124, 185, 132);
+  /*background-color:rgb(124, 185, 132);*/
+  background-color: #98bce5;
+
   padding: 1em;
 }
 
