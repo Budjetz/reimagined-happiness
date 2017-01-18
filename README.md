@@ -14,4 +14,4 @@ With easy to read charts and inputing systems, Budjetz allows users to see all o
 * HTML5
 * D3.js
 
-![Login Page](/budjetz-images/Screenshot-14.png)
+![Login Page](/budjetz-images/ScreenshotBudjetz.png)
