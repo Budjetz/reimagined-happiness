@@ -10,7 +10,8 @@
 .home-paragraph {
   color: black;
   font-size: 20px;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Amatic SC', cursive;
+  /*font-family: 'Indie Flower', cursive;*/
   padding-left: 15px;
   padding-right: 15px;
   text-align:center;
@@ -19,7 +20,8 @@
 .home-category-title {
   font-size: 25px;
   font-weight: bold;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Amatic SC', cursive;
+  /*font-family: 'Indie Flower', cursive;*/
   padding-top: 15px;
   padding-bottom: 5px;
   display: flex;
@@ -48,12 +50,14 @@
 }
 
 .home-budget-p1, .home-budget-p2 {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Amatic SC', cursive;
+  /*font-family: 'Indie Flower', cursive;*/
   color: black;
   font-size: 18px;
 }
 
 .barGraph, .totalBar, .savingsBar {
+  /*font-family: 'Amatic SC', cursive;*/
   font-family: 'Indie Flower', cursive;
   font-size: 18px;
 }

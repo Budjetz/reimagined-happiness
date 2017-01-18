@@ -1,17 +1,17 @@
 <ion-view title="Saved Receipts" >
 
-  <ion-content class="has-header padding" >
+  <ion-content  class="animated bounceInDown" class="has-header padding">
     <br>
     <!-- <button class="button button-full button-energized" ng-click="addMedia()">
       Add image
     </button> -->
 
-    <br><br>
+    <p class="receiptsP">
+      Save your receipts here or email them for safekeeping!
+    </p>
     <!-- <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
       <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
     </ion-scroll> -->
-
-
 
     <ion-gallery ion-gallery-items="items" ion-zoom-events="true">
 
@@ -25,14 +25,14 @@
      </ion-gallery>
 <br>
 
-
-    This button
-    goes here
-    for now:
-    <br><br>
-<a class="button button-full button-balanced" href="/ocr">Go to camApp!</a>
-
+<!-- <a class="button button-full button-balanced" href="/ocr">Go to camApp!</a> -->
+<!-- <ion-footer-bar> -->
+<div class="centercam">
+<i class="icon ion-ios-camera" style="font-size: 50px;" href="/ocr"></i>
+</div>
+<!-- </ion-footer-bar> -->
   </ion-content>
+
 </ion-view>
 
 <!-- <ion-content class="has-header padding" >

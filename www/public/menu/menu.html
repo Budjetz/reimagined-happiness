@@ -19,31 +19,50 @@
 
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
 
-  </ion-side-menu-content >
+  </ion-side-menu-content>
 
-  <ion-side-menu side="left" style="font-family: courier new;">
+  <ion-side-menu side="left" style="font-family: Amatic SC;">
     <ion-header-bar class="bar-balanced">
-      <!-- <h1 class="title">Menu</h1> -->
+      <h1 class="title">Menu</h1>
     </ion-header-bar>
+    <br><br><br>
+
+
     <ion-content class="custom">
-      <ul class="menu-list">
+      <ul class="menu-list" style="text-align:center;">
+        <!-- <div style="text-align:center; margin-top:15px;">
+          <img style="width:25%;" src="img/budjet1.png">
+        </div> -->
         <li menu-close ui-sref="app.home" ng-click='setPieChart()' class="menu-home">
           Home
         </li>
-          <hr>
+        <hr>
         <li menu-close ui-sref="app.goals">
-          Saved Receipts
+           Saved Receipts
         </li>
-          <hr>
+        <hr>
         <li menu-close ui-sref="app.settings">
           Settings
         </li>
-          <hr>
-            <br><br><br><br><br><br><br>
-          <hr>
+        <hr>
+
+
+<br>
+        <br>
+        <!-- <div style=" margin-top:15px; margin-left:15px; text-align:left;">
+          <img style="width:35%;" src="img/budjet1.png">
+        </div> -->
+        <br>
+
+        <!-- <div style="text-align:right; margin-top:15px;">
+          <img style="width:12%;" src="img/budjet1.png">
+        </div> -->
+<br><br>
+        <hr>
         <li ui-sref="login" class="menu-logout">
-          Logout
+           Logout
         </li>
+        <!-- <img style="width:15%;" src="img/budjet1.png"> -->
       </ul>
 
       </ion-list>

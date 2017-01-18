@@ -43,9 +43,8 @@ h3 {
   /*margin-top: 10em;*/
   color: black;
   /*color:rgb(124, 174, 132);*/
-  font-size: 51px;
+  font-size: 75px;
   font-family: 'Amatic SC', cursive;
-  font-family: ;
 }
 
 p {
@@ -55,8 +54,7 @@ p {
   font-family: 'Indie Flower', cursive;
   padding-left: 15px;
   padding-right: 15px;
-  font-family: ;
-
+  /*font-family: 'Amatic SC', cursive;*/
 }
 
 .button-wrapper {
@@ -68,7 +66,8 @@ p {
 #login-button {
   /*background-color:rgb(124, 174, 132);*/
   /*color: #000;*/
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Amatic SC', cursive;
+  /*font-family: 'Indie Flower', cursive;*/
   font-size: 21px;
   padding: 7px;
 }
