@@ -14,4 +14,8 @@ With easy to read charts and inputing systems, Budjetz allows users to see all o
 * HTML5
 * D3.js
 
-![Login Page](/budjetz-images/ScreenshotBudjetz.png)
+######HOSTED SITE
+https://budjetz.herokuapp.com/#/login
+For Demo Purpose, the login feature has been disabled and test data has been added. The login button will take you to the welcome slides.
+
+![Login Page](/budjetz-images/Home.png)
